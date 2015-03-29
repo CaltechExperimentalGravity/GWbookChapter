@@ -1,0 +1,51 @@
+\chapter[Diagnostic methods]{Diagnostic methods: math ideas, implementation methods, success stories \label{ch15}}
+
+\section{Introduction}\label{ch15:intro}
+
+\begin{itemize}
+\item The extreme sensitivity of gravitational-wave detectors comes from drastic isolation from the environment, precise servo control of hundreds of degrees of freedom, and extreme reduction of noise sources ranging from quantum noise to technical electronic noise. 
+\item In general, the detector sensitivity to astrophysical sources is set by a combination of its spectral sensitivity (formed by mostly stationary Gaussian noise) and by time and frequency non-Gaussian components such as resonances and noise transients. 
+\item Because the instruments are so complex, hundreds of thousands of auxiliary sensors are used to monitor their degrees of freedom and electronics and their local environments. 
+\item This chapter focuses on making an effective use of these sensors to diagnose problems and fix them in the instruments or exclude them from the data analysis. 
+\item The aim of this work is to get the most astrophysical reach out of the searches, given the constraints of the fundamental stationary noise limits that are inherent to the design of the detectors. 
+\end{itemize}
+
+\section{Noise types common to GW detectors}\label{ch15:noise}
+
+\begin{itemize}
+\item Define, with plenty of references to previous chapters, what fundamental noises limit the spectral sensitivity of the detectors. 
+\item Illustrate noise sources that lead to a modulation of the detector noise floor. For example, high seismic leading to noise floor increase via up conversion. 
+\item Illustrate noise sources that lead to noise transients, or “glitches.” For example, a faulty electronics box that creates glitches because of a wiggle-contact. 
+\item Illustrate periodic noise that is narrow band, but persistent in time. For example, beats between un-synced local oscillators. 
+\item Illustrate non-linear noise, such as scattered light, that is not clearly either of the above, but also very common in detectors. 
+These types of noises can have devastating effects on GW searches. 
+\end{itemize}
+
+
+\section{Monitoring the detector: signal processing}\label{ch15:monitoring}
+
+\begin{itemize}
+\item Given the noise sources above, and the hundreds of thousands of channels recorded, we monitor the instruments for clues of causation.
+\item Define stationary noise characterization. To track slowly-changing, stationary noises in the detector, we use a technique called noise budgeting. This involves measuring the ambient noise level of a given disturbance or degree of freedom, measuring its coupling transfer function to h(t) and then multiplying and showing it on the same spectral density plot as h(t).
+\item Discuss glitch characterization. Discuss transient trigger generation (Omicron and omegascan). Discuss time-correlation tools such as UPV and hveto and how they can be used to find clues to the instrumental causes and families of related sensors. 
+\item Discuss more complicated methods like excavator, UPV, ADC saturation monitors. 
+\item Discuss glitch classification. 
+\item Discuss frequency line tracking and coincidence (Fscan, Noemi) and work to correlate among sites. 
+\item Discuss coherence methods and discovery of terrestrial correlated magnetic noise among sites. 
+\end{itemize}
+
+\section{Assessing the data quality of searches}\label{ch15:assessing}
+
+\begin{itemize}
+\item Discuss the general goals and limitations of the searches and how data quality efforts can impact these.
+\item Discuss the human aspect of this along with signal processing, data quality shifts, summary pages, search FOMs, operators, scimons, data quality flags. 
+\end{itemize}
+
+\section{Conclusions, future prospects}\label{ch15:conclusions}
+
+\begin{itemize}
+\item The mathematical ideas and implementation of this work has led to techniques and algorithms that can be applied to different fields (anything searching for transient correlations, for example GNOME). 
+\item Glitch identification can be done as a citizen science project. 
+\item Noise transient correlation can benefit from genetic algorithms and other fancy math. 
+\item This problem will not go away for LIGO 3, LISA or BBO. 
+\end{itemize}

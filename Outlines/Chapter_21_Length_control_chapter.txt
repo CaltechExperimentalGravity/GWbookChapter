@@ -1,0 +1,48 @@
+chapter: Length sensing and Control; outline
+-------------------------------------------
+
+-Introduction
+(connection to seismic isolation, residual motion of masses,
+need to sense and control masses position to be at operating point.)
+
+
+-Length sensing
+---Pound-Drever-Hall sensing
+  (The 'workhorse' in length sensing of high precision optical
+  cavities. Connection to cavity chapter)
+---Heterodyne, Homodyne- and DC readout
+---Length sensing of a Michelson interferometer and more general readout
+  concepts
+---Some more length sensing techniques (2f, 3f, relevant for lock
+  acquisition)
+---Coupling and decoupling of degrees of freedom / Length sensing of a
+  dual recycled Fabry-Perot Michelson (choice of modulation
+  frequencies etc)
+---Photodetector electronics (if place allows, at least some basics as
+  dynamic range and noise, connection to PDs in EOM/PD chapter)
+
+
+
+-Closing the loop: Lenght control
+---Actuators and dynamic range (including hierarchical control.
+  Will actuators be introduced in suspension chapter?)
+---Control bandwidth and noise coupling
+---Individual length control loops and their interplay
+  (IMC/laser freq. chain/CARM,DARM,MICH,PRCL,SRCL)
+---Noise reduction by subtraction techniques
+
+
+
+-The lock acquisition process
+---Lock acquisition (general problem and consideration of approaches)
+---Input modecleaners (as more simple example)
+---Main Interferometers / DRFPMI
+---Transition to low-noise readout
+
+
+
+-The Gravitational-wave readout channel
+---Filtering of the Output beam: the output mode cleaner (connection to
+  cavities and mirrors/TCS chapters)
+---Length sensing and control of the output mode cleaner
+---Gravitational-wave channel readout

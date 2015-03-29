@@ -1,0 +1,24 @@
+Peter Fritschel's chapter:
+
+Systems design & trade-offs:
+
+- System design of primary interferometer parameters
+  - laser power, cavity finesse, beam size, etc
+
+- System design for secondary interferometer parameters
+  - optical loss budget
+  - recycling cavity geometry
+  - actuation requirements
+  - lock acquisition features
+
+- Role of simulations in systems design
+  - static interferometer simulations
+  - length & alignment sensing/control simulations
+
+- Handling high power effects with systems design
+
+- Managing technical noise sources
+
+- System trade-offs in seismic isolation
+
+- Global controls & filtering

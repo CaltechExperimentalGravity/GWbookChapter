@@ -1,0 +1,116 @@
+Dear Peter,
+
+Apologies for this very late reply. I have attached a suggested table of contents
+for the chapter. I have prepared this after several iterations with my student 
+Daniel Brown. Daniel has worked with me on various aspects of simulations for the last 
+5 years and I’d like to propose him as a co-author for this chapter. There is 
+very little existing literature on the motivation and progress of optical 
+simulations in the GW community, and we believe that up to half of the chapter 
+is required to cover some basics.
+
+The second half would then be more text-book like in giving explicit examples
+how to derive the math (equations for the optical field and coupling) suitable
+for certain numerical implementations. We plan to give only basic cavity examples
+for time domain and FFT code and plan to provide more realistic examples
+from the Advanced LIGO design and commissioning based on modal models. This
+selection is partly because I am more familiar with this work, but also because
+the modal, frequency domain models (Optickle, Finesse, MIST, etc) saw the
+greatest push during the Advanced LIGO design phase.
+
+Please have a look at the draft table-of-contents below and let me know
+what you think. Thanks a lot!
+
+Cheers,
+Andreas
+
+——————
+
+Introduction (1 pages)
+- What are interferometer simulations
+- Why do we need them (for Advanced detectors)
+- What will we describe in this chapter
+
+Motivation (2 pages)
+- Laser interferometers are built from classical and
+  mostly passive optics which operate in a stable,
+  static state which can be well described with
+  classical linear optics.
+- However, interferometer forms one complex system
+  of many simple components. The *complexity* is the
+  main challenge.
+- Modelling during design phase of a new type
+  of instrument allows virtual experimentation
+  in advance, this creates confidence in design,
+  highlight mistakes
+
+- Principle of modelling:
+  a) using realistic model to make experiments 'in silico'
+     for validating design, predicting results
+  b) modelling a simple/reduced system to understand a
+     specific behaviour more fundamentally
+  c) playing with the system, for teaching/learning
+     outreach
+ - High accuracy models of large optical structures not
+  feasible due to the nature of the problem (Maxwell,
+  solvers, FDTD, ...)
+  Physics approximation required for numerical tools
+  (memory requirement, run-time)
+- GW requires spectacular phase accuracy, many
+  commercial simulation packages not good enough
+- What did we need to solve for Advanced detectors, signal 
+  recycling control, thermal deformation, quantum noise, 
+  radiation pressure (examples come later)
+- GW community, early development -> AIC - STAIC 1998-2003
+  -> now
+
+Types of simulation tools (1 pages)
+- Time domain vs Frequency domain
+- Modal model versus FFT codes
+
+Time domain simulation of a cavity (3 pages)
+- Derive the time domain equations for a field in a
+  cavity
+- Show how Laplace transform converts this as digital
+  filter (i.e. discretised form of equation)
+- Show simple example code, result for ringing cavity
+- Most versatile, can include non-linear physics, various
+  representations of the physics
+- can be slow and difficult to interpret
+- used for 'lock acquisition'
+- Links to E2E and Siesta
+
+Frequency domain simulations (1 pages)
+- GW laser interferometers during data taking very stable,
+  can be interpreted mostly as stable state with small
+  distortions -> Frequency response, faster simultions
+- Two methods to find/describe steady state:
+  a) describe local couplings and iterate until globally
+  stable -> typical FFT code
+  b) generate global system description from local couplings
+  and find solution -> typical modal model
+
+Paraxial models (2 pages)
+- diffraction theory to paraxial wave equation
+- approximation that matched GW laser interferometers well
+- limitations
+
+FFT propagation (2 pages)
+- propagation kernel, interaction with surface, iteration
+  to stable state
+- show cavity example
+- link to SIS, OSCAR, WAVEPROP
+
+Modal model (6 pages)
+- setting up interferometer matrix, sparse matrix solver
+- beam shapes with model expansion, coupling coefficients
+- radiation pressure, quantum noise computation
+- cavity example
+- Advanced LIGO design/commissioning examples
+  - Thermal deformation
+  - radiation pressure, quantum noise
+- link to MIST, Optickle, Finesse
+
+Other simulations and outlook (1-2 pages)
+- Ray tracing, ...
+- Current work on simulations, needs for future
+  detectors

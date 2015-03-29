@@ -1,0 +1,56 @@
+\chapter[Diagnostics, Control Systems, and People]{Diagnostics, Control Systems, and People\label{ch7}}
+
+\section{Introduction}\label{sec7.1}
+You told me that the commissioning process had taught you that we were mistaken in our whole design process. We had divided things into subsystems as in the chapters in a textbook, but then to make them work together things didn’t factor nearly so neatly. You learned that controllability was much more important than the last few dB of isolation or whatever figure of merit a subsystem designer thought s/he was supposed to optimize. I think that you also had in mind the sneaky noise sources that you mention in last night’s email. But please don’t forget about your from-the-trenches critique of by-the-book thinking and WBS-style design.
+
+\section{Detector Diagnostics}
+   - we need testpoints everywhere
+   - we need to have high frequency noise measurements to diagnose laser noise, HOM resonances, and mirror mode ringups
+   - even more important for parametric instability control
+   - missing diagnostics: non-uniform optic absorption, time dependence of scattering, how close are the optics to the stops, THD of the force actuators, THD of the displacement sensors, strain release in vacuum system couples to IFO by scattered light
+
+
+\section{Mirror Suspension designs ignored controllability}
+   1) the first thought in suspension design is to provide vibration isolation
+   2) low suspension thermal noise
+   3) third priority is some thoughts on damping
+   4) 4th priority is minimize damping noise
+   5) should instead consider upconversion, control forces, gradual noise reduction, minimization of angular noise generation, etc. all together in holistic metric v. sensitivity and uptime.
+   6) Future suspension will look different than the LIGO/Virgo style
+
+
+​\section{Control System Synthesis}
+  1) LIGO/Virgo/GEO done by pre-1980 controls technology: pole/zero placement, SISO error signal minimization, by-eye estimates of loop stability
+  2) Techniques for process and aircraft control use more global and MIMO synthesis techniques with general cost function minimization.
+  3) Machine learning techniques can use nonlinear cost functions and account for rare, large excursions -> maximize uptime
+  4) Adaptive machines can explore non-intuitive noise cancelation techniques​
+  5) The dynamical response of the interferometer is a combination of mechanical, opto-mechanical, and electronic feedback. Its a mistake to treat these on such unequal footings - the interferometer design ought to be done using global search methods (such as MCMC) in the same way that we do for BHBH parameter estimation.
+
+\section{Most Surprising Noise Sources}
+\begin{itemize}
+\item Classic bilinear: beam spot motion makes upconversion. Well understood in the 90's.
+\item Limiting noise in S1: seen, but not understood until S2.
+\item Weak LO: limit in S3. Found by noticing harmonics in spectra. Same structure as S1 OL noise.
+\item Multiple PDs: the signal is not the same.
+\item RF AS PD: What's in the I-phase?
+
+\end{itemize}
+
+\section{People}
+\begin{enumerate}
+\item An important piece of the noise reduction feedback system is the team of humans 
+  in the control room.
+\item Viewed as a NN or ML algorithm, the machine needs to be rewarded, punished, trained, and 
+  maintained in order to minimize the time needed to reach the quantum sensitivity limits.
+\item The team must also be able to train the next generation of machines.
+\item In the Navy they teach the priority list of (1) complete the mission, 
+  (2) safety, (3) train your replacement. How should we do this better?
+\item How to balance making progress quickly and training the next wave of young scientists?
+\item The team needs to make progress quickly, but the PhD students need theses and the local
+  observatory staff need to be fully engaged (not steamrolled) by visiting scientists working 15 hour days.
+\end{enumerate}
+
+
+\section{Index}\index{index}
+The index should be printed at the end of the book. \Cref{ch3} has more
+on indexing.

@@ -1,0 +1,25 @@
+Gravitational waves and their interactions with detectors
+
+2. details of ifo configuration and response (Kawamura)
+
+
+Effect of GW on spacetime, light, and matter
+  Description of the effect in a local inertial frame
+  Description of the effect in a transverse traceless gauge
+
+Response of a Michelson interferometer to GW
+  Basics of a Michelson interferometer
+  Suspended mirrors and a beam splitter
+  Description of the response in a local inertial frame
+  Description of the response in a transverse traceless gauge
+  Frequency dependence of the response
+  Direction and polarization dependence of the response
+
+Advanced interferometer configuration
+  Fabry-Perot Michelson interferometer
+    -Frequency dependence of the response
+  Power-recycled Fabry-Perot Michelson interferometer
+  Dual-recycled interferometer
+  Resonant sideband extraction interferometer
+    -detuned interferometer
+

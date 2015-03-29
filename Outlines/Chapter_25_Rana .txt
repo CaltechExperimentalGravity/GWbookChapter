@@ -1,0 +1,32 @@
+Sorry for the late response - this has been sitting around in my outbox.
+
+
+* Detector Diagnostics
+   - we need testpoints everywhere
+   - we need to have high frequency noise measurements to diagnose laser noise, HOM resonances, and mirror mode ringups
+   - even more important for parametric instability control
+   - missing diagnostics: non-uniform optic absorption, time dependence of scattering, how close are the optics to the stops, THD of the force actuators, THD of the displacement sensors, strain release in vacuum system couples to IFO by scattered light
+
+
+* Mirror Suspension designs ignored controllability
+   1) the first thought in suspension design is to provide vibration isolation
+   2) low suspension thermal noise
+   3) third priority is some thoughts on damping
+   4) 4th priority is minimize damping noise
+   5) should instead consider upconversion, control forces, gradual noise reduction, minimization of angular noise generation, etc. all together in holistic metric v. sensitivity and uptime.
+   6) Future suspension will look different than the LIGO/Virgo style
+
+
+* People
+  1) An important piece of the noise reduction feedback system is the team of humans in the control room.
+  2) Viewed as a NN or ML algorithm, the machine needs to be rewarded, punished, trained, and maintained in order to minimize the time needed to reach the quantum sensitivity limits.
+  3) The team must also be able to train the next generation of machines.
+  4) In the Navy they teach the priority list of (1) complete the mission, (2) safety, (3) train your replacement
+
+
+​* Control System Synthesis
+  1) LIGO/Virgo/GEO done by pre-1980 controls technology: pole/zero placement, SISO error signal minimization, by-eye estimates of loop stability
+  2) Techniques for process and aircraft control use more global and MIMO synthesis techniques with general cost function minimization.
+  3) Machine learning techniques can use nonlinear cost functions and account for rare, large excursions -> maximize uptime
+  4) Adaptive machines can explore non-intuitive noise cancelation techniques​
+  5) The dynamical response of the interferometer is a combination of mechanical, opto-mechanical, and electronic feedback. Its a mistake to treat these on such unequal footings - the interferometer design ought to be done using global search methods (such as MCMC) in the same way that we do for BHBH parameter estimation.

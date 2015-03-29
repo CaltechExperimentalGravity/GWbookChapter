@@ -1,0 +1,36 @@
+chapter: Alignment Sensing and Control; outline 
+------------------------------------------- 
+
+-Introduction and Requirements
+ (connection to seismic isolation, residual angular motion of masses, 
+ need to sense and control masses angles to be at operating point.) 
+
+
+-Angle sensing 
+-- Introduction about sensors for angles
+--- Optical levers (This could go in the suspension chapter)
+--- DC Quadrants 
+--- RF Wave front-sensors -- refer here to PDH technique explained in LSC chapter
+-- Angle sensing of a single cavity (parallel with LSC chapter - new piece: Gouy phase separation between sensors)
+-- Angle sensing of a Michelson interferometer (and/or the IMC?)
+-- Angle sensing of a dual recycled Michelson interferometer with Fabry-Perot cavities
+---Coupling and decoupling of degrees of freedom (sensing matrix)
+---Sensor noise (refer to LSC chapter)
+
+
+-Closing the loop: Angle control 
+--Actuators and dynamic range 
+--Control bandwidth and noise coupling 
+--The role of radiation pressure
+--- Sidles-Sigg instabilities for a single cavity
+--- HARD/SOFT modes for the full IFO
+
+
+-ASC in real life: commissioning of the angle sensing and control system
+( I think it can be interesting to have a section which practically describes the "unspoken" challenges typical of essentially all the IFO in the world)
+-- Overview of the challenges 
+-- Length/Angle coupling, offsets
+-- Opto-mechanical response changing as function of input power
+-- ASC vs TCS (link with TCS section)
+-- The alignment of the OMC (refer to DC readout section in the LSC chapter, papers from GEO and eLIGO)
+-- A particularly challenging case: enhanced LIGO (mix of all previous problems, refer to eLIGO ASC paper)
