@@ -1,7 +1,15 @@
 \chapter[Diagnostics, Control Systems, and People]{Diagnostics, Control Systems, and People\label{ch7}}
 
 \section{Introduction}\label{sec7.1}
-You told me that the commissioning process had taught you that we were mistaken in our whole design process. We had divided things into subsystems as in the chapters in a textbook, but then to make them work together things didn’t factor nearly so neatly. You learned that controllability was much more important than the last few dB of isolation or whatever figure of merit a subsystem designer thought s/he was supposed to optimize. I think that you also had in mind the sneaky noise sources that you mention in last night’s email. But please don’t forget about your from-the-trenches critique of by-the-book thinking and WBS-style design.
+The commissioning process has taught us that we were mistaken in the design process.
+
+We could divide things into subsystems as done in the chapters of a book, but then 
+to make them work together things do not factor nearly so neatly. Controllability is 
+much more important than the last few percent of isolation or noise performance. It
+is not wise to design for a single point in parameter space: if each part of the interferometer
+can only work when all other pieces are performing as designed, it becomes impossible
+to integrate. Its the inverse of the classic locked-room mystery stories.
+
 
 \section{Detector Diagnostics}
    - we need testpoints everywhere
@@ -36,6 +44,22 @@ You told me that the commissioning process had taught you that we were mistaken 
 
 \end{itemize}
 
+\section{Risk Register and Risk Reduction Research}
+\begin{itemize}
+\item Keep a list of risks.
+\item Gather detector experts to update list periodically.
+\item Rate risks: probability of occurrence, potential impact, cost to fix
+\item Risk Breakdown Structure and Risk Management Tools
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{Figures/RIPBubbleChartNoOverlays.png}
+\caption{Example of graphical representation of a Risk Registry}
+\label{fig:RiskBubbles}
+\end{figure}
+
+
 \section{People}
 \begin{enumerate}
 \item An important piece of the noise reduction feedback system is the team of humans 
@@ -50,7 +74,17 @@ You told me that the commissioning process had taught you that we were mistaken 
   observatory staff need to be fully engaged (not steamrolled) by visiting scientists working 15 hour days.
 \end{enumerate}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{Figures/GroupPhoto_LLOworkshop13.jpg}
+\caption{International GW Commissioning workshop}
+\label{fig:workshopPhotoLLO}
+\end{figure}
 
-\section{Index}\index{index}
-The index should be printed at the end of the book. \Cref{ch3} has more
-on indexing.
+\section{Conclusion}
+These wise things should be kept in mind while doing the detector commissioning.
+
+In addition to the usual thoughts about how
+
+
+

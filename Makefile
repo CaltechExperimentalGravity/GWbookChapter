@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-DOC = main
+DOC = ws-book975x65
 
 .PHONY: all
 all: pdf

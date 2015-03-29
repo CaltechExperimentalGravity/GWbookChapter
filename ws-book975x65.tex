@@ -16,7 +16,7 @@
 \documentclass{ws-book975x65}
 \usepackage{ws-book-thm}           % comment this line when `amsthm` is used
 \usepackage{ws-book-har}           % citation - Author-Date system
-\usepackage[pdfpagelabels=false]{hyperref}  % \label, \ref and \cite are recommended
+\usepackage[pdfpagelabels=false, colorlinks=true]{hyperref}  % \label, \ref and \cite are recommended
 \title{My Book Title}              % set your book title here for even page running title
 
 \makeindex
@@ -56,11 +56,13 @@
 
 \input chapter3.tex
 
+\input chapter25.tex
+
 \input appendix.tex
 
 % for BibTeX users
 \bibliographystyle{ws-book-har}    % Bibliography: Author-Date system
-\bibliography{ws-book-sample}      % pls. call your database here
+\bibliography{RanaGWrefs}      % pls. call your database here
 
 % for non-BibTeX users
 % \input bibliography.tex
