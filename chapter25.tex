@@ -14,23 +14,32 @@ to integrate. Its the inverse of the classic locked-room mystery stories.
 \section{Detector Diagnostics}
    - we need testpoints everywhere
    - we need to have high frequency noise measurements to diagnose laser noise, HOM resonances, and mirror mode ringups
-   - even more important for parametric instability control
+   - even more important for parametric instability control\cite{Matt:PI}
    - missing diagnostics: non-uniform optic absorption, time dependence of scattering, how close are the optics to the stops, THD of the force actuators, THD of the displacement sensors, strain release in vacuum system couples to IFO by scattered light
 
 
-\section{Mirror Suspension designs ignored controllability}
-   1) the first thought in suspension design is to provide vibration isolation
-   2) low suspension thermal noise
-   3) third priority is some thoughts on damping
-   4) 4th priority is minimize damping noise
-   5) should instead consider upconversion, control forces, gradual noise reduction, minimization of angular noise generation, etc. all together in holistic metric v. sensitivity and uptime.
-   6) Future suspension will look different than the LIGO/Virgo style
+\section{LIGO Mirror Suspensions: A Design Example}
 
+Important considerations in test mass suspension design\cite{SUS:2012, Aston:2012}:
+\begin{itemize}
+   \item Vibration isolation: nearly all of the seismic isolation in the GW detection band ($f > 5\,\rm Hz$)
+     comes from the suspension. To fulfill this requirement, the mirror must be isolated by a 
+     multi-stage pendulum~\cite{Beker:2011}.
+    \item low suspension thermal noise and minimization of creep noise~\cite{Levin:2012ek, Gretarsson:2005gs}
+    \item third priority is some thoughts on damping
+    \item 4th priority is minimize damping noise
+    \item should instead consider upconversion, control forces, gradual noise reduction, minimization of angular noise generation, etc. all together in holistic metric v. sensitivity and uptime.
+    \item Future suspension will look different than the LIGO/Virgo style
+\end{itemize}
 
 ​\section{Control System Synthesis}
   1) LIGO/Virgo/GEO done by pre-1980 controls technology: pole/zero placement, SISO error signal minimization, by-eye estimates of loop stability
   2) Techniques for process and aircraft control use more global and MIMO synthesis techniques with general cost function minimization.
   3) Machine learning techniques can use nonlinear cost functions and account for rare, large excursions -> maximize uptime
+
+In recent years, more sophisticated algorithms have been introduced to better control the vibration isolation
+systems supporting the mirrors in the interferometer\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
+
   4) Adaptive machines can explore non-intuitive noise cancelation techniques​
   5) The dynamical response of the interferometer is a combination of mechanical, opto-mechanical, and electronic feedback. Its a mistake to treat these on such unequal footings - the interferometer design ought to be done using global search methods (such as MCMC) in the same way that we do for BHBH parameter estimation.
 
