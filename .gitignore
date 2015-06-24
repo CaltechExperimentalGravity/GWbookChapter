@@ -1,0 +1,7 @@
+# a comment - this is ignored
+# emacs autosave files
+*~
+*.eps
+*.docx
+*.zip
+.ipynb*
