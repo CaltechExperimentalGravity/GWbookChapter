@@ -1,22 +1,44 @@
 \chapter[Diagnostics, Control Systems, and People]{Diagnostics, Control Systems, and People\label{ch7}}
 
-\section{Introduction}\label{sec7.1}
-The commissioning process has taught us that we were mistaken in the design process.
+Feynamn: "all things are mmade of atoms..."
 
-We could divide things into subsystems as done in the chapters of a book, but then 
-to make them work together things do not factor nearly so neatly. Controllability is 
-much more important than the last few percent of isolation or noise performance. It
-is not wise to design for a single point in parameter space: if each part of the interferometer
-can only work when all other pieces are performing as designed, it becomes impossible
-to integrate. Its the inverse of the classic locked-room mystery stories.
+% If, in some cataclysm, all of scientific knowledge were to be destroyed, and only one sentence passed on to the next generation of creatures, what statement would contain the most information in the fewest words? I believe it is the atomic hypothesis that all things are made of atoms — little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another. In that one sentence, you will see, there is an enormous amount of information about the world, if just a little imagination and thinking are applied.
+
+\section{Introduction}
+\label{sec7.1}
+If civilization were to be wiped out and only a single statement could be left carved in stone for future scientists to use, as they rebuilt civilization and invented gravitational wave detectors to reach out into the universe, it would be this:\\
+
+"Think carefully and holistically about your detector before building it such that no part is neglected as being too small or 'second order', yea, for even the mighty may be brought low by the loose baffle or the unforseen cross-coupling."
+
+The interferometer commissioning process has taught us that we could improve our design process.\\
+
+We could divide things into subsystems as done in the chapters of a book, 
+but then to make them work together things do not factor nearly so neatly. Controllability is much more important than the last few percent of 
+isolation or noise performance.\\
+
+It is not wise to design for a single point in parameter space: if each 
+part of the interferometer can only work when all other pieces are 
+performing as designed, it becomes impossible to integrate.\\
+
+Its the inverse of a Sherlock Holmes locked-room mystery story.
 
 
 \section{Detector Diagnostics}
    - we need testpoints everywhere
-   - we need to have high frequency noise measurements to diagnose laser noise, HOM resonances, and mirror mode ringups
-   - even more important for parametric instability control\cite{Matt:PI}
-   - missing diagnostics: non-uniform optic absorption, time dependence of scattering, how close are the optics to the stops, THD of the force actuators, THD of the displacement sensors, strain release in vacuum system couples to IFO by scattered light
 
+\begin{itmemize}
+\item high frequency noise measurements to diagnose laser noise
+\item HOM resonances
+\item mirror mode ringups
+\item even more important for parametric instability control\cite{Matt:PI}
+\item non-uniform optic absorption
+\item time dependence of optical scattering
+\item how close are the optics to the stops
+\item THD of the force actuators
+\item THD of the displacement sensors
+\item strain release in vacuum system couples to IFO by scattered light
+\item bursts of gas lead to transient phase noise in arm cavities
+\end{itemize}
 
 \section{LIGO Mirror Suspensions: A Design Example}
 
@@ -40,7 +62,7 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
   3) Machine learning techniques can use nonlinear cost functions and account for rare, large excursions -> maximize uptime
 
 In recent years, more sophisticated algorithms have been introduced to better control the vibration isolation
-systems supporting the mirrors in the interferometer\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
+systems supporting the mirrors in the interferometer~\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
 
   4) Adaptive machines can explore non-intuitive noise cancelation techniques​
   5) The dynamical response of the interferometer is a combination of mechanical, opto-mechanical, and electronic feedback. Its a mistake to treat these on such unequal footings - the interferometer design ought to be done using global search methods (such as MCMC) in the same way that we do for BHBH parameter estimation.
@@ -52,8 +74,20 @@ systems supporting the mirrors in the interferometer\cite{Beker:2014, Driggers:2
 \item Weak LO: limit in S3. Found by noticing harmonics in spectra. Same structure as S1 OL noise.
 \item Multiple PDs: the signal is not the same.
 \item RF AS PD: What's in the I-phase?
-
 \end{itemize}
+
+
+\subsection{Scattered Light}
+The phenomenon of excess phase noise due to scattered light has been known about for decades~\cite{DanDewey} at least.
+
+Due to imperfections in the optics, for example, a small fraction of the laser light escapes from the main interferometer beam path. This light then interacts with something (e.g. a piece of the vacuum system or some other suspended optic or beam baffle) and then recombines with the circulating laser field within the 
+interferometer~\cite{Kip:Baffles, Ottaway:scatter, Virgo:scatter, Partha:scatter}. The recombination may occur at virtually any point within the system: inside of the Fabry-Perot arm cavities, at the beamsplitter, or even at the final photodetector which records the GW strain signal.
+
+It is instructive to consider quantitatively the ampltidue of the noise for a few of these cases. A significant source of scatter for all of the long interferometers
+\begin{align}
+S_x = some scattering stuff
+\end{align}
+
 
 \section{Risk Register and Risk Reduction Research}
 \begin{itemize}
