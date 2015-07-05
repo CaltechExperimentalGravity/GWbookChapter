@@ -13,7 +13,8 @@ If civilization were to be wiped out and only a single statement could be left c
 The interferometer commissioning process has taught us that we could improve our design process.\\
 
 We could divide things into subsystems as done in the chapters of a book, 
-but then to make them work together things do not factor nearly so neatly. Controllability is much more important than the last few percent of 
+but then to make them work together things do not factor nearly so neatly. 
+Controllability is much more important than the last few percent of 
 isolation or noise performance.\\
 
 It is not wise to design for a single point in parameter space: if each 
@@ -23,22 +24,7 @@ performing as designed, it becomes impossible to integrate.\\
 Its the inverse of a Sherlock Holmes locked-room mystery story.
 
 
-\section{Detector Diagnostics}
-   - we need testpoints everywhere
 
-\begin{itemize}
-  \item high frequency noise measurements to diagnose laser noise
-  \item HOM resonances
-  \item mirror mode ringups
-  \item even more important for parametric instability control\cite{Matt:PI}
-  \item non-uniform optic absorption
-  \item time dependence of optical scattering
-  \item how close are the optics to the stops
-  \item THD of the force actuators
-  \item THD of the displacement sensors
-  \item strain release in vacuum system couples to IFO by scattered light
-  \item bursts of gas lead to transient phase noise in arm cavities
-\end{itemize}
 
 \section{LIGO Mirror Suspensions: A Design Example}
 
@@ -61,8 +47,10 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
   2) Techniques for process and aircraft control use more global and MIMO synthesis techniques with general cost function minimization.
   3) Machine learning techniques can use nonlinear cost functions and account for rare, large excursions -> maximize uptime
 
-In recent years, more sophisticated algorithms have been introduced to better control the vibration isolation
-systems supporting the mirrors in the interferometer~\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
+In recent years, more sophisticated algorithms have been introduced to 
+better control the vibration isolation
+systems supporting the mirrors in the 
+interferometer~\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
 
   4) Adaptive machines can explore non-intuitive noise cancelation techniques​
   5) The dynamical response of the interferometer is a combination of mechanical, opto-mechanical, and electronic feedback. Its a mistake to treat these on such unequal footings - the interferometer design ought to be done using global search methods (such as MCMC) in the same way that we do for BHBH parameter estimation.
@@ -79,12 +67,20 @@ systems supporting the mirrors in the interferometer~\cite{Beker:2014, Driggers:
 
 
 \subsection{Scattered Light}
-The phenomenon of excess phase noise due to scattered light has been known about for decades~\cite{Schilling:1981} at least.
+The phenomenon of excess phase noise due to scattered light has been known about for 
+decades~\cite{Schilling:1981} at least.
 
-Due to imperfections in the optics, for example, a small fraction of the laser light escapes from the main interferometer beam path. This light then interacts with something (e.g. a piece of the vacuum system or some other suspended optic or beam baffle) and then recombines with the circulating laser field within the 
-interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012, Stefano:Scatter, Vinet:scatter, fritschel1998high}. The recombination may occur at virtually any point within the system: inside of the Fabry-Perot arm cavities, at the beamsplitter, or even at the final photodetector which records the GW strain signal.
+Due to imperfections in the optics, for example, a small fraction of the laser light escapes from 
+the main interferometer beam path. This light then interacts with something (e.g. a piece of the 
+vacuum system or some other suspended optic or beam baffle) and then recombines with the 
+circulating laser field within the 
+interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012, Stefano:Scatter, Vinet:scatter, fritschel1998high}. 
+The recombination may occur at virtually any point within the system: inside of the 
+Fabry-Perot arm cavities, at the beamsplitter, or even at the final photodetector which 
+records the GW strain signal.
 
-It is instructive to consider quantitatively the ampltidue of the noise for a few of these cases. A significant source of scatter for all of the long interferometers
+It is instructive to consider quantitatively the ampltidue of the noise for a few of 
+these cases. A significant source of scatter for all of the long interferometers
 \begin{align}
 S_x = some scattering stuff
 \end{align}
@@ -109,7 +105,7 @@ S_x = some scattering stuff
 
 \begin{tabular}{lllrrrrrr}
 \toprule
-{} &                     Risk Description & sub-System &  Probability (\%) &  Cost to Fix (M\$) &  Time to Fix (m) &  BNS Impact (\% Range) &  BBH Impact (\% Range) &  Total Severity \\
+{} &                     Risk Description & sub-System &  Prob. (\%) &  Cost (M\$) &  Time (m) &  BNS (\% Range) &  BBH (\% Range) &  Total Severity \\
 %\midrule
 0  &            Gravity Gradient too high &        SEI &               75 &              0.30 &                5 &                    10 &                    90 &             NaN \\
 1  &  Thermal Distortion destabilizes ASC &        AOS &               60 &              0.50 &               18 &                    30 &                    50 &             NaN \\
@@ -117,8 +113,8 @@ S_x = some scattering stuff
 3  &               LSC Aux noise too high &        LSC &               25 &              0.03 &                3 &                    15 &                    15 &             NaN \\
 4  &          ASC feedback noise too high &        ASC &               65 &              0.03 &                6 &                     5 &                    90 &             NaN \\
 5  &                 Beamtube Backscatter &        SYS &               33 &              0.15 &                5 &                     3 &                    65 &             NaN \\
-6  &          SRC Mode Healing -> Harming &        SYS &               50 &              0.50 &                6 &                    40 &                     5 &             NaN \\
-7  &       BS clipping -> contrast defect &        COC &               90 &              0.35 &                6 &                    33 &                     3 &             NaN \\
+6  &          SRC Mode Healing $\rightarrow$ Harming &        SYS &               50 &              0.50 &                6 &                    40 &                     5 &             NaN \\
+7  &       BS clipping $\rightarrow$ contrast defect &        COC &               90 &              0.35 &                6 &                    33 &                     3 &             NaN \\
 8  &              ETM Charge fluctuations &        SUS &               50 &              0.20 &                4 &                    15 &                    40 &             NaN \\
 9  &             Parametric Instabilities &        LSC &               70 &              0.20 &                4 &                    40 &                     5 &             NaN \\
 10 &                   Suspension crackle &        SUS &               25 &              0.25 &                7 &                     5 &                    50 &             NaN \\
@@ -131,6 +127,23 @@ S_x = some scattering stuff
 17 &             CDS/SEI breaks SUS fiber &        SEI &               10 &              0.03 &                3 &                   100 &                   100 &             NaN \\
 %\bottomrule
 \end{tabular}
+
+\section{Detector Diagnostics}
+   - we need testpoints everywhere
+
+\begin{itemize}
+  \item high frequency noise measurements to diagnose laser noise
+  \item HOM resonances
+  \item mirror mode ringups
+  \item even more important for parametric instability control\cite{Matt:PI}
+  \item non-uniform optic absorption
+  \item time dependence of optical scattering
+  \item how close are the optics to the stops
+  \item THD of the force actuators
+  \item THD of the displacement sensors
+  \item strain release in vacuum system couples to IFO by scattered light
+  \item bursts of gas lead to transient phase noise in arm cavities
+\end{itemize}
 
 \section{People}
 \begin{enumerate}
