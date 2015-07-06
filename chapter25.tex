@@ -24,9 +24,20 @@ performing as designed, it becomes impossible to integrate.\\
 Its the inverse of a Sherlock Holmes locked-room mystery story.
 
 
+\section{Sub-system Integration Issues}
+We design the individual components of the interfererometer to fulfill some primary goals with some secondary considerations.
+
+But in some cases, the most important driver in the design should, in fact, be the interaction that this 'isolated' component has with the full system. In some cases, this interaction is only apparent with the highest circulating laser power levels and only when considering the smallest mirror displacements.
 
 
-\section{LIGO Mirror Suspensions: A Design Example}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{Figures/SystemConflicts.pdf}
+\caption{Examples of conflicts between subsytems}
+\label{fig:SystemConflicts}
+\end{figure}
+
+\subsection{LIGO Mirror Suspensions: A Design Example}
 
 Important considerations in test mass suspension design\cite{SUS:2012, Aston:2012}:
 \begin{itemize}
@@ -40,7 +51,7 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
     \item Future suspension will look different than the LIGO/Virgo style
 \end{itemize}
 
-\section{Digital Control Systems: A second example}
+\subsection{Digital Control Systems: A second example}
 
 ​\section{Control System Synthesis}
   1) LIGO/Virgo/GEO done by pre-1980 controls technology: pole/zero placement, SISO error signal minimization, by-eye estimates of loop stability
@@ -54,6 +65,11 @@ interferometer~\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
 
   4) Adaptive machines can explore non-intuitive noise cancelation techniques​
   5) The dynamical response of the interferometer is a combination of mechanical, opto-mechanical, and electronic feedback. Its a mistake to treat these on such unequal footings - the interferometer design ought to be done using global search methods (such as MCMC) in the same way that we do for BHBH parameter estimation.
+
+
+
+
+
 
 \section{Most Surprising Noise Sources}
 
@@ -102,7 +118,8 @@ S_x = some scattering stuff
 \label{fig:RiskBubbles}
 \end{figure}
 
-
+\begin{table}
+\tiny
 \begin{tabular}{lllrrrrrr}
 \toprule
 {} &                     Risk Description & sub-System &  Prob. (\%) &  Cost (M\$) &  Time (m) &  BNS (\% Range) &  BBH (\% Range) &  Total Severity \\
@@ -127,6 +144,7 @@ S_x = some scattering stuff
 17 &             CDS/SEI breaks SUS fiber &        SEI &               10 &              0.03 &                3 &                   100 &                   100 &             NaN \\
 %\bottomrule
 \end{tabular}
+\end{table}
 
 \section{Detector Diagnostics}
    - we need testpoints everywhere
