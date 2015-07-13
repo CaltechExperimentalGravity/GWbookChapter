@@ -47,7 +47,7 @@ and only when considering the smallest mirror displacements.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{Figures/SystemConflicts.pdf}
-\caption{Examples of conflicts between subsytems}
+\caption{Examples of interactions between subsytems}
 \label{fig:SystemConflicts}
 \end{figure}
 
@@ -89,7 +89,14 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
     \item Future suspension will look different than the LIGO/Virgo style
 \end{itemize}
 
-During the commissioning of the first generation of kilometer scale detectors, it became clear that the angular motion of the suspended optics was too large and a significant challenge for the angular control systems~\ref{ASC}.
+During the commissioning of the first generation of kilometer scale detectors, it became clear that the angular motion of the suspended optics was too large and a significant challenge for the angular control systems~\ref{ASC}. The most obvious mechanism to produce rotations of the optics is, perhaps, direct coupling of the ground motion through the suspension system and into mechanical torque. 
+
+In fact, the dominant mechanism is through the control system: rotations and translations of the ground produce relative motions of the mirrors along the direction of the laser beam propagation. The Length Sensing and Control~\ref{LSC} system then corrects for this by applying forces to the mirror suspension system.
+
+The length to angle coupling has a complicated transfer function from each length actuator to the mirror angle due to the many resonances in the suspension, the presence of the local damping loops, and the Sidles-Sigg effect~\cite{Sidles:2006un, Hirose:10, Dooley:13}
+
+
+
 
 
 
