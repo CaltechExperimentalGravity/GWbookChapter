@@ -1,33 +1,47 @@
-\chapter[Diagnostics, Control Systems, and People]{Diagnostics, Control Systems, and People\label{ch7}}
+\chapter[Integrated Detector Commissioning]{Integrated Detector Commissioning}
+\label{IDC}
 
-Feynamn: "all things are mmade of atoms..."
+% editing Tex in Atom
+% http://rolflekang.com/writing-latex-in-atom/
+
+Feynman: "all things are made of atoms..."
 
 % If, in some cataclysm, all of scientific knowledge were to be destroyed, and only one sentence passed on to the next generation of creatures, what statement would contain the most information in the fewest words? I believe it is the atomic hypothesis that all things are made of atoms — little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another. In that one sentence, you will see, there is an enormous amount of information about the world, if just a little imagination and thinking are applied.
 
 \section{Introduction}
 \label{sec7.1}
-If civilization were to be wiped out and only a single statement could be left carved in stone for future scientists to use, as they rebuilt civilization and invented gravitational wave detectors to reach out into the universe, it would be this:\\
+If civilization were to be wiped out and only a single statement could be left
+carved in stone for future scientists to use, as they rebuilt civilization and
+invented gravitational wave detectors to reach out into the universe,
+it would be this:\\
 
-"Think carefully and holistically about your detector before building it such that no part is neglected as being too small or 'second order', yea, for even the mighty may be brought low by the loose baffle or the unforseen cross-coupling."
+"Think carefully and holistically about your detector before building it
+such that no part is neglected as being too small or 'second order', yea,
+for even the mighty may be brought low by the loose baffle or the
+unforseen cross-coupling."
 
 The interferometer commissioning process has taught us that we could improve our design process.\\
 
-We could divide things into subsystems as done in the chapters of a book, 
-but then to make them work together things do not factor nearly so neatly. 
-Controllability is much more important than the last few percent of 
+We might divide things into subsystems as done in the chapters of a book,
+but then to make them work together things do not factor nearly so neatly.
+Controllability is much more important than the last few percent of
 isolation or noise performance.\\
 
-It is not wise to design for a single point in parameter space: if each 
-part of the interferometer can only work when all other pieces are 
+It is not wise to design for a single point in parameter space: if each
+part of the interferometer can only work when all other pieces are
 performing as designed, it becomes impossible to integrate.\\
 
 Its the inverse of a Sherlock Holmes locked-room mystery story.
 
 
 \section{Sub-system Integration Issues}
-We design the individual components of the interfererometer to fulfill some primary goals with some secondary considerations.
+We design the individual components of the interfererometer to fulfill some
+primary goals with some secondary considerations.
 
-But in some cases, the most important driver in the design should, in fact, be the interaction that this 'isolated' component has with the full system. In some cases, this interaction is only apparent with the highest circulating laser power levels and only when considering the smallest mirror displacements.
+But in some cases, the most important driver in the design should, in fact, be the
+interaction that this 'isolated' component has with the full system. In some cases,
+this interaction is only apparent with the highest circulating laser power levels
+and only when considering the smallest mirror displacements.
 
 
 \begin{figure}[h]
@@ -38,11 +52,35 @@ But in some cases, the most important driver in the design should, in fact, be t
 \end{figure}
 
 \subsection{LIGO Mirror Suspensions: A Design Example}
+The way the vibration isolation and mirror suspension systems are designed,
+provides much attenuation of noise at higher frequencies and some amplification
+at lower frequencies (cf.~\ref{fig:SeismicTFs}). This condition is analogous to the
+one encountered in analog, electronic filter design;  a sharp transition from
+the passband to the stopband requires complex poles in the passband (e.g.
+in Chebyshev filters) which amplify the signals at those frequencies. This
+can ameilorated somewhat through the use of 'cold damping' 
+techniques~\cite{Kuroda:1982vf, Forward:1979ks}.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{Figures/SeismicIsolations.pdf}
+\caption{Vibration isolation for the initial LIGO~\cite{ponslet:432, Giaime:1996},
+                   Virgo~\cite{Stefano:2001, Virgo:SA2010, Accadia:2011jh},
+                   TAMA (with SAS)~\cite{Szabi:TAMASAS},
+                   GEO600~\cite{Hartmut:PhD, Ken:GEOseismic, plissi:3055},
+                   Adv. LIGO~\cite{aLIGO:Seismic2002},
+                    KAGRA~\cite{Somiya:2011tb}, and the Einstein Telescope~\cite{ET2011}. In the KAGRA case,
+                    the mechanical links for cooling (included) are expected to limit the
+                    isolation performance above $\sim$\,1\,Hz~\cite{Takahashi:email}}
+\label{fig:SeismicTFs}
+\end{figure}
+
 
 Important considerations in test mass suspension design\cite{SUS:2012, Aston:2012}:
 \begin{itemize}
    \item Vibration isolation: nearly all of the seismic isolation in the GW detection band ($f > 5\,\rm Hz$)
-     comes from the suspension. To fulfill this requirement, the mirror must be isolated by a 
+     comes from the suspension. To fulfill this requirement, the mirror must be isolated by a
      multi-stage pendulum~\cite{Beker:2011}.
     \item low suspension thermal noise and minimization of creep noise~\cite{Levin:2012ek, Gretarsson:2005gs}
     \item third priority is some thoughts on damping
@@ -51,6 +89,10 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
     \item Future suspension will look different than the LIGO/Virgo style
 \end{itemize}
 
+During the commissioning of the first generation of kilometer scale detectors, it became clear that the angular motion of the suspended optics was too large and a significant challenge for the angular control systems~\ref{ASC}.
+
+
+
 \subsection{Digital Control Systems: A second example}
 
 ​\section{Control System Synthesis}
@@ -58,9 +100,9 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
   2) Techniques for process and aircraft control use more global and MIMO synthesis techniques with general cost function minimization.
   3) Machine learning techniques can use nonlinear cost functions and account for rare, large excursions -> maximize uptime
 
-In recent years, more sophisticated algorithms have been introduced to 
+In recent years, more sophisticated algorithms have been introduced to
 better control the vibration isolation
-systems supporting the mirrors in the 
+systems supporting the mirrors in the
 interferometer~\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
 
   4) Adaptive machines can explore non-intuitive noise cancelation techniques​
@@ -83,19 +125,19 @@ interferometer~\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
 
 
 \subsection{Scattered Light}
-The phenomenon of excess phase noise due to scattered light has been known about for 
+The phenomenon of excess phase noise due to scattered light has been known about for
 decades~\cite{Schilling:1981} at least.
 
-Due to imperfections in the optics, for example, a small fraction of the laser light escapes from 
-the main interferometer beam path. This light then interacts with something (e.g. a piece of the 
-vacuum system or some other suspended optic or beam baffle) and then recombines with the 
-circulating laser field within the 
-interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012, Stefano:Scatter, Vinet:scatter, fritschel1998high}. 
-The recombination may occur at virtually any point within the system: inside of the 
-Fabry-Perot arm cavities, at the beamsplitter, or even at the final photodetector which 
+Due to imperfections in the optics, for example, a small fraction of the laser light escapes from
+the main interferometer beam path. This light then interacts with something (e.g. a piece of the
+vacuum system or some other suspended optic or beam baffle) and then recombines with the
+circulating laser field within the
+interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012, Stefano:Scatter, Vinet:scatter, fritschel1998high}.
+The recombination may occur at virtually any point within the system: inside of the
+Fabry-Perot arm cavities, at the beamsplitter, or even at the final photodetector which
 records the GW strain signal.
 
-It is instructive to consider quantitatively the ampltidue of the noise for a few of 
+It is instructive to consider quantitatively the ampltidue of the noise for a few of
 these cases. A significant source of scatter for all of the long interferometers
 \begin{align}
 S_x = some scattering stuff
@@ -165,19 +207,19 @@ S_x = some scattering stuff
 
 \section{People}
 \begin{enumerate}
-\item An important piece of the noise reduction feedback system 
+\item An important piece of the noise reduction feedback system
   is the team of humans in the control room.
-\item Viewed as a NN or ML algorithm, the machine needs to be 
-  rewarded, punished, trained, and maintained in order to minimize 
+\item Viewed as a NN or ML algorithm, the machine needs to be
+  rewarded, punished, trained, and maintained in order to minimize
   the time needed to reach the quantum sensitivity limits.
 \item The team must also be able to train the next generation of machines.
-\item In the Navy they teach the priority list of (1) complete the mission, 
+\item In the Navy they teach the priority list of (1) complete the mission,
   (2) safety, (3) train your replacement. How should we do this better?
-\item How to balance making progress quickly and training the next 
+\item How to balance making progress quickly and training the next
   wave of young scientists?
-\item The team needs to make progress quickly, but the PhD 
-  students need theses and the local observatory staff need to 
-  be fully engaged (not steamrolled) by visiting scientists 
+\item The team needs to make progress quickly, but the PhD
+  students need theses and the local observatory staff need to
+  be fully engaged (not steamrolled) by visiting scientists
   working 15 hour days.
 \item Include some data here on grad students who did work on the
   interferometers (at CIT and MIT) and what they did next and where
@@ -195,6 +237,3 @@ S_x = some scattering stuff
 These wise things should be kept in mind while doing the detector commissioning.
 
 In addition to the usual thoughts about how to radically improve the detector sensitivity.
-
-
-
