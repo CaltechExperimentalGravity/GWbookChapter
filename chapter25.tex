@@ -117,14 +117,40 @@ During the commissioning of the first generation of kilometer scale detectors, i
 
 In fact, the dominant mechanism is through the control system: rotations and translations of the ground produce relative motions of the mirrors along the direction of the laser beam propagation. The Length Sensing and Control~\ref{LSC} system then corrects for this by applying forces to the mirror suspension system.
 
-The length to angle coupling has a complicated transfer function from each length actuator to the mirror angle due to the many resonances in the suspension, the presence of the local damping loops, and the Sidles-Sigg effect~\cite{Sidles:2006un, Hirose:10, Dooley:13}
+The length to angle coupling has a complicated transfer function from each length actuator to the mirror angle due to the many resonances in the suspension, the presence of the local damping loops, and the Sidles-Sigg effect~\cite{Sidles:2006un, Hirose:10, Dooley:13}.
 
+\subsubsection{High Q Eigenmodes}
+In the effort to make a mirror suspension with very low thermal noise, the mechanical
+elements nearest the mirror must have a very high mechanical Q
+(cf.~Chapters~\ref{THN} and \ref{SUS}).
+In the ideal steady-state, these modes are driven only by the thermal energy
+dictated by the Equipartition theorem and their presence in the data can be simply
+removed through standard techniques~\cite{Allen:1999wy, Finn:Violins, Searle:2003ib, Sintes:1998gq}.
 
+Nature, however, is not so kind. Large seismic transients and instabilites in the control systems can lead to large excitations of these modes. The vertical and roll (rotation about the cavity axis)
+modes of the mirror suspension fall in the lower end of the observation band
+(f $\simeq$ 10-20 Hz) and the higher frequency fiber modes which have nodes at
+their endpoints are at multiples of $\sim$\,500\,Hz. The lower frequency modes have
+decay time constants of order several hours, whereas the higher frequency ones
+have time constants of several days.
 
+Each of the four test masses has a vertical mode, a roll mode, and 2n fiber modes
+for each of its four fibers. So the total number of high Q suspension modes is:
+\begin{equation}
+N_{high} = 4 \times (1 + 1 + 4 \times 2n)
+\end{equation}
+which totals to 104, if we consider the first few harmonics only.
 
+In order to allow the interferometer to operate, numerous digital feedback
+loops have been designed to damp these modes~\cite{martynov2015lock}. In the
+installed systems, the only way to damp these modes is to sense their perturbation
+of the mirror motion and apply feedback forces to the suspension chain. In the case
+that thermall induced drifts cause the mode frequencies to overlap, the problem
+becomes intractable results in massive downtime of the detectors. Future designs
+may utilize dedicated hardware solutions to apply damping forces without degrading
+the thermal noise~\cite{Dmitriev:2010hk, Lockerbie:2011zma}.
 
-
-\subsection{Digital Control Systems: A second example}
+%\subsection{Digital Control Systems: A second example}
 
 % ​\section{Control System Synthesis}
 %   1) LIGO/Virgo/GEO done by pre-1980 controls technology: pole/zero placement, SISO error signal minimization, by-eye estimates of loop stability
