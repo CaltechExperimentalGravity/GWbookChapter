@@ -59,8 +59,20 @@ To increase the phase (and thereby strain) sensitivity of the interferometer
 the circulating laser power in the interferometer is increased (into the MW
 regime). This has several problematic consequences:
 \begin{itemize}
-\item Low frequency noise is worsened due to quantum-limited radiation pressure fluctuations.
-\item
+\item Quantum fluctuations of the radiation pressure increase as P$^{1/2}$, increasing the low frequency strain noise.
+\item The classical radiation pressure force due to the high cavity power leads to static and dynamic instabilities in mirror orientations~\cite{Sidles:2006un, Dooley:13, aLIGO:ASC}. In addition to producing more mirror motion, the concomitant increase in the angular feedback control gain, injects noise into the GW strain channel at low frequencies (cf.~Chapter~\ref{ASC}), masking the presence of intermediate mass black holes.
+\item In addition to angular instabilites, the system of compound resonant cavities can exhibit instabilities along the optical cavity axis~\cite{SGLMW2004, BuCh2002, Osamu:spring}. This
+unstable opto-mechanical eigenfrequency can show up in the GW detection band,
+making the control system challenging to design (cf.~Chapter~\ref{LSC}).
+\item Through the finite optical absorption in the mirror substrates and the
+high reflectivity mirror coatings, heat is deposited in the mirrors and thermal
+gradients are formed. These lead to thermal lensing and thermal deformations
+(cf.~Chapter~\ref{TCS}) which can reduce the stored power in the system, destabilize
+the MIMO angular control system, increase the coupling of laser ampltidue and
+frequency noise to the strain channel, spoil the dark fringe contrast, and
+aggravate opto-acoustic parametric instabilities (cf.~Chapter~\ref{SYS}).
+\item Light which scatters out of the main interferometer and then returns after interacting with a vibrating piece of the environment, will be phase modulated by the vibration. In a low power interferometer, this will just produce phase noise, but depending upon the relative phase of the interferometer field and the backscattered light, this can also produce amplitude noise. These amplitude fluctuations (via radiation pressure) can produce as much as an order of magnitude more strain noise than mere phase fluctuations.
+
 \end{itemize}
 
 \subsection{LIGO Mirror Suspensions: A Design Example}
