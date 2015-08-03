@@ -51,6 +51,18 @@ and only when considering the smallest mirror displacements.
 \label{fig:SystemConflicts}
 \end{figure}
 
+Figure~\ref{fig:SystemConflicts} shows diagrammatically many of the most
+significant subsystem conflicts/intercations.
+
+\subsection{Issues due to high laser power}
+To increase the phase (and thereby strain) sensitivity of the interferometer
+the circulating laser power in the interferometer is increased (into the MW
+regime). This has several problematic consequences:
+\begin{itemize}
+\item Low frequency noise is worsened due to quantum-limited radiation pressure fluctuations.
+\item
+\end{itemize}
+
 \subsection{LIGO Mirror Suspensions: A Design Example}
 The way the vibration isolation and mirror suspension systems are designed,
 provides much attenuation of noise at higher frequencies and some amplification
@@ -58,7 +70,7 @@ at lower frequencies (cf.~\ref{fig:SeismicTFs}). This condition is analogous to 
 one encountered in analog, electronic filter design;  a sharp transition from
 the passband to the stopband requires complex poles in the passband (e.g.
 in Chebyshev filters) which amplify the signals at those frequencies. This
-can ameilorated somewhat through the use of 'cold damping' 
+can ameilorated somewhat through the use of 'cold damping'
 techniques~\cite{Kuroda:1982vf, Forward:1979ks}.
 
 
@@ -89,7 +101,7 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
     \item Future suspension will look different than the LIGO/Virgo style
 \end{itemize}
 
-During the commissioning of the first generation of kilometer scale detectors, it became clear that the angular motion of the suspended optics was too large and a significant challenge for the angular control systems~\ref{ASC}. The most obvious mechanism to produce rotations of the optics is, perhaps, direct coupling of the ground motion through the suspension system and into mechanical torque. 
+During the commissioning of the first generation of kilometer scale detectors, it became clear that the angular motion of the suspended optics was too large and a significant challenge for the angular control systems~\ref{ASC}. The most obvious mechanism to produce rotations of the optics is, perhaps, direct coupling of the ground motion through the suspension system and into mechanical torque.
 
 In fact, the dominant mechanism is through the control system: rotations and translations of the ground produce relative motions of the mirrors along the direction of the laser beam propagation. The Length Sensing and Control~\ref{LSC} system then corrects for this by applying forces to the mirror suspension system.
 
@@ -102,18 +114,18 @@ The length to angle coupling has a complicated transfer function from each lengt
 
 \subsection{Digital Control Systems: A second example}
 
-​\section{Control System Synthesis}
-  1) LIGO/Virgo/GEO done by pre-1980 controls technology: pole/zero placement, SISO error signal minimization, by-eye estimates of loop stability
-  2) Techniques for process and aircraft control use more global and MIMO synthesis techniques with general cost function minimization.
-  3) Machine learning techniques can use nonlinear cost functions and account for rare, large excursions -> maximize uptime
+% ​\section{Control System Synthesis}
+%   1) LIGO/Virgo/GEO done by pre-1980 controls technology: pole/zero placement, SISO error signal minimization, by-eye estimates of loop stability
+%   2) Techniques for process and aircraft control use more global and MIMO synthesis techniques with general cost function minimization.
+%   3) Machine learning techniques can use nonlinear cost functions and account for rare, large excursions -> maximize uptime
 
-In recent years, more sophisticated algorithms have been introduced to
-better control the vibration isolation
-systems supporting the mirrors in the
-interferometer~\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
+% In recent years, more sophisticated algorithms have been introduced to
+% better control the vibration isolation
+% systems supporting the mirrors in the
+% interferometer~\cite{Beker:2014, Driggers:2012fl, Ryan:FFW2012}
 
-  4) Adaptive machines can explore non-intuitive noise cancelation techniques​
-  5) The dynamical response of the interferometer is a combination of mechanical, opto-mechanical, and electronic feedback. Its a mistake to treat these on such unequal footings - the interferometer design ought to be done using global search methods (such as MCMC) in the same way that we do for BHBH parameter estimation.
+%   4) Adaptive machines can explore non-intuitive noise cancelation techniques​
+%   5) The dynamical response of the interferometer is a combination of mechanical, opto-mechanical, and electronic feedback. Its a mistake to treat these on such unequal footings - the interferometer design ought to be done using global search methods (such as MCMC) in the same way that we do for BHBH parameter estimation.
 
 
 
