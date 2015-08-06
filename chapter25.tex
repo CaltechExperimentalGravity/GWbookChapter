@@ -54,13 +54,18 @@ and only when considering the smallest mirror displacements.
 Figure~\ref{fig:SystemConflicts} shows diagrammatically many of the most
 significant subsystem conflicts/intercations.
 
-\subsection{Issues due to high laser power}
+\subsection{Issues due to High Laser Power}
 To increase the phase (and thereby strain) sensitivity of the interferometer
 the circulating laser power in the interferometer is increased (into the MW
 regime). This has several problematic consequences:
 \begin{itemize}
 \item Quantum fluctuations of the radiation pressure increase as P$^{1/2}$, increasing the low frequency strain noise.
-\item The classical radiation pressure force due to the high cavity power leads to static and dynamic instabilities in mirror orientations~\cite{Sidles:2006un, Dooley:13, aLIGO:ASC}. In addition to producing more mirror motion, the concomitant increase in the angular feedback control gain, injects noise into the GW strain channel at low frequencies (cf.~Chapter~\ref{ASC}), masking the presence of intermediate mass black holes.
+\item The classical radiation pressure force due to the high cavity power
+leads to static and dynamic instabilities in mirror
+orientations~\cite{Sidles:2006un, Dooley:13, aLIGO:ASC}. In addition to producing
+more mirror motion, the concomitant increase in the angular feedback
+control bandwidth (cf.~Chapter~\ref{ASC}) injects noise into the GW strain
+channel at low frequencies (cf.~Fig.~\ref{}), masking the presence of intermediate mass black holes.
 \item In addition to angular instabilites, the system of compound resonant cavities can exhibit instabilities along the optical cavity axis~\cite{SGLMW2004, BuCh2002, Osamu:spring}. This
 unstable opto-mechanical eigenfrequency can show up in the GW detection band,
 making the control system challenging to design (cf.~Chapter~\ref{LSC}).
@@ -75,14 +80,28 @@ aggravate opto-acoustic parametric instabilities (cf.~Chapter~\ref{SYS}).
 
 \end{itemize}
 
-\subsection{LIGO Mirror Suspensions: A Design Example}
-The way the vibration isolation and mirror suspension systems are designed,
-provides much attenuation of noise at higher frequencies and some amplification
+\begin{figure}[h]
+  \begin{subfigure}{0.4\columnwidth}
+    \includegraphics[width=0.4\textwidth]{Figures/S6_NB.pdf}
+    \caption{Contribution of Alignment noise to the noise budget of the Enhanced LIGO interferometer in Louisiana (2010)}
+    \label{fig:eLIGO}
+  \end{subfigure}
+  \begin{subfigure}{0.4\columnwidth}
+    \includegraphics[width=0.4\textwidth]{Figures/darm_nb.png}
+    \caption{Contribution of Alignment noise to the noise budget of the Advanced LIGO interferometer in Louisiana (2015): replace with simple plot}
+    \label{fig:aLIGO}
+  \end{subfigure}
+\end{figure}
+
+
+\subsection{Interaction of Mirror Suspension with Global Controls}
+The vibration isolation and mirror suspension systems are designed so as to
+provide much attenuation of noise at higher frequencies and some (unwanted) amplification
 at lower frequencies (cf.~\ref{fig:SeismicTFs}). This condition is analogous to the
-one encountered in analog, electronic filter design;  a sharp transition from
+one encountered in analog electronic filter design:  a sharp transition from
 the passband to the stopband requires complex poles in the passband (e.g.
 in Chebyshev filters) which amplify the signals at those frequencies. This
-can ameilorated somewhat through the use of 'cold damping'
+can be ameiliorated somewhat through the use of 'cold damping'
 techniques~\cite{Kuroda:1982vf, Forward:1979ks}.
 
 
@@ -113,11 +132,15 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
     \item Future suspension will look different than the LIGO/Virgo style
 \end{itemize}
 
-During the commissioning of the first generation of kilometer scale detectors, it became clear that the angular motion of the suspended optics was too large and a significant challenge for the angular control systems~\ref{ASC}. The most obvious mechanism to produce rotations of the optics is, perhaps, direct coupling of the ground motion through the suspension system and into mechanical torque.
+\subsubsection{Cross-Coupling of Translation to Rotation}
+During the commissioning of the first generation of kilometer scale detectors, it became clear that the angular motion of the suspended optics was too large and a significant challenge for the angular control systems~\ref{ASC}. The most obvious mechanism to produce rotations of the optics is, perhaps, direct coupling of the ground motion through the suspension system and into mechanical torque. However, the rotations of the ground are much too small, when propagated through the pertinent mechanical transfer functions, to explain the observed angular motion.
 
-In fact, the dominant mechanism is through the control system: rotations and translations of the ground produce relative motions of the mirrors along the direction of the laser beam propagation. The Length Sensing and Control~\ref{LSC} system then corrects for this by applying forces to the mirror suspension system.
+In fact, the dominant coupling mechanism is due to an interaction between the control system and the off-diagonal elements of the suspension: rotations and translations of the ground produce relative motions of the mirrors along the direction of the laser beam propagation. The Length Sensing and Control (cf.~Chapter~\ref{LSC}) system then corrects for this by applying forces to the mirror suspension system.
 
-The length to angle coupling has a complicated transfer function from each length actuator to the mirror angle due to the many resonances in the suspension, the presence of the local damping loops, and the Sidles-Sigg effect~\cite{Sidles:2006un, Hirose:10, Dooley:13}.
+The mechanical cross-coupling in the suspension system is so large that this force to angle term dominates over all others. This length to angle coupling has a complicated transfer function from each length actuator to the mirror angle due to the many resonances in the suspension, the presence of the local damping loops, and the Sidles-Sigg effect~\cite{Sidles:2006un, Hirose:10, Dooley:13}. For years, attempts have been made to mitigate this effect by taking the applying a filtered version of the length control force as a torque to the suspension actuators. In the asymptotic low and high frequency regimes, the cancellation achieved by this technique can be as good as 99.9\% or more,
+but in the 0.3\,--\,3\,Hz band, where most of the mechanical resonances are,
+this drops to only 80\,--\,90\%. The fidelity of this cancellation technique is limited by the required accuracy of the measurements, the slow time variation in the opto-mechanical plant, and limitations in inverting high Q zeros of the mechanical transfer function.
+
 
 \subsubsection{High Q Eigenmodes}
 In the effort to make a mirror suspension with very low thermal noise, the mechanical
@@ -149,6 +172,8 @@ that thermall induced drifts cause the mode frequencies to overlap, the problem
 becomes intractable results in massive downtime of the detectors. Future designs
 may utilize dedicated hardware solutions to apply damping forces without degrading
 the thermal noise~\cite{Dmitriev:2010hk, Lockerbie:2011zma}.
+
+Ultimately, we have seen that it is not wise to have high Q mechanical modes which are nearly invisible to the control systems. The cost, in terms of time spent developing an ad-hoc solution, is quite high.
 
 %\subsection{Digital Control Systems: A second example}
 
