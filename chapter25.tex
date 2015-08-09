@@ -81,41 +81,44 @@ aggravate opto-acoustic parametric instabilities (cf.~Chapter~\ref{SYS}).
 \end{itemize}
 
 \begin{figure}[h]
-  \begin{subfigure}{0.4\columnwidth}
-    \includegraphics[width=0.4\textwidth]{Figures/S6_NB.pdf}
-    \caption{Contribution of Alignment noise to the noise budget of the Enhanced LIGO interferometer in Louisiana (2010)}
+  \centering
+    \includegraphics[width=\columnwidth]{Figures/S6_NB.pdf}
+    \caption{Contribution of Alignment noise to the noise budget of the
+    Enhanced LIGO interferometer in Louisiana (2010)}
     \label{fig:eLIGO}
-  \end{subfigure}
-  \begin{subfigure}{0.4\columnwidth}
-    \includegraphics[width=0.4\textwidth]{Figures/darm_nb.png}
-    \caption{Contribution of Alignment noise to the noise budget of the Advanced LIGO interferometer in Louisiana (2015): replace with simple plot}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\columnwidth]{Figures/darm_nb.png}
+    \caption{Contribution of Alignment noise to the noise budget of the
+    Advanced LIGO interferometer in Louisiana (2015): replace with simple plot}
     \label{fig:aLIGO}
-  \end{subfigure}
 \end{figure}
 
 
 \subsection{Interaction of Mirror Suspension with Global Controls}
 The vibration isolation and mirror suspension systems are designed so as to
 provide much attenuation of noise at higher frequencies and some (unwanted) amplification
-at lower frequencies (cf.~\ref{fig:SeismicTFs}). This condition is analogous to the
+at lower frequencies (cf.~Figure\,\ref{fig:SeismicTFs}). This condition is analogous to the
 one encountered in analog electronic filter design:  a sharp transition from
 the passband to the stopband requires complex poles in the passband (e.g.
 in Chebyshev filters) which amplify the signals at those frequencies. This
-can be ameiliorated somewhat through the use of 'cold damping'
-techniques~\cite{Kuroda:1982vf, Forward:1979ks}.
+is ameiliorated somewhat through the use of 'cold damping'
+techniques~\cite{Kuroda:1982vf, Forward:1979ks, Shapiro:2015di}.
 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{Figures/SeismicIsolations.pdf}
 \caption{Vibration isolation for the initial LIGO~\cite{ponslet:432, Giaime:1996},
-                   Virgo~\cite{Stefano:2001, Virgo:SA2010, Accadia:2011jh},
-                   TAMA (with SAS)~\cite{Szabi:TAMASAS},
-                   GEO600~\cite{Hartmut:PhD, Ken:GEOseismic, plissi:3055},
-                   Adv. LIGO~\cite{aLIGO:Seismic2002},
-                    KAGRA~\cite{Somiya:2011tb}, and the Einstein Telescope~\cite{ET2011}. In the KAGRA case,
-                    the mechanical links for cooling (included) are expected to limit the
-                    isolation performance above $\sim$\,1\,Hz~\cite{Takahashi:email}}
+        Virgo~\cite{Stefano:2001, Virgo:SA2010, Accadia:2011jh},
+        TAMA (with SAS)~\cite{Szabi:TAMASAS},
+        GEO600~\cite{Hartmut:PhD, Ken:GEOseismic, plissi:3055},
+        Adv. LIGO~\cite{aLIGO:Seismic2002},
+        KAGRA~\cite{Somiya:2011tb}, and the
+        Einstein Telescope~\cite{ET2011}. In the KAGRA case,
+      the mechanical links for cooling (included) are expected to limit the
+      isolation performance above $\sim$\,1\,Hz~\cite{Takahashi:email}}
 \label{fig:SeismicTFs}
 \end{figure}
 
@@ -157,12 +160,12 @@ their endpoints are at multiples of $\sim$\,500\,Hz. The lower frequency modes h
 decay time constants of order several hours, whereas the higher frequency ones
 have time constants of several days.
 
-Each of the four test masses has a vertical mode, a roll mode, and 2n fiber modes
+Each of the four test masses has a vertical mode, a roll mode, and $2n$ fiber modes
 for each of its four fibers. So the total number of high Q suspension modes is:
 \begin{equation}
 N_{high} = 4 \times (1 + 1 + 4 \times 2n)
 \end{equation}
-which totals to 104, if we consider the first few harmonics only.
+which totals to $104$, if we consider the first few harmonics only.
 
 In order to allow the interferometer to operate, numerous digital feedback
 loops have been designed to damp these modes~\cite{martynov2015lock}. In the
@@ -207,6 +210,7 @@ Ultimately, we have seen that it is not wise to have high Q mechanical modes whi
 
 
 \subsection{Scattered Light}
+\label{s:IDC:scatter}
 The phenomenon of excess phase noise due to scattered light has been known about for
 decades~\cite{Schilling:1981} at least.
 
@@ -224,6 +228,18 @@ these cases. A significant source of scatter for all of the long interferometers
 \begin{align}
 S_x = some scattering stuff
 \end{align}
+
+We would like to imagine that since the interferometers are in a vacuum system and
+protected from the ground by millions of dollars of vibrations isolation equipment,
+the coupling of environmental acoustics would be zero. In fact, a host of environmental
+disturbances~\cite{Effler:2015hw} (cf.~Figure~\ref{fig:EnvironmentalNoise}) show up in the interferometer 
+output (or are expected to in future detectors).
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{Figures/Environmental.pdf}
+\caption{PEM}
+\label{fig:EnvironmentalNoise}
+\end{figure}
 
 
 \section{Risk Register and Risk Reduction Research}
@@ -244,38 +260,58 @@ S_x = some scattering stuff
 
 \begin{table}
 \tiny
-\begin{tabular}{lllrrrrrr}
+\begin{tabular}{llccccccc}
 \toprule
-{} &                     Risk Description & sub-System &  Prob. (\%) &  Cost (M\$) &  Time (m) &  BNS (\% Range) &  BBH (\% Range) &  Total Severity \\
+{} &                     Risk Description & System &  Prob. (\%) &  Cost (M\$) &  Time (m) &  BNS (\% Range) &  BBH (\% Range) &  Total Severity \\
 %\midrule
-0  &            Gravity Gradient too high &        SEI &               75 &              0.30 &                5 &                    10 &                    90 &             NaN \\
-1  &  Thermal Distortion destabilizes ASC &        AOS &               60 &              0.50 &               18 &                    30 &                    50 &             NaN \\
-2  &               OMC PZT noise too high &        LSC &               15 &              0.10 &                2 &                     5 &                     5 &             NaN \\
-3  &               LSC Aux noise too high &        LSC &               25 &              0.03 &                3 &                    15 &                    15 &             NaN \\
-4  &          ASC feedback noise too high &        ASC &               65 &              0.03 &                6 &                     5 &                    90 &             NaN \\
-5  &                 Beamtube Backscatter &        SYS &               33 &              0.15 &                5 &                     3 &                    65 &             NaN \\
+0  &            Gravity Gradient too high &        SEI &            75 &              0.30 &                5 &                    10 &                    90 &             NaN \\
+1  &  Thermal Distortion destabilizes ASC &        AOS &            60 &              0.50 &               18 &                    30 &                    50 &             NaN \\
+2  &               OMC PZT noise too high &        LSC &            15 &              0.10 &                2 &                     5 &                     5 &             NaN \\
+3  &               LSC Aux noise too high &        LSC &            25 &              0.03 &                3 &                    15 &                    15 &             NaN \\
+4  &          ASC feedback noise too high &        ASC &            65 &              0.03 &                6 &                     5 &                    90 &             NaN \\
+5  &                 Beamtube Backscatter &        SYS &            33 &              0.15 &                5 &                     3 &                    65 &             NaN \\
 6  &          SRC Mode Healing $\rightarrow$ Harming &        SYS &               50 &              0.50 &                6 &                    40 &                     5 &             NaN \\
 7  &       BS clipping $\rightarrow$ contrast defect &        COC &               90 &              0.35 &                6 &                    33 &                     3 &             NaN \\
-8  &              ETM Charge fluctuations &        SUS &               50 &              0.20 &                4 &                    15 &                    40 &             NaN \\
-9  &             Parametric Instabilities &        LSC &               70 &              0.20 &                4 &                    40 &                     5 &             NaN \\
-10 &                   Suspension crackle &        SUS &               25 &              0.25 &                7 &                     5 &                    50 &             NaN \\
-11 &        Coating thermal noise anomaly &        COC &               20 &              0.75 &                8 &                    30 &                     3 &             NaN \\
-12 &                      OMC backscatter &        LSC &               55 &              0.10 &                3 &                    10 &                     2 &             NaN \\
-13 &                       HAM6 Acoustics &        SYS &               70 &              0.10 &                2 &                    10 &                     3 &             NaN \\
-14 &                         Residual Gas &        SYS &               40 &              0.60 &                4 &                    30 &                     5 &             NaN \\
-15 &                    Bounce/Roll modes &        SUS &               80 &              0.15 &                3 &                    20 &                    95 &             NaN \\
-16 &                         Violin Modes &        SUS &               35 &              0.15 &                3 &                    80 &                    10 &             NaN \\
-17 &             CDS/SEI breaks SUS fiber &        SEI &               10 &              0.03 &                3 &                   100 &                   100 &             NaN \\
+8  &              ETM Charge fluctuations &        SUS &            50 &              0.20 &                4 &                    15 &                    40 &             NaN \\
+9  &             Parametric Instabilities &        LSC &            70 &              0.20 &                4 &                    40 &                     5 &             NaN \\
+10 &                   Suspension crackle &        SUS &            25 &              0.25 &                7 &                     5 &                    50 &             NaN \\
+11 &        Coating thermal noise anomaly &        COC &            20 &              0.75 &                8 &                    30 &                     3 &             NaN \\
+12 &                      OMC backscatter &        LSC &            55 &              0.10 &                3 &                    10 &                     2 &             NaN \\
+13 &                       HAM6 Acoustics &        SYS &            70 &              0.10 &                2 &                    10 &                     3 &             NaN \\
+14 &                         Residual Gas &        SYS &            40 &              0.60 &                4 &                    30 &                     5 &             NaN \\
+15 &                    Bounce/Roll modes &        SUS &            80 &              0.15 &                3 &                    20 &                    95 &             NaN \\
+16 &                         Violin Modes &        SUS &            35 &              0.15 &                3 &                    80 &                    10 &             NaN \\
+17 &             CDS/SEI breaks SUS fiber &        SEI &            10 &              0.03 &                3 &                   100 &                   100 &             NaN \\
 %\bottomrule
 \end{tabular}
 \end{table}
 
 \section{Detector Diagnostics}
-   - we need testpoints everywhere
+\label{s:IDC:diagnostics}
+During the integration process, it became clear that the addition of numerous
+extra diagnostics would make diagnoses of rare problems easier to make:
 
 \begin{itemize}
-  \item high frequency noise measurements to diagnose laser noise
-  \item HOM resonances
+  \item Since the GW detection band overlaps mainly with the audio band, the
+    digital systems which we use to record signals and hunt for noise. The highest
+    frequencies that we can monitor are 10\,--\,20\,kHz. In order to diagnose
+    excess noise in lasers, electronics, etc. at frequencies of up to several
+    MHz we are often forced to move analog equipment around the site and manually
+    check for problems. In future detectors, more care should be paid to allowing
+    for these diagnostics, either by the use of FPGA based high frequency
+    digitizers or by remote access of dedicated analog test instruments.
+
+  \item Chapter\,\ref{COP} describes the higher order spatial modes (HOM) of
+    Fabry-Perot optical resonators. Most of the considerations included when
+    refining the design of the modern detectors, either consider the frequency
+    response of the TEM$_{00}$ mode or the quasi-static behavior of the
+    HOMs (cf.~Chapter~\ref{SIM}). During the commissioning
+    of the initial LIGO, the unanticipated asymmetries due to the high frequency
+    response of the HOMs lead to an unexpected laser noise coupling~\cite{Stefan:Thesis}.
+    This situation is complicated by the non-spherical aberrations in the mirrors
+    produced by polishing errors, coating non-uniformity, and time dependent
+    thermal gradients.
+
   \item mirror mode ringups
   \item even more important for parametric instability control\cite{Matt:PI}
   \item non-uniform optic absorption
@@ -288,25 +324,23 @@ S_x = some scattering stuff
 \end{itemize}
 
 \section{People}
-\begin{enumerate}
-\item An important piece of the noise reduction feedback system
-  is the team of humans in the control room.
-\item Viewed as a NN or ML algorithm, the machine needs to be
-  rewarded, punished, trained, and maintained in order to minimize
-  the time needed to reach the quantum sensitivity limits.
-\item The team must also be able to train the next generation of machines.
-\item In the Navy they teach the priority list of (1) complete the mission,
-  (2) safety, (3) train your replacement. How should we do this better?
-\item How to balance making progress quickly and training the next
-  wave of young scientists?
-\item The team needs to make progress quickly, but the PhD
-  students need theses and the local observatory staff need to
-  be fully engaged (not steamrolled) by visiting scientists
-  working 15 hour days.
-\item Include some data here on grad students who did work on the
-  interferometers (at CIT and MIT) and what they did next and where
-  they are now. e.g., they stayed in the field N years, the left or not.
-\end{enumerate}
+\label{s:People}
+One of the most important elements in the continuous evolution of gravitational
+wave sensitivity is the scientific workforce. These people serve to to do the
+hands on work required for the daily progress and later become the leaders
+in the field who are responsible for the design and implementation of future
+technologies.
+
+This organism needs to be maintained and groomed in an appropriate manner so
+as to maximize the long term scientific output of the field. When we use
+adaptive filters or machine learning algorithms, we often discuss tuning the
+'cost function' in order to guide the algorithm to optimize something. In a
+similar manner, there must be a balance in order to make short term progress
+as needed while also training the newest students and scientists. To train
+a continuous stream of students, suitable PhD projects must be developed
+which have sufficient scientific potential. These projects must be
+undertaken in a way which allows speedy progress of the interferometers
+while simultaneously allowing for the start up training time of students.
 
 \begin{figure}[h]
 \centering
