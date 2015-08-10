@@ -198,15 +198,15 @@ Ultimately, we have seen that it is not wise to have high Q mechanical modes whi
 
 
 
-\section{Most Surprising Noise Sources}
-
-\begin{itemize}
-  \item Classic bilinear: beam spot motion makes upconversion. Well understood in the 90's.
-  \item Limiting noise in S1: seen, but not understood until S2.
-  \item Weak LO: limit in S3. Found by noticing harmonics in spectra. Same structure as S1 OL noise.
-  \item Multiple PDs: the signal is not the same.
-  \item RF AS PD: What's in the I-phase?
-\end{itemize}
+% \section{Most Surprising Noise Sources}
+%
+% \begin{itemize}
+%   \item Classic bilinear: beam spot motion makes upconversion. Well understood in the 90's.
+%   \item Limiting noise in S1: seen, but not understood until S2.
+%   \item Weak LO: limit in S3. Found by noticing harmonics in spectra. Same structure as S1 OL noise.
+%   \item Multiple PDs: the signal is not the same.
+%   \item RF AS PD: What's in the I-phase?
+% \end{itemize}
 
 
 \subsection{Scattered Light}
@@ -218,7 +218,8 @@ Due to imperfections in the optics, for example, a small fraction of the laser l
 the main interferometer beam path. This light then interacts with something (e.g. a piece of the
 vacuum system or some other suspended optic or beam baffle) and then recombines with the
 circulating laser field within the
-interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012, Stefano:Scatter, Vinet:scatter, fritschel1998high}.
+interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012,
+Stefano:Scatter, vinet1997scattered, fritschel1998high}.
 The recombination may occur at virtually any point within the system: inside of the
 Fabry-Perot arm cavities, at the beamsplitter, or even at the final photodetector which
 records the GW strain signal.
@@ -232,24 +233,35 @@ S_x = some scattering stuff
 We would like to imagine that since the interferometers are in a vacuum system and
 protected from the ground by millions of dollars of vibrations isolation equipment,
 the coupling of environmental acoustics would be zero. In fact, a host of environmental
-disturbances~\cite{Effler:2015hw} (cf.~Figure~\ref{fig:EnvironmentalNoise}) show up in the interferometer 
-output (or are expected to in future detectors).
+disturbances~\cite{Effler:2015hw} (cf.~Figure~\ref{fig:EnvironmentalNoise}) show up in the interferometer
+output (or are expected to in future detectors) at a level much higher than
+expected by the Navier-Stokes equations~\cite{Greenspan:sound} for low frequency
+acoustics at the $\sim10^{-6}~Pa$ pressures of high vacuum experiments.
+
+
+
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{Figures/Environmental.pdf}
-\caption{PEM}
+\caption{Graphical representation of environmental sources of noise. The detector
+design nominally isolates against many of these, but some of the sensitivity to,
+e.g. acoustics or magnetics, comes in mainly as a consequence of the vacuum
+or control system design.}
 \label{fig:EnvironmentalNoise}
 \end{figure}
 
 
 \section{Risk Register and Risk Reduction Research}
+\label{s:IDC:Risk}
+The concept of a Risk Register is common in project management circles and refers
+to a log of all the risks know to the project and their associated details. In
+the context of the interferometer commissioning and noise hunting, it is a log of
+the suspected noise sources, events which might damage some parts of the detector,
+and other phenomena that may negatively impact the sensitivity or uptime for
+astrophysical searches (such as hurricanes, earthquakes, students leaving, etc.).
 
-\begin{itemize}
-  \item Keep a list of risks.
-  \item Gather detector experts to update list periodically.
-  \item Rate risks: probability of occurrence, potential impact, cost to fix
-  \item Risk Breakdown Structure and Risk Management Tools
-\end{itemize}
+
 
 \begin{figure}[h]
 \centering
@@ -284,15 +296,18 @@ output (or are expected to in future detectors).
 17 &             CDS/SEI breaks SUS fiber &        SEI &            10 &              0.03 &                3 &                   100 &                   100 &             NaN \\
 %\bottomrule
 \end{tabular}
+\caption{Example of a Risk Register for the Advanced LIGO detector. This can be used to guide theoretical and experimental risk reduction research.}
 \end{table}
 
 \section{Detector Diagnostics}
 \label{s:IDC:diagnostics}
 During the integration process, it became clear that the addition of numerous
-extra diagnostics would make diagnoses of rare problems easier to make:
+extra diagnostics would make diagnoses of rare problems easier to make. Although
+a few of these are in place for some of the detectors (KAGRA, Virgo, LIGO, GEO),
+it is fair to say that none of the following have been uniformly implemented and
+they are esoteric enough to make this unsurprising.
 
-\begin{itemize}
-  \item Since the GW detection band overlaps mainly with the audio band, the
+Since the GW detection band overlaps mainly with the audio band, the
     digital systems which we use to record signals and hunt for noise. The highest
     frequencies that we can monitor are 10\,--\,20\,kHz. In order to diagnose
     excess noise in lasers, electronics, etc. at frequencies of up to several
@@ -301,7 +316,7 @@ extra diagnostics would make diagnoses of rare problems easier to make:
     for these diagnostics, either by the use of FPGA based high frequency
     digitizers or by remote access of dedicated analog test instruments.
 
-  \item Chapter\,\ref{COP} describes the higher order spatial modes (HOM) of
+Chapter\,\ref{COP} describes the higher order spatial modes (HOM) of
     Fabry-Perot optical resonators. Most of the considerations included when
     refining the design of the modern detectors, either consider the frequency
     response of the TEM$_{00}$ mode or the quasi-static behavior of the
@@ -310,10 +325,22 @@ extra diagnostics would make diagnoses of rare problems easier to make:
     response of the HOMs lead to an unexpected laser noise coupling~\cite{Stefan:Thesis}.
     This situation is complicated by the non-spherical aberrations in the mirrors
     produced by polishing errors, coating non-uniformity, and time dependent
-    thermal gradients.
+    thermal gradients. These effects all serve to move the HOM resonance frequencies
+    slightly from their ideal positions~\cite{Siegman:Lasers}.
 
-  \item mirror mode ringups
-  \item even more important for parametric instability control\cite{Matt:PI}
+In addition to the instabilities caused by the mirror
+    suspension (described above), the eigenmodes of the mirrors can be
+    excited by the control system, either by the physical mirror actuators
+    or through the high bandwidth laser frequency control loops
+    (cf.~Chapter~\ref{LSC}) which can apply forces to the mirrors by the
+    frequency to ampltiude conversion in detuned optical cavities and the
+    resulting radiation pressure force.
+
+The acousto-optic parametric instability~\cite{Matt:PI} control
+    systems, by definition, require high frequency monitoring capability
+    (cf.~Chapter~\ref{SYS})
+
+\begin{itemize}
   \item non-uniform optic absorption
   \item time dependence of optical scattering
   \item how close are the optics to the stops
