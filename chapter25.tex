@@ -4,7 +4,7 @@
 % editing Tex in Atom
 % http://rolflekang.com/writing-latex-in-atom/
 
-Feynman: "all things are made of atoms..."
+%Feynman: "all things are made of atoms..."
 
 % If, in some cataclysm, all of scientific knowledge were to be destroyed, and only one sentence passed on to the next generation of creatures, what statement would contain the most information in the fewest words? I believe it is the atomic hypothesis that all things are made of atoms — little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another. In that one sentence, you will see, there is an enormous amount of information about the world, if just a little imagination and thinking are applied.
 
@@ -16,22 +16,28 @@ invented gravitational wave detectors to reach out into the universe,
 it would be this:\\
 
 "Think carefully and holistically about your detector before building it
-such that no part is neglected as being too small or 'second order', yea,
-for even the mighty may be brought low by the loose baffle or the
+such that no part is neglected as being too small or  coupling at 'second order',
+yea, for even the mighty may be brought low by the loose beam dump or the
 unforseen cross-coupling."
 
-The interferometer commissioning process has taught us that we could improve our design process.\\
+The interferometer commissioning process has taught us that we could improve
+our design process.\\
 
 We might divide things into subsystems as done in the chapters of a book,
-but then to make them work together things do not factor nearly so neatly.
+but then to make them work together things are not so orthogonal.
 Controllability is much more important than the last few percent of
 isolation or noise performance.\\
 
 It is not wise to design for a single point in parameter space: if each
 part of the interferometer can only work when all other pieces are
-performing as designed, it becomes impossible to integrate.\\
+performing as designed, it becomes impossible to integrate. This phase
+space nirvana cannot be reached. \\
 
 Its the inverse of a Sherlock Holmes locked-room mystery story.
+
+In this chapter we will explore some of the interesting interaction between
+disparate sub-systems which make the interferometer commissioning experience
+so rich, challenging, and rewarding.
 
 
 \section{Sub-system Integration Issues}
@@ -42,6 +48,9 @@ But in some cases, the most important driver in the design should, in fact, be t
 interaction that this 'isolated' component has with the full system. In some cases,
 this interaction is only apparent with the highest circulating laser power levels
 and only when considering the smallest mirror displacements.
+
+In the following sections we explore a few examples of this kind of surprising
+interaction.
 
 
 \begin{figure}[h]
@@ -260,44 +269,55 @@ the context of the interferometer commissioning and noise hunting, it is a log o
 the suspected noise sources, events which might damage some parts of the detector,
 and other phenomena that may negatively impact the sensitivity or uptime for
 astrophysical searches (such as hurricanes, earthquakes, students leaving, etc.).
+While it is not unheard of for such project management tools to give one the
+illusion of concreteness and control, the process of looking into the future
+for problems to tackle can be very valuable in the long run.
 
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\columnwidth]{Figures/Risk.pdf}
-\caption{Risk Register for Advanced LIGO. Area of each circle represents the impact on the binary neutron star inspiral range.}
-\label{fig:RiskBubbles}
-\end{figure}
+In Table~\ref{t:IDC:Risk} and Figure~\ref{fig:RiskBubbles} an example of such
+a register is given for the next several years of Advanced LIGO.
 
 \begin{table}
 \tiny
-\begin{tabular}{llccccccc}
-\toprule
-{} &                     Risk Description & System &  Prob. (\%) &  Cost (M\$) &  Time (m) &  BNS (\% Range) &  BBH (\% Range) &  Total Severity \\
-%\midrule
-0  &            Gravity Gradient too high &        SEI &            75 &              0.30 &                5 &                    10 &                    90 &             NaN \\
-1  &  Thermal Distortion destabilizes ASC &        AOS &            60 &              0.50 &               18 &                    30 &                    50 &             NaN \\
-2  &               OMC PZT noise too high &        LSC &            15 &              0.10 &                2 &                     5 &                     5 &             NaN \\
-3  &               LSC Aux noise too high &        LSC &            25 &              0.03 &                3 &                    15 &                    15 &             NaN \\
-4  &          ASC feedback noise too high &        ASC &            65 &              0.03 &                6 &                     5 &                    90 &             NaN \\
-5  &                 Beamtube Backscatter &        SYS &            33 &              0.15 &                5 &                     3 &                    65 &             NaN \\
-6  &          SRC Mode Healing $\rightarrow$ Harming &        SYS &               50 &              0.50 &                6 &                    40 &                     5 &             NaN \\
-7  &       BS clipping $\rightarrow$ contrast defect &        COC &               90 &              0.35 &                6 &                    33 &                     3 &             NaN \\
-8  &              ETM Charge fluctuations &        SUS &            50 &              0.20 &                4 &                    15 &                    40 &             NaN \\
-9  &             Parametric Instabilities &        LSC &            70 &              0.20 &                4 &                    40 &                     5 &             NaN \\
-10 &                   Suspension crackle &        SUS &            25 &              0.25 &                7 &                     5 &                    50 &             NaN \\
-11 &        Coating thermal noise anomaly &        COC &            20 &              0.75 &                8 &                    30 &                     3 &             NaN \\
-12 &                      OMC backscatter &        LSC &            55 &              0.10 &                3 &                    10 &                     2 &             NaN \\
-13 &                       HAM6 Acoustics &        SYS &            70 &              0.10 &                2 &                    10 &                     3 &             NaN \\
-14 &                         Residual Gas &        SYS &            40 &              0.60 &                4 &                    30 &                     5 &             NaN \\
-15 &                    Bounce/Roll modes &        SUS &            80 &              0.15 &                3 &                    20 &                    95 &             NaN \\
-16 &                         Violin Modes &        SUS &            35 &              0.15 &                3 &                    80 &                    10 &             NaN \\
-17 &             CDS/SEI breaks SUS fiber &        SEI &            10 &              0.03 &                3 &                   100 &                   100 &             NaN \\
-%\bottomrule
+\begin{tabular}{ | l | c | c | c | c | c | c | c | }
+\hline
+	Risk Description & sub-System & Prob. (\%) & Cost (M\$) & Time (mo) & BNS (\% Range) & BBH (\% Range) & Total Severity \\ \hline
+	Gravity Gradients & SEI & 75 & 0.3 & 5 & 10 & 90 & 41.6 \\ \hline
+	Thermal Distortion destabilizes ASC & AOS & 60 & 0.5 & 18 & 30 & 50 & 145.8 \\ \hline
+	OMC PZT noise & LSC & 15 & 0.1 & 2 & 5 & 5 & 0.58 \\ \hline
+	LSC Aux noise & LSC & 25 & 0.03 & 3 & 15 & 15 & 4.387 \\ \hline
+	ASC feedback noise & ASC & 65 & 0.03 & 6 & 5 & 90 & 37.4 \\ \hline
+	Beamtube Backscatter & SYS & 33 & 0.15 & 5 & 3 & 65 & 11.1 \\ \hline
+	SRC Mode Healing - Harming & SYS & 50 & 0.5 & 6 & 40 & 5 & 37.3 \\ \hline
+	BS clipping - contrast defect & COC & 90 & 0.35 & 6 & 33 & 3 & 54.9 \\ \hline
+	ETM Charge fluctuations & SUS & 50 & 0.2 & 4 & 15 & 40 & 16.2 \\ \hline
+	Parametric Instabilities & LSC & 70 & 0.2 & 4 & 40 & 5 & 34.8 \\ \hline
+	Suspension crackle & SUS & 25 & 0.25 & 7 & 5 & 50 & 10.5 \\ \hline
+	Coating thermal noise anomaly & COC & 20 & 0.75 & 8 & 30 & 3 & 14.8 \\ \hline
+	OMC backscatter & LSC & 55 & 0.1 & 3 & 10 & 2 & 5.2 \\ \hline
+	Vac Chamber Acoustics & SYS & 70 & 0.1 & 2 & 10 & 3 & 4.6 \\ \hline
+	Residual Gas & SYS & 40 & 0.6 & 4 & 30 & 5 & 15.1 \\ \hline
+	Bounce/Roll modes & SUS & 80 & 0.15 & 3 & 20 & 95 & 34.9 \\ \hline
+	Violin Modes & SUS & 35 & 0.15 & 3 & 80 & 10 & 26.1 \\ \hline
+	Control system instability & SEI & 10 & 0.03 & 3 & 100 & 100 & 11.7 \\ \hline
 \end{tabular}
-\caption{Example of a Risk Register for the Advanced LIGO detector. This can be used to guide theoretical and experimental risk reduction research.}
+
+\caption{Example of a Risk Register for the Advanced LIGO detector. This can be used to guide theoretical and experimental risk reduction research. The column headings are
+name of the Risk, sub-system, Probability of occurence within 5 years, hardware
+cost to repair, time to repair (months), \% reduction of binary neutron star range,
+and \% reduction of ($30/30 M_{\odot}$) binary black hole range.}
+\label{t:IDC:Risk}
 \end{table}
+
+
+\begin{figure}[h]
+  \centering
+\includegraphics[width=\columnwidth]{Figures/Risk.pdf}
+  \caption{Example Risk Register for Advanced LIGO. The area of each circle is
+  proportional to the impact on the binary neutron star inspiral rate
+  (time $\times$ range$^3$).}
+  \label{fig:RiskBubbles}
+\end{figure}
+
 
 \section{Detector Diagnostics}
 \label{s:IDC:diagnostics}
