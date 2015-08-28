@@ -220,18 +220,28 @@ Ultimately, we have seen that it is not wise to have high Q mechanical modes whi
 
 \subsection{Scattered Light}
 \label{s:IDC:scatter}
-The phenomenon of excess phase noise due to scattered light has been known about for
-decades~\cite{Schilling:1981} at least.
+The sensitivity required to make gravitational wave measurements can be expressed also
+as a sensitivity to \textit{optical phase} fluctuations. The current state of the art
+is approximately $10^{-11} radians/\sqrt{Hz}$ and is nominally considered to be limited
+by quantum mechanics and the available laser power~\ref{SQN}. Practically, however,
+all of the high sensitivity interferometers in the past 30 years have been limited
+at some frequencies by the non-fundamental phase fluctuations due to scattered light.
+This phenomenon of excess phase
+noise due to scattered light has been known about for decades~\cite{Schilling:1981}
+but the methods by which to combat it have been developing steadily since then and
+involve the highest levels of experimental artistry in the business.
 
 Due to imperfections in the optics, for example, a small fraction of the laser light escapes from
 the main interferometer beam path. This light then interacts with something (e.g. a piece of the
-vacuum system or some other suspended optic or beam baffle) and then recombines with the
+vacuum system or some other suspended optic or beam dump) and then recombines with the
 circulating laser field within the
 interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012,
 Stefano:Scatter, vinet1997scattered, fritschel1998high}.
 The recombination may occur at virtually any point within the system: inside of the
 Fabry-Perot arm cavities, at the beamsplitter, or even at the final photodetector which
-records the GW strain signal.
+records the GW strain signal. Scattered light induced phase noise in the sensing
+of auxilliary degrees of freedom can couple into the strain channel through the
+relevant feedback control systems~\ref{LSC, NFN}.
 
 It is instructive to consider quantitatively the ampltidue of the noise for a few of
 these cases. A significant source of scatter for all of the long interferometers
@@ -239,8 +249,9 @@ these cases. A significant source of scatter for all of the long interferometers
 S_x = some scattering stuff
 \end{align}
 
+\subsubsection{Environmental Noise Sources}
 We would like to imagine that since the interferometers are in a vacuum system and
-protected from the ground by millions of dollars of vibrations isolation equipment,
+protected from the ground by very sophisticated vibrations isolation equipment,
 the coupling of environmental acoustics would be zero. In fact, a host of environmental
 disturbances~\cite{Effler:2015hw} (cf.~Figure~\ref{fig:EnvironmentalNoise}) show up in the interferometer
 output (or are expected to in future detectors) at a level much higher than
