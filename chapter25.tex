@@ -256,7 +256,9 @@ the coupling of environmental acoustics would be zero. In fact, a host of enviro
 disturbances~\cite{Effler:2015hw} (cf.~Figure~\ref{fig:EnvironmentalNoise}) show up in the interferometer
 output (or are expected to in future detectors) at a level much higher than
 expected by the Navier-Stokes equations~\cite{Greenspan:sound} for low frequency
-acoustics at the $\sim10^{-6}~Pa$ pressures of high vacuum experiments.
+acoustics at the $\sim10^{-6}~Pa$ pressures of high vacuum experiments. The reason
+for this is that the coupling paths are not through vibration of the air molecules
+in the high vacuum system.
 
 
 
@@ -287,38 +289,46 @@ for problems to tackle can be very valuable in the long run.
 In Table~\ref{t:IDC:Risk} and Figure~\ref{fig:RiskBubbles} an example of such
 a register is given for the next several years of Advanced LIGO.
 
-\begin{table}
-\tiny
-\begin{tabular}{ | l | c | c | c | c | c | c | c | }
-\hline
-	Risk Description & sub-System & Prob. (\%) & Cost (M\$) & Time (mo) & BNS (\% Range) & BBH (\% Range) & Total Severity \\ \hline
-	Gravity Gradients & SEI & 75 & 0.3 & 5 & 10 & 90 & 41.6 \\ \hline
-	Thermal Distortion destabilizes ASC & AOS & 60 & 0.5 & 18 & 30 & 50 & 145.8 \\ \hline
-	OMC PZT noise & LSC & 15 & 0.1 & 2 & 5 & 5 & 0.58 \\ \hline
-	LSC Aux noise & LSC & 25 & 0.03 & 3 & 15 & 15 & 4.387 \\ \hline
-	ASC feedback noise & ASC & 65 & 0.03 & 6 & 5 & 90 & 37.4 \\ \hline
-	Beamtube Backscatter & SYS & 33 & 0.15 & 5 & 3 & 65 & 11.1 \\ \hline
-	SRC Mode Healing - Harming & SYS & 50 & 0.5 & 6 & 40 & 5 & 37.3 \\ \hline
-	BS clipping - contrast defect & COC & 90 & 0.35 & 6 & 33 & 3 & 54.9 \\ \hline
-	ETM Charge fluctuations & SUS & 50 & 0.2 & 4 & 15 & 40 & 16.2 \\ \hline
-	Parametric Instabilities & LSC & 70 & 0.2 & 4 & 40 & 5 & 34.8 \\ \hline
-	Suspension crackle & SUS & 25 & 0.25 & 7 & 5 & 50 & 10.5 \\ \hline
-	Coating thermal noise anomaly & COC & 20 & 0.75 & 8 & 30 & 3 & 14.8 \\ \hline
-	OMC backscatter & LSC & 55 & 0.1 & 3 & 10 & 2 & 5.2 \\ \hline
-	Vac Chamber Acoustics & SYS & 70 & 0.1 & 2 & 10 & 3 & 4.6 \\ \hline
-	Residual Gas & SYS & 40 & 0.6 & 4 & 30 & 5 & 15.1 \\ \hline
-	Bounce/Roll modes & SUS & 80 & 0.15 & 3 & 20 & 95 & 34.9 \\ \hline
-	Violin Modes & SUS & 35 & 0.15 & 3 & 80 & 10 & 26.1 \\ \hline
-	Control system instability & SEI & 10 & 0.03 & 3 & 100 & 100 & 11.7 \\ \hline
-\end{tabular}
-
-\caption{Example of a Risk Register for the Advanced LIGO detector. This can be used to guide theoretical and experimental risk reduction research. The column headings are
-name of the Risk, sub-system, Probability of occurence within 5 years, hardware
-cost to repair, time to repair (months), \% reduction of binary neutron star range,
-and \% reduction of ($30/30 M_{\odot}$) binary black hole range.}
-\label{t:IDC:Risk}
-\end{table}
-
+% \begin{table}
+% \tiny
+% \begin{tabular}{ | l | c | c | c | c | c | c | c | }
+% \hline
+% 	Risk Description & sub-System & Prob. (\%) & Cost (M\$) & Time (mo) & BNS (\% Range) & BBH (\% Range) & Total Severity \\ \hline
+% 	Gravity Gradients & SEI & 75 & 0.3 & 5 & 10 & 90 & 41.6 \\ \hline
+% 	Thermal Distortion destabilizes ASC & AOS & 60 & 0.5 & 18 & 30 & 50 & 145.8 \\ \hline
+% 	OMC PZT noise & LSC & 15 & 0.1 & 2 & 5 & 5 & 0.58 \\ \hline
+% 	LSC Aux noise & LSC & 25 & 0.03 & 3 & 15 & 15 & 4.387 \\ \hline
+% 	ASC feedback noise & ASC & 65 & 0.03 & 6 & 5 & 90 & 37.4 \\ \hline
+% 	Beamtube Backscatter & SYS & 33 & 0.15 & 5 & 3 & 65 & 11.1 \\ \hline
+% 	SRC Mode Healing - Harming & SYS & 50 & 0.5 & 6 & 40 & 5 & 37.3 \\ \hline
+% 	BS clipping - contrast defect & COC & 90 & 0.35 & 6 & 33 & 3 & 54.9 \\ \hline
+% 	ETM Charge fluctuations & SUS & 50 & 0.2 & 4 & 15 & 40 & 16.2 \\ \hline
+% 	Parametric Instabilities & LSC & 70 & 0.2 & 4 & 40 & 5 & 34.8 \\ \hline
+% 	Suspension crackle & SUS & 25 & 0.25 & 7 & 5 & 50 & 10.5 \\ \hline
+% 	Coating thermal noise anomaly & COC & 20 & 0.75 & 8 & 30 & 3 & 14.8 \\ \hline
+% 	OMC backscatter & LSC & 55 & 0.1 & 3 & 10 & 2 & 5.2 \\ \hline
+% 	Vac Chamber Acoustics & SYS & 70 & 0.1 & 2 & 10 & 3 & 4.6 \\ \hline
+% 	Residual Gas & SYS & 40 & 0.6 & 4 & 30 & 5 & 15.1 \\ \hline
+% 	Bounce/Roll modes & SUS & 80 & 0.15 & 3 & 20 & 95 & 34.9 \\ \hline
+% 	Violin Modes & SUS & 35 & 0.15 & 3 & 80 & 10 & 26.1 \\ \hline
+% 	Control system instability & SEI & 10 & 0.03 & 3 & 100 & 100 & 11.7 \\ \hline
+% \end{tabular}
+%
+% \caption{Example of a Risk Register for the Advanced LIGO detector. This can be used to guide theoretical and experimental risk reduction research. The column headings are
+% name of the Risk, sub-system, Probability of occurence within 5 years, hardware
+% cost to repair, time to repair (months), \% reduction of binary neutron star range,
+% and \% reduction of ($30/30 M_{\odot}$) binary black hole range.}
+% \label{t:IDC:Risk}
+% \end{table}
+\begin{figure}[h]
+  \centering
+\includegraphics[width=\columnwidth]{Figures/RiskRegister.pdf}
+  \caption{Example of a Risk Register for the Advanced LIGO detector. This can be used to guide theoretical and experimental risk reduction research. The column headings are
+  name of the Risk, sub-system, Probability of occurence within 5 years, hardware
+  cost to repair, time to repair (months), \% reduction of binary neutron star range,
+  and \% reduction of ($30/30 M_{\odot}$) binary black hole range.}
+  \label{t:IDC:Risk}
+\end{figure}
 
 \begin{figure}[h]
   \centering
