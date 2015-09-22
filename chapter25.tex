@@ -268,6 +268,27 @@ relevant feedback control systems~\ref{LSC, NFN}.
 It is instructive to consider quantitatively the ampltidue of the noise for a few of
 these cases.
 \subsubsection{Case I: The Beam Tube Baffles}
+Let us assume in this case that the field scatters from the test mass surface,
+reflects from a piece of multi-km long beamtube, returns to the same test mass
+mirror, and then recombines into the circulating cavity mode. The resulting electric
+field fluctuation will be
+\begin{equation}
+\delta u_{s} = \frac{4 \pi}{\lambda} x_{s}(f) P_s^{1/2}
+\end{equation}
+For comparison, the field fluctuation due to mirror motion will be
+\begin{equation}
+\delta u_{m} = \frac{4 \pi}{\lambda} x_{m}(f) P_0^{1/2}
+\end{equation}
+where $x_s$ is the motion of the beamtube in the direction of the mirror, $x_m$
+is the motion of the interferometer mirror, $\lambda$ is the laser wavelength,
+$P_0$ is the power stored in the arm cavity, and $P_s$ is the power which
+recombines into the circulating cavity mode. Ignoring for a moment the radiation
+pressure effects, we can see that the phase noise due to this type of backscatter
+can be simply expressed (in units of mirror displacement) using the ratios of
+the stored power and the backscattered power. The recombined power is
+\begin{equation}
+\frac{\delta P_s}{P_0} = \frac{\lambda^2}{r^2} \left( \frac{dP}{d\Omega_{mb}}\right)^2 \frac{dP}{d\Omega_{bm}} \delta \Omega_{mb}
+\end{equation}
 
 
 \subsubsection{Case II: The Test Mass Chambers}
