@@ -31,7 +31,7 @@
 
 
 \section{Introduction}
-\label{sec7.1}
+\label{s:IDC:Intro}
 If civilization were to be wiped out and only a single statement could be left
 carved in stone for future scientists to use, as they rebuilt civilization and
 invented gravitational wave detectors to reach out into the universe,
@@ -90,14 +90,18 @@ To increase the phase (and thereby strain) sensitivity of the interferometer
 the circulating laser power in the interferometer is increased (into the MW
 regime). This has several problematic consequences:
 \begin{itemize}
-\item Quantum fluctuations of the radiation pressure increase as P$^{1/2}$, increasing the low frequency strain noise.
+\item Quantum fluctuations of the radiation pressure increase as P$^{1/2}$,
+  increasing the low frequency strain noise.
 \item The classical radiation pressure force due to the high cavity power
 leads to static and dynamic instabilities in mirror
 orientations~\cite{Sidles:2006un, Dooley:13, aLIGO:ASC}. In addition to producing
 more mirror motion, the concomitant increase in the angular feedback
 control bandwidth (cf.~Chapter~\ref{ASC}) injects noise into the GW strain
-channel at low frequencies (cf.~Fig.~\ref{}), masking the presence of intermediate mass black holes.
-\item In addition to angular instabilites, the system of compound resonant cavities can exhibit instabilities along the optical cavity axis~\cite{SGLMW2004, BuCh2002, Osamu:spring}. This
+channel at low frequencies (cf.~Fig.~\ref{}), masking the presence of
+intermediate mass black holes.
+\item In addition to angular instabilites, the system of compound resonant
+cavities can exhibit instabilities along the optical cavity
+axis~\cite{SGLMW2004, BuCh2002, Osamu:spring}. This
 unstable opto-mechanical eigenfrequency can show up in the GW detection band,
 making the control system challenging to design (cf.~Chapter~\ref{LSC}).
 \item Through the finite optical absorption in the mirror substrates and the
@@ -107,7 +111,14 @@ gradients are formed. These lead to thermal lensing and thermal deformations
 the MIMO angular control system, increase the coupling of laser ampltidue and
 frequency noise to the strain channel, spoil the dark fringe contrast, and
 aggravate opto-acoustic parametric instabilities (cf.~Chapter~\ref{SYS}).
-\item Light which scatters out of the main interferometer and then returns after interacting with a vibrating piece of the environment, will be phase modulated by the vibration. In a low power interferometer, this will just produce phase noise, but depending upon the relative phase of the interferometer field and the backscattered light, this can also produce amplitude noise. These amplitude fluctuations (via radiation pressure) can produce as much as an order of magnitude more strain noise than mere phase fluctuations.
+\item Light which scatters out of the main interferometer and then returns
+  after interacting with a vibrating piece of the environment, will be phase
+  modulated by the vibration. In a low power interferometer, this will just
+  produce phase noise, but depending upon the relative phase of the
+  interferometer field and the backscattered light, this can also produce
+  amplitude noise. These amplitude fluctuations (via radiation pressure) can
+  produce as much as an order of magnitude more strain noise than mere
+  phase fluctuations.
 
 \end{itemize}
 
@@ -159,11 +170,13 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
    \item Vibration isolation: nearly all of the seismic isolation in the GW detection band ($f > 5\,\rm Hz$)
      comes from the suspension. To fulfill this requirement, the mirror must be isolated by a
      multi-stage pendulum~\cite{Beker:2011}.
-    \item low suspension thermal noise and minimization of creep noise~\cite{Levin:2012ek, Gretarsson:2005gs}
-    \item third priority is some thoughts on damping
-    \item 4th priority is minimize damping noise
-    \item should instead consider upconversion, control forces, gradual noise reduction, minimization of angular noise generation, etc. all together in holistic metric v. sensitivity and uptime.
-    \item Future suspension will look different than the LIGO/Virgo style
+   \item low suspension thermal noise and minimization of creep noise~\cite{Levin:2012ek, Gretarsson:2005gs}
+   \item third priority is some thoughts on damping
+   \item 4th priority is minimize damping noise
+   \item should instead consider upconversion, control forces, gradual noise
+      reduction, minimization of angular noise generation, etc. all together in
+      holistic metric v. sensitivity and uptime.
+   \item Future suspension will look different than the LIGO/Virgo style
 \end{itemize}
 
 \subsubsection{Cross-Coupling of Translation to Rotation}
@@ -207,7 +220,9 @@ becomes intractable results in massive downtime of the detectors. Future designs
 may utilize dedicated hardware solutions to apply damping forces without degrading
 the thermal noise~\cite{Dmitriev:2010hk, Lockerbie:2011zma}.
 
-Ultimately, we have seen that it is not wise to have high Q mechanical modes which are nearly invisible to the control systems. The cost, in terms of time spent developing an ad-hoc solution, is quite high.
+Ultimately, we have seen that it is not wise to have high Q mechanical modes
+which are nearly invisible to the control systems. The cost, in terms of time
+spent developing an ad-hoc solution, is quite high.
 
 %\subsection{Digital Control Systems: A second example}
 
@@ -291,6 +306,7 @@ the stored power and the backscattered power. The recombined power is
 \frac{\delta P_s}{P_0} = \frac{\lambda^2}{r^2} \left( \frac{dP}{d\Omega_{mb}}\right)^2 \frac{dP}{d\Omega_{bm}} \delta \Omega_{mb}
 \end{equation}
 
+% make it a side by side figure
 \begin{figure}[h]
   \centering
     \includegraphics[width=\columnwidth]{Figures/ETMphasemap.png}
@@ -300,10 +316,33 @@ the stored power and the backscattered power. The recombined power is
     \label{fig:PhaseMap}
 \end{figure}
 
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=\columnwidth]{Figures/ETMpsd.png}
+    \caption{Power spectrum of surface shown in Figure~\ref{fig:PhaseMap}. Also
+    plotted is the RMS surface roughness integrated from high to low
+    spatial frequency.}
+    \label{fig:PhaseMapPSD}
+\end{figure}
+
 \subsubsection{Case II: The Test Mass Chambers}
-During the operation of the first generation of kilometer scale interferometers, it became
-clear that the scattered light from the test mass mirrors was not all concentrated into
-small angles (as predicted by theory for super-polished optics), but instead
+During the operation of the first generation of kilometer scale interferometers,
+it became clear that the scattered light from the test mass mirrors was not
+all concentrated into small angles (as predicted by theory for super-polished
+optics). To calculate the total power scattered into wide angles, one can use the
+so-called 'Golden Rule':
+\begin{equation}
+\frac{dP}{P} = \left( \frac{4 \pi \sigma}{\lambda} \right)^2
+\end{equation}
+where $\sigma$ is the RMS surface roughness. Using the result from
+Figure~\ref{fig:PhaseMapPSD}, we can see that the power radiated into
+angles ($\theta_{scat} = \lambda / d_{rough}$) greater than 1~degree should be
+less than 0.1~ppm. This estimate is off by at least 2 orders of magnitude.
+
+Based on cavity ringdown and resonant reflectivity tests (cf.~\cite{Isogai2013}),
+the round trip (arm cavity) loss in the initial LIGO interferometers ranged from
+$\sim$60\--\140\,ppm. For two of the Advanced LIGO interferometers, the numbers
+are in the $\sim$80\--\120\,ppm range.
 
 \begin{figure}[h]
   \centering
@@ -325,15 +364,17 @@ S_x = some scattering stuff
 \end{align}
 
 \subsection{Environmental Noise Sources}
+\label{s:IDC:PEM}
 We would like to imagine that since the interferometers are in a vacuum system and
 protected from the ground by very sophisticated vibrations isolation equipment,
 the coupling of environmental acoustics would be zero. In fact, a host of environmental
-disturbances~\cite{Effler:2015hw, Acernese:2006dq} (cf.~Figure~\ref{fig:EnvironmentalNoise}) show up in the interferometer
-output (or are expected to in future detectors) at a level much higher than
-expected by the Navier-Stokes equations~\cite{Greenspan:sound} for low frequency
-acoustics at the $\sim10^{-6}~Pa$ pressures of high vacuum experiments. The reason
-for this is that the coupling paths are not through vibration of the air molecules
-in the high vacuum system, but through the motion of the vacuum chambers and tubes.
+disturbances~\cite{Effler:2015hw, Acernese:2006dq} (cf.~Figure~\ref{fig:EnvironmentalNoise})
+show up in the interferometer output (or are expected to in future detectors)
+at a level much higher than expected by the Navier-Stokes
+equations~\cite{Greenspan:sound} for low frequency acoustics at the $\sim10^{-6}~Pa$
+pressures of high vacuum experiments. The reason for this is that the coupling
+paths are not through vibration of the air molecules in the high vacuum system,
+but through the motion of the vacuum chambers and tubes.
 
 
 
