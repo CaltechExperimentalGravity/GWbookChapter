@@ -280,7 +280,7 @@ records the GW strain signal. Scattered light induced phase noise in the sensing
 of auxilliary degrees of freedom can couple into the strain channel through the
 relevant feedback control systems~\ref{LSC, NFN}.
 
-It is instructive to consider quantitatively the ampltidue of the noise for a few of
+It is instructive to consider quantitatively the amplitude of the noise for a few of
 these cases.
 \subsubsection{Case I: The Beam Tube Baffles}
 % based on T1300354
@@ -307,23 +307,21 @@ the stored power and the backscattered power. The recombined power is
 \end{equation}
 
 % make it a side by side figure
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=\columnwidth]{Figures/ETMphasemap.png}
-    \caption{Surface figure of an Advanced LIGO test mass (ETM07) with the
-    spherical curvature and tilt subtracted. The ripple pattern at a radius
-    of 3-15 cm from the center is due to the planetary coating technique.}
-    \label{fig:PhaseMap}
+
+\begin{figure}%
+    \centering
+    \subfloat[Phase Map]{{\includegraphics[width=5.5cm]{Figures/ETMphasemap.png} }}%
+    \qquad
+    \subfloat[Surf PSD]{{\includegraphics[width=5.5cm]{Figures/ETMpsd.png} }}%
+    \caption{(left) Surface figure of an uncoated LIGO mirror (ETM07) with the
+      spherical curvature and tilt subtracted. The ripple pattern at a radius
+      of 3--15~cm from the center is due to the planetary coating technique.
+      (right) 1D power spectrum of surface. Also
+      plotted is the RMS surface roughness integrated from high to low
+      spatial frequency.}%
+    \label{fig:PhaseMap}%
 \end{figure}
 
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=\columnwidth]{Figures/ETMpsd.png}
-    \caption{Power spectrum of surface shown in Figure~\ref{fig:PhaseMap}. Also
-    plotted is the RMS surface roughness integrated from high to low
-    spatial frequency.}
-    \label{fig:PhaseMapPSD}
-\end{figure}
 
 \subsubsection{Case II: The Test Mass Chambers}
 During the operation of the first generation of kilometer scale interferometers,
@@ -341,8 +339,8 @@ less than 0.1~ppm. This estimate is off by at least 2 orders of magnitude.
 
 Based on cavity ringdown and resonant reflectivity tests (cf.~\cite{Isogai2013}),
 the round trip (arm cavity) loss in the initial LIGO interferometers ranged from
-$\sim$60-140\,ppm. For two of the Advanced LIGO interferometers, the numbers
-are in the $\sim$80-120\,ppm range.
+$\sim$60--140\,ppm. For two of the Advanced LIGO interferometers, the numbers
+are in the $\sim$80--120\,ppm range.
 
 \begin{figure}[h]
   \centering
@@ -389,6 +387,26 @@ or control system design.}
 \label{fig:EnvironmentalNoise}
 \end{figure}
 
+\subsection{Complexity}
+\label{s:IDC:Complex}
+The interferometer design should be made as simple, but not too simple. In
+Figure~\ref{fig:IDC:SensEvo}, the evolution of the strain sensitivity is plotted
+versus time. The noise hunting~\cite{Rana:PhD}    of the interferometer began in earnest at the
+point when the two arm cavities were brought into simultaneous resonance. As is
+clear, the noise reduction in the case of Advanced LIGO has been much more rapid
+than in the initial detectors. What is the reason for this?
+
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{Figures/NoiseProgComp.pdf}
+\caption{Evolution of the interferometer strain sensitivities. The $t = 0$
+  point is chosen, in each case, to coincide with the first time that the
+  two arms are brought into resonance.}
+\label{fig:IDC:SensEvo}
+\end{figure}
 
 \section{Risk Register and Risk Reduction Research}
 \label{s:IDC:Risk}
