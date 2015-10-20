@@ -284,6 +284,10 @@ It is instructive to consider quantitatively the amplitude of the noise for a fe
 these cases.
 \subsubsection{Case I: The Beam Tube Baffles}
 % based on T1300354
+The case of scattering from the multi-km beam tubes connecting the ends of the
+interferometer has been studied by Whitcomb, Weiss, Thorne, and Flanagan (for LIGO)
+and by Braccini, Vinet, et al. (for Virgo); see references above. Here we provide
+a condensed version of their arguments so as to construct a noise budget for backscatter.
 Let us assume in this case that the field scatters from the test mass surface,
 reflects from a piece of multi-km long beamtube, returns to the same test mass
 mirror, and then recombines into the circulating cavity mode. The resulting phase
@@ -306,7 +310,57 @@ the stored power and the backscattered power. The recombined power is
 \frac{\delta P_s}{P_0} = \frac{\lambda^2}{r^2} \left( \frac{dP}{d\Omega_{mb}}\right)^2 \frac{dP}{d\Omega_{bm}} \delta \Omega_{mb}
 \end{equation}
 
-% make it a side by side figure
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=\columnwidth]{Figures/ETM_scatter.pdf}
+    \caption{Schematic diagram of interferomer mirror and surrounding vacuum chambers
+    responsible for backscattered light.}
+    \label{fig:ETMscat}
+\end{figure}
+
+
+
+\subsubsection{Case II: The Test Mass Chambers}
+During the operation of the first generation of kilometer scale interferometers,
+it became clear that the scattered light from the test mass mirrors was not
+all concentrated into small angles (as predicted by theory for super-polished
+optics). To calculate the total power scattered into wide angles, one can use the
+so-called 'Golden Rule'\,\cite{Weiss:Scatter97}:
+\begin{equation}
+\frac{dP}{P} = \left( \frac{4 \pi \sigma}{\lambda} \right)^2
+\end{equation}
+where $\sigma$ is the RMS surface roughness. Using the result from
+Figure~\ref{fig:PhaseMap}, we can see that the power radiated into
+angles ($\theta_{scat} = \lambda / d_{rough}$) greater than 1\,degree should be
+less than 0.1\,ppm. This underestimates the true number by at least 2 orders of magnitude.
+
+Based on cavity ringdown and resonant reflectivity tests (cf.~\cite{Isogai2013}),
+the round trip (arm cavity) loss in the initial LIGO interferometers ranged from
+$\sim$60--140\,ppm. For two of the Advanced LIGO interferometers, the loss
+is in the $\sim$80--120\,ppm range. Wide angle, \textit{in situ},
+measurements (using calibrated photodetectors and CCD cameras) show
+that the total loss for $\theta_{scat} \gtrsim 1\deg$ is $\sim$\,15\,ppm and that
+the angular distribution in that range is that of a Lambertian surface. Images
+such as the one in Figure\,\ref{fig:skETMy}, implicate point-like structures.
+Repeated cleaning of the surface using various techniques reveals a largely
+unchanging pattern, implying that the points are defects in the dielectric
+mirror coatings, rather than surface contaminants. Although the details of the
+story are still being investigated, it seems likely that the defects are due to
+artifacts of the ion beam sputtering process as well as crystal formation in the
+amorphous thin films during the post deposition annealing.
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=\columnwidth]{Figures/Cheryl-2ketmy.pdf}
+    \caption{Image of an initial LIGO test mass during normal operation}
+    \label{fig:2kETMy}
+\end{figure}
+
+
+
+
+\subsubsection{Case III: Backscatter from the Dark Port}
 
 \begin{figure}
     \centering
@@ -322,44 +376,9 @@ the stored power and the backscattered power. The recombined power is
     \label{fig:PhaseMap}
 \end{figure}
 
-
-\subsubsection{Case II: The Test Mass Chambers}
-During the operation of the first generation of kilometer scale interferometers,
-it became clear that the scattered light from the test mass mirrors was not
-all concentrated into small angles (as predicted by theory for super-polished
-optics). To calculate the total power scattered into wide angles, one can use the
-so-called 'Golden Rule':
-\begin{equation}
-\frac{dP}{P} = \left( \frac{4 \pi \sigma}{\lambda} \right)^2
-\end{equation}
-where $\sigma$ is the RMS surface roughness. Using the result from
-Figure~\ref{fig:PhaseMap}, we can see that the power radiated into
-angles ($\theta_{scat} = \lambda / d_{rough}$) greater than 1~degree should be
-less than 0.1~ppm. This estimate is off by at least 2 orders of magnitude.
-
-Based on cavity ringdown and resonant reflectivity tests (cf.~\cite{Isogai2013}),
-the round trip (arm cavity) loss in the initial LIGO interferometers ranged from
-$\sim$60--140\,ppm. For two of the Advanced LIGO interferometers, the numbers
-are in the $\sim$80--120\,ppm range.
-
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=\columnwidth]{Figures/Cheryl-2ketmy.pdf}
-    \caption{Image of an initial LIGO test mass during normal operation}
-    \label{fig:2kETMy}
-\end{figure}
-
-\subsubsection{Case III: Backscatter from the Dark Port}
-
-
 \subsubsection{Case IV: Backscatter from the Bright Port}
 
 
-
-A significant source of scatter for all of the long interferometers
-\begin{align}
-S_x = some scattering stuff
-\end{align}
 
 \subsection{Environmental Noise Sources}
 \label{s:IDC:PEM}
