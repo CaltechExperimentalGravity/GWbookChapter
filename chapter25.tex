@@ -1,11 +1,8 @@
 \chapter[Integrated Detector Commissioning]{Integrated Detector Commissioning}
 \label{IDC}
 
-% editing Tex in Atom
-% http://rolflekang.com/writing-latex-in-atom/
 
-%Feynman: "all things are made of atoms..."
-
+% Feynman: "all things are made of atoms..."
 % If, in some cataclysm, all of scientific knowledge were to be destroyed, and only one sentence passed on to the next generation of creatures, what statement would contain the most information in the fewest words? I believe it is the atomic hypothesis that all things are made of atoms — little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another. In that one sentence, you will see, there is an enormous amount of information about the world, if just a little imagination and thinking are applied.
 
 % TODO
@@ -28,7 +25,7 @@
 % -- seismo: B&W
 % -- PEM: B&W
 %
-
+\newcommand{\R}[1]{\textcolor{red}{#1}}
 
 \section{Introduction}
 \label{s:IDC:Intro}
@@ -38,38 +35,26 @@ invented gravitational wave detectors to reach out into the universe,
 it would be this:
 
 "Think carefully and holistically about your detector before building it
-such that no part is neglected as being too small or  coupling at 'second order',
-yea, for even the mighty may be brought low by the loose beam dump or the
-unforseen cross-coupling."
+such that no part is neglected as being `too small' or having a coupling at `second order'."
 
 The interferometer commissioning process has taught us that we could improve
-our design process.
-
-We might divide things into subsystems as done in the chapters of a book,
-but then to make them work together things are not so orthogonal.
-Controllability is much more important than the last few percent of
-isolation or noise performance.
+our design process. We might divide things into subsystems as done in the chapters of a book, but then to make them work together things are not so orthogonal. Controllability is much more important than the last few percent of isolation or noise performance.
 
 It is not wise to design for a single point in parameter space: if each
 part of the interferometer can only work when all other pieces are
 performing as designed, it becomes impossible to integrate. This phase
-space nirvana cannot be reached.
-
-Its the inverse of a Sherlock Holmes locked-room mystery story.
+space `nirvana' cannot be reached.
 
 In this chapter we will explore some of the interesting interaction between
-disparate sub-systems which make the interferometer commissioning experience
-so rich, challenging, and rewarding.
+disparate sub-systems which make the interferometer debugging experience
+so rich, and so challenging.
 
 
 \section{Sub-system Integration Issues}
 We design the individual components of the interfererometer to fulfill some
 primary goals with some secondary considerations.
 
-But in some cases, the most important driver in the design should, in fact, be the
-interaction that this 'isolated' component has with the full system. In some cases,
-this interaction is only apparent with the highest circulating laser power levels
-and only when considering the smallest mirror displacements.
+In some cases, however, the most important driver in the design should, in fact, be the interaction that this 'isolated' component has with the full system. In some cases, this interaction is only apparent with the highest circulating laser power levels and only when considering the smallest mirror displacements.
 
 In the following sections we explore a few examples of this kind of surprising
 interaction.
@@ -83,7 +68,7 @@ interaction.
 \end{figure}
 
 Figure~\ref{fig:SystemConflicts} shows diagrammatically many of the most
-significant subsystem conflicts/intercations.
+significant subsystem conflicts/interactions.
 
 \subsection{Issues due to High Laser Power}
 To increase the phase (and thereby strain) sensitivity of the interferometer
@@ -91,29 +76,25 @@ the circulating laser power in the interferometer is increased (into the MW
 regime). This has several problematic consequences:
 \begin{itemize}
 \item Quantum fluctuations of the radiation pressure increase as P$^{1/2}$,
-  increasing the low frequency strain noise.
-\item The classical radiation pressure force due to the high cavity power
-leads to static and dynamic instabilities in mirror
-orientations~\cite{Sidles:2006un, Dooley:13, aLIGO:ASC}. In addition to producing
-more mirror motion, the concomitant increase in the angular feedback
-control bandwidth (cf.~Chapter~\ref{ASC}) injects noise into the GW strain
-channel at low frequencies (cf.~Fig.~\ref{}), masking the presence of
-intermediate mass black holes.
-\item In addition to angular instabilites, the system of compound resonant
-cavities can exhibit instabilities along the optical cavity
-axis~\cite{SGLMW2004, BuCh2002, Osamu:spring}. This
-unstable opto-mechanical eigenfrequency can show up in the GW detection band,
-making the control system challenging to design (cf.~Chapter~\ref{LSC}).
-\item Through the finite optical absorption in the mirror substrates and the
-high reflectivity mirror coatings, heat is deposited in the mirrors and thermal
-gradients are formed. These lead to thermal lensing and thermal deformations
-(cf.~Chapter~\ref{TCS}) which can reduce the stored power in the system, destabilize
-the MIMO angular control system, increase the coupling of laser ampltidue and
-frequency noise to the strain channel, spoil the dark fringe contrast, and
-aggravate opto-acoustic parametric instabilities (cf.~Chapter~\ref{SYS}).
+  buffeting the mirrors, and increasing the low frequency strain noise.
+\item The classical radiation pressure force due to the high cavity
+  power leads to static and dynamic instabilities in mirror
+  orientations~\cite{Sidles:2006un, Dooley:13, aLIGO:ASC}. In addition
+  to producing more mirror motion, the concomitant increase in the angular feedback control bandwidth (cf.~Chapter~\ref{ASC}) increases the noise injected into the GW strain channel at low frequencies (cf.~Fig.~\ref{}).
+\item In addition to angular instabilites, the system of compound
+  resonant cavities can exhibit instabilities along the optical cavity
+  axis~\cite{SGLMW2004, BuCh2002, Osamu:spring}. This unstable opto-mechanical eigenfrequency can show up in the GW detection band, making the control system challenging to design (cf.~Chapter~\ref{LSC}).
+\item Through the finite optical absorption in the mirror substrates
+  and the high reflectivity mirror coatings, heat is deposited in the
+  mirrors and thermal gradients are formed. These lead to thermal
+  lensing and thermal deformations (cf.~Chapter~\ref{TCS}) which can
+  reduce the stored power in the system, destabilize the MIMO angular
+  control system, increase the coupling of laser ampltidue and
+  frequency noise to the strain channel, spoil the dark fringe
+  contrast, and aggravate opto-acoustic parametric instabilities (cf.~Chapter~\ref{SYS}).
 \item Light which scatters out of the main interferometer and then returns
   after interacting with a vibrating piece of the environment, will be phase
-  modulated by the vibration. In a low power interferometer, this will just
+  modulated by that vibration. In a low power interferometer, this will just
   produce phase noise, but depending upon the relative phase of the
   interferometer field and the backscattered light, this can also produce
   amplitude noise. These amplitude fluctuations (via radiation pressure) can
@@ -131,21 +112,19 @@ aggravate opto-acoustic parametric instabilities (cf.~Chapter~\ref{SYS}).
 \end{figure}
 
 \begin{figure}[h]
-    \includegraphics[width=\columnwidth]{Figures/darm_nb.png}
-    \caption{Contribution of Alignment noise to the noise budget of the
-    Advanced LIGO interferometer in Louisiana (2015): replace with simple plot}
+    \includegraphics[width=\columnwidth]{Figures/L1-NB.pdf}
+    \caption{Breakdown of the various noise sources for the LIGO Livingston interferometer (4/2017)}
     \label{fig:aLIGO}
 \end{figure}
 
 
 \subsection{Interaction of Mirror Suspension with Global Controls}
 The vibration isolation and mirror suspension systems are designed so as to
-provide much attenuation of noise at higher frequencies and some (unwanted) amplification
-at lower frequencies (cf.~Figure\,\ref{fig:SeismicTFs}). This condition is analogous to the
-one encountered in analog electronic filter design:  a sharp transition from
+provide much attenuation of noise at higher frequencies.  This results in some (undesired) amplification at lower frequencies (cf.~Figure\,\ref{fig:SeismicTFs}). This condition is analogous to the
+one encountered in analog electronic filter design: a sharp transition from
 the passband to the stopband requires complex poles in the passband (e.g.
 in Chebyshev filters) which amplify the signals at those frequencies. This
-is ameiliorated somewhat through the use of 'cold damping'
+is ameiliorated somewhat through the use of active (a.k.a. `cold') damping
 techniques~\cite{Kuroda:1982vf, Forward:1979ks, Shapiro:2015di}.
 
 
@@ -257,31 +236,35 @@ spent developing an ad-hoc solution, is quite high.
 
 \subsection{Scattered Light}
 \label{s:IDC:scatter}
-The sensitivity required to make gravitational wave measurements can be expressed also
-as a sensitivity to \textit{optical phase} fluctuations. The current state of the art
-is approximately $10^{-11}$ radians/$\sqrt{\rm Hz}$ and is nominally considered to be limited
-by quantum mechanics and the available laser power (cf.~Chapter~\ref{SQN}). Practically, however,
-all of the high sensitivity interferometers in the past 30 years have been limited
-at some frequencies by the non-fundamental phase fluctuations due to scattered light.
-This phenomenon of excess phase
-noise due to scattered light has been known about for decades~\cite{Schilling:1981}
-but the methods by which to combat it have been developing steadily since then and
-involve the highest levels of experimental artistry in the field of laser interferometry.
+The sensitivity required to make gravitational wave measurements can
+be expressed also as a sensitivity to \textit{optical phase} fluctuations.
+The current state of the art is approximately
+$10^{-11}$ radians/$\sqrt{\rm Hz}$ and is nominally considered to be
+limited by quantum mechanics and the available laser power (cf.~Chapter~\ref{SQN}). Practically, however, all of the high
+sensitivity interferometers in the past 30 years have been limited
+at some frequencies by the non-fundamental phase fluctuations due to
+scattered light. This phenomenon of excess phase noise due to scattered
+light has been known about for decades~\cite{Schilling:1981} but
+the methods by which to combat it have been developing steadily since
+then and involve the highest levels of experimental artistry in the
+field of laser interferometry.
 
-Due to imperfections in the optics, for example, a small fraction of the laser light escapes from
-the main interferometer beam path. This light then interacts with something (e.g. a piece of the
-vacuum system or some other suspended optic or beam dump) and then recombines with the
-circulating laser field within the
-interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012,
+Due to imperfections in the optics, for example, a small fraction of
+the laser light escapes from the main interferometer beam path. This
+light then interacts with something (e.g. a piece of the vacuum system
+or some other suspended optic or beam dump) and then recombines with the
+circulating laser field within the interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012,
 Stefano:Scatter, vinet1997scattered, fritschel1998high}.
-The recombination may occur at virtually any point within the system: inside of the
-Fabry-Perot arm cavities, at the beamsplitter, or even at the final photodetector which
-records the GW strain signal. Scattered light induced phase noise in the sensing
-of auxilliary degrees of freedom can couple into the strain channel through the
-relevant feedback control systems (cf.~Chapter~\ref{LSC, NFN}).
+The recombination may occur at virtually any point within the system:
+inside of the Fabry-Perot arm cavities, at the beamsplitter, or even at
+the final photodetector which records the GW strain signal. Scattered
+light induced phase noise in the sensing of auxilliary degrees of
+freedom can couple into the strain channel through the relevant
+feedback control systems (cf.~Chapter~\ref{LSC, NFN}).
 
-It is instructive to consider quantitatively the amplitude of the noise for a few of
-these cases.
+It is illuminating to consider \emph{quantitatively} the amplitude of
+the noise for a few of these cases.
+
 \subsubsection{Case I: The Beam Tube Baffles}
 % based on T1300354
 The case of scattering from the multi-km beam tubes connecting the ends of the
@@ -314,7 +297,7 @@ the stored power and the backscattered power. The recombined power is
 \begin{figure}[h]
   \centering
     \includegraphics[width=\columnwidth]{Figures/ETM_scatter-BW.pdf}
-    \caption{Schematic diagram of interferomer mirror and surrounding vacuum chambers responsible for backscattered light.}
+    \caption{Schematic diagram of LIGO interferomer mirror and surrounding vacuum chambers responsible for backscattered light.}
     \label{fig:ETMscat}
 \end{figure}
 
@@ -325,7 +308,7 @@ During the operation of the first generation of kilometer scale interferometers,
 it became clear that the scattered light from the test mass mirrors was not
 all concentrated into small angles (as predicted by theory for super-polished
 optics). To calculate the total power scattered into wide angles, one can use the
-so-called 'Golden Rule'\,\cite{Weiss:Scatter97}:
+equivalent of Fermi's 'Golden Rule'\,\cite{Weiss:Scatter97} for optical scattering:
 \begin{equation}
 \frac{dP}{P} = \left( \frac{4 \pi \sigma}{\lambda} \right)^2
 \end{equation}
@@ -341,13 +324,13 @@ is in the $\sim$80--120\,ppm range. Wide angle, \textit{in situ},
 measurements (using calibrated photodetectors and CCD cameras) show
 that the total loss for $\theta_{scat} \gtrsim 1\deg$ is $\sim$\,15\,ppm and that
 the angular distribution in that range is that of a Lambertian surface. Images
-such as the one in Figure\,\ref{fig:skETMy}, implicate point-like structures.
+such as the one in Figure\,\ref{fig:2kETMy}, implicate point-like structures.
 Repeated cleaning of the surface using various techniques reveals a largely
 unchanging pattern, implying that the points are defects in the dielectric
 mirror coatings, rather than surface contaminants. Although the details of the
 story are still being investigated, it seems likely that the defects are due to
 artifacts of the ion beam sputtering process as well as crystal formation in the
-amorphous thin films during the post deposition annealing.
+amorphous thin films during the post-deposition annealing.
 
 \begin{figure}[h]
   \centering
@@ -407,7 +390,8 @@ or control system design.}
 
 \subsection{Complexity}
 \label{s:IDC:Complex}
-The interferometer design should be made as simple, but not too simple. In
+The interferometer design should be made as simple as possible, but not so simple as to degrade the controllability and sensitivity.
+In
 Figure~\ref{fig:IDC:SensEvo}, the evolution of the strain sensitivity is plotted
 versus time. The noise hunting~\cite{Rana:PhD} of the interferometer began in earnest at the
 point when the two arm cavities were brought into simultaneous resonance. As is
@@ -433,30 +417,26 @@ experiment should be designed to be as simple as possible, but no more so. We ha
 seen that the initial generation of detector was made too simple; passive vibration
 isolation using tables made of rubber and steel, single stage pendulums holding
 the mirrors, and no adaptive optics. The complicated vibration isolation system,
-which includes N sensors and N feedback loops (cf.~\ref{SEI}) reduces the seismic
-motions of the interferometer mirrors by orders of magnitude (compare the 0.1 - 3 Hz
-transfer functions of AdvLIGO/Virgo with GEO600, initial LIGO, and TAMA SAS). The
-complicated multiple stage pendulum Virgo, GEO600, and Adv. LIGO allows the remaining
-seismic motion to be allocated intelligently among the different stages, such that
-the actuators in the final stages may be weak and inject less noise. By integrating
-the thermal wavefront compensation systems (cf.~\ref{TCS}) in the baseline design,
-the interferometers can be made to operate stably with any operating power, whereas
-the first generation detectors either ignored thermal effects or suffered from
-the point design problem of assuming we would always operate with the laser power
-specified in a conceptual design document.
+which includes N sensors and N feedback loops (cf. Chapter~\ref{SEI})
+reduces the seismic motions of the interferometer mirrors by
+orders of magnitude (compare the 0.1\,--\,3\,Hz transfer functions of AdvLIGO/Virgo with GEO600, initial LIGO, and TAMA SAS). The
+complicated multiple stage pendulum Virgo, GEO600, and Adv. LIGO
+allows the remaining seismic motion to be allocated intelligently
+among the different stages, such that the actuators in the final stages
+may be weak and inject less noise. By integrating the thermal wavefront
+compensation systems (cf.~\ref{TCS}) in the baseline design, the
+interferometers can be made to operate stably with any operating power,
+whereas the first generation interferometers suffered from a lack of optical stability at all but a narrow range of operating power levels.
 
 The addition of hundreds of sensors and feedback loops, along with more careful
 optical modeling, has lead to a more 'simple' system from the standpoint of
-detector commissioning and has reduced the time between installation and astrophysical
-data taking. The information earned by fighting with first generation of
-interferometers has yielded valuable fruits and one can only assume that we are
-now sowing the seeds for the third generation to reap.
+detector commissioning and has reduced the time between installation and astrophysical data taking. The information earned by fighting with first generation of interferometers has yielded valuable fruits and one can only assume that we are now sowing the seeds for the third generation to reap.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{Figures/aLIGO_noises.pdf}
 \caption{Strain noise reduction of the Advanced LIGO interferometers
-  through 2016.}
+  through 2016. \R{change to BW} }
 \label{fig:IDC:aLIGOnoises}
 \end{figure}
 
@@ -579,46 +559,46 @@ The acousto-optic parametric instability~\cite{Matt:PI} control
   \item bursts of gas lead to transient phase noise in arm cavities
 \end{itemize}
 
-\section{People}
-\label{s:People}
-One of the most important elements in the continuous evolution of gravitational
-wave sensitivity is the scientific workforce. These people serve to to do the
-hands on work required for the daily progress and later become the leaders
-in the field who are responsible for the design and implementation of future
-technologies.
-
-This organism needs to be maintained and groomed in an appropriate manner so
-as to maximize the long term scientific output of the field. When we use
-adaptive filters or machine learning algorithms, we often discuss tuning the
-'cost function' in order to guide the algorithm to optimize something. In a
-similar manner, there must be a balance in order to make short term progress
-as needed while also training the newest students and scientists. To train
-a continuous stream of students, suitable PhD projects must be developed
-which have sufficient scientific potential. These projects must be
-undertaken in a way which allows speedy progress of the interferometers
-while simultaneously allowing for the start up training time of students.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\columnwidth]{Figures/GroupPhoto_LLOworkshop13.jpg}
-\caption{International GW Commissioning workshop}
-\label{fig:workshopPhotoLLO}
-\end{figure}
-
-We don't want students building the detector. Having several inexperienced people
-working on the interferometer at the same time can quickly lead to a madhouse
-situation.
-
-People need time to fiddle in order to attain deep mastery of the experiment.
-
-Its hard to achieve significant insights without several years of intense
-study over all aspects of the experiment.
-
-\subsection{Exchange of Information}
-Short term visits not so useful. Long term visits serve to exchange the
-technqiues and tricks that we have not thought to publish~\cite{HarryCollins}
-and to establish personal relationships which allow the free exchange of
-knowledge in the future and make it easy to ask for help.
+% \section{People}
+% \label{s:People}
+% One of the most important elements in the continuous evolution of gravitational
+% wave sensitivity is the scientific workforce. These people serve to to do the
+% hands on work required for the daily progress and later become the leaders
+% in the field who are responsible for the design and implementation of future
+% technologies.
+%
+% This organism needs to be maintained and groomed in an appropriate manner so
+% as to maximize the long term scientific output of the field. When we use
+% adaptive filters or machine learning algorithms, we often discuss tuning the
+% 'cost function' in order to guide the algorithm to optimize something. In a
+% similar manner, there must be a balance in order to make short term progress
+% as needed while also training the newest students and scientists. To train
+% a continuous stream of students, suitable PhD projects must be developed
+% which have sufficient scientific potential. These projects must be
+% undertaken in a way which allows speedy progress of the interferometers
+% while simultaneously allowing for the start up training time of students.
+%
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=\columnwidth]{Figures/GroupPhoto_LLOworkshop13.jpg}
+% \caption{International GW Commissioning workshop}
+% \label{fig:workshopPhotoLLO}
+% \end{figure}
+%
+% We don't want students building the detector. Having several inexperienced people
+% working on the interferometer at the same time can quickly lead to a madhouse
+% situation.
+%
+% People need time to fiddle in order to attain deep mastery of the experiment.
+%
+% Its hard to achieve significant insights without several years of intense
+% study over all aspects of the experiment.
+%
+% \subsection{Exchange of Information}
+% Short term visits not so useful. Long term visits serve to exchange the
+% technqiues and tricks that we have not thought to publish~\cite{HarryCollins}
+% and to establish personal relationships which allow the free exchange of
+% knowledge in the future and make it easy to ask for help.
 
 
 \section{Conclusion}
