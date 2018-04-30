@@ -24,7 +24,7 @@
 % Figures
 % -- interactions: less wacky, B&W
 % -- noise budgets: B&W, less busy
-% -- Risk: keep?
+% -- Risk: keep? no, lets drop it
 % -- seismo: B&W
 % -- PEM: B&W
 %
@@ -77,7 +77,7 @@ interaction.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\columnwidth]{Figures/SystemConflicts.pdf}
+\includegraphics[width=\columnwidth]{Figures/SystemConflicts-BW.pdf}
 \caption{Examples of interactions between subsytems}
 \label{fig:SystemConflicts}
 \end{figure}
@@ -313,9 +313,8 @@ the stored power and the backscattered power. The recombined power is
 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=\columnwidth]{Figures/ETM_scatter.pdf}
-    \caption{Schematic diagram of interferomer mirror and surrounding vacuum chambers
-    responsible for backscattered light.}
+    \includegraphics[width=\columnwidth]{Figures/ETM_scatter-BW.pdf}
+    \caption{Schematic diagram of interferomer mirror and surrounding vacuum chambers responsible for backscattered light.}
     \label{fig:ETMscat}
 \end{figure}
 
@@ -353,7 +352,7 @@ amorphous thin films during the post deposition annealing.
 \begin{figure}[h]
   \centering
     \includegraphics[width=\columnwidth]{Figures/Cheryl-2ketmy.pdf}
-    \caption{Image of an initial LIGO test mass during normal operation}
+    \caption{Image of an initial LIGO test mass during normal operation. The large blob near the top of the image is due to a diagnostic beam. The 'starry night' of points are believed to be due to point defects in the high reflection coating and contribute ot small and large angle scattering. Photo credit: Cheryl Vorvick (LHO)}
     \label{fig:2kETMy}
 \end{figure}
 
@@ -364,7 +363,7 @@ amorphous thin films during the post deposition annealing.
 
 \begin{figure}
     \centering
-    \subfloat[Phase Map]{{\includegraphics[width=5.5cm]{Figures/ETMphasemap.png} }}
+    \subfloat[Phase Map]{{\includegraphics[width=6cm]{Figures/ETMphasemap.png} }}
     \qquad
     \subfloat[Surf PSD]{{\includegraphics[width=5.5cm]{Figures/ETMpsd.png} }}
     \caption{(left) Surface figure of an uncoated LIGO mirror (ETM07) with the
@@ -398,7 +397,7 @@ but through the motion of the vacuum chambers and tubes.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{Figures/Environmental.pdf}
+\includegraphics[width=\columnwidth]{Figures/Environmental-BW.pdf}
 \caption{Graphical representation of environmental sources of noise. The detector
 design nominally isolates against many of these, but some of the sensitivity to,
 e.g. acoustics or magnetics, comes in mainly as a consequence of the vacuum
@@ -462,20 +461,20 @@ now sowing the seeds for the third generation to reap.
 \end{figure}
 
 
-\section{Risk Register and Risk Reduction Research}
-\label{s:IDC:Risk}
-The concept of a Risk Register is common in project management circles and refers
-to a log of all the risks know to the project and their associated details. In
-the context of the interferometer commissioning and noise hunting, it is a log of
-the suspected noise sources, events which might damage some parts of the detector,
-and other phenomena that may negatively impact the sensitivity or uptime for
-astrophysical searches (such as hurricanes, earthquakes, students leaving, etc.).
-While it is not unheard of for such project management tools to give one the
-illusion of concreteness and control, the process of looking into the future
-for problems to tackle can be very valuable in the long run.
-
-In Table~\ref{t:IDC:Risk} and Figure~\ref{fig:RiskBubbles} an example of such
-a register is given for the next several years of Advanced LIGO.
+% \section{Risk Register and Risk Reduction Research}
+% \label{s:IDC:Risk}
+% The concept of a Risk Register is common in project management circles and refers
+% to a log of all the risks know to the project and their associated details. In
+% the context of the interferometer commissioning and noise hunting, it is a log of
+% the suspected noise sources, events which might damage some parts of the detector,
+% and other phenomena that may negatively impact the sensitivity or uptime for
+% astrophysical searches (such as hurricanes, earthquakes, students leaving, etc.).
+% While it is not unheard of for such project management tools to give one the
+% illusion of concreteness and control, the process of looking into the future
+% for problems to tackle can be very valuable in the long run.
+%
+% In Table~\ref{t:IDC:Risk} and Figure~\ref{fig:RiskBubbles} an example of such
+% a register is given for the next several years of Advanced LIGO.
 
 % \begin{table}
 % \tiny
@@ -508,25 +507,25 @@ a register is given for the next several years of Advanced LIGO.
 % and \% reduction of ($30/30 M_{\odot}$) binary black hole range.}
 % \label{t:IDC:Risk}
 % \end{table}
-\begin{figure}[h]
-  \centering
-\includegraphics[width=\columnwidth]{Figures/RiskRegister.pdf}
-  \caption{Example of a Risk Register for the Advanced LIGO detector. This can be used
-  to guide theoretical and experimental risk reduction research. The column headings are
-  name of the Risk, sub-system, Probability of occurence within 5 years, hardware
-  cost to repair, time to repair (months), \% reduction of binary neutron star range,
-  and \% reduction of ($30/30 M_{\odot}$) binary black hole range.}
-  \label{t:IDC:Risk}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-\includegraphics[width=\columnwidth]{Figures/Risk.pdf}
-  \caption{Example Risk Register for Advanced LIGO. The area of each circle is
-  proportional to the impact on the binary neutron star inspiral rate
-  (time $\times$ range$^3$).}
-  \label{fig:RiskBubbles}
-\end{figure}
+% \begin{figure}[h]
+%   \centering
+% \includegraphics[width=\columnwidth]{Figures/RiskRegister.pdf}
+%   \caption{Example of a Risk Register for the Advanced LIGO detector. This can be used
+%   to guide theoretical and experimental risk reduction research. The column headings are
+%   name of the Risk, sub-system, Probability of occurence within 5 years, hardware
+%   cost to repair, time to repair (months), \% reduction of binary neutron star range,
+%   and \% reduction of ($30/30 M_{\odot}$) binary black hole range.}
+%   \label{t:IDC:Risk}
+% \end{figure}
+%
+% \begin{figure}[h]
+%   \centering
+% \includegraphics[width=\columnwidth]{Figures/Risk.pdf}
+%   \caption{Example Risk Register for Advanced LIGO. The area of each circle is
+%   proportional to the impact on the binary neutron star inspiral rate
+%   (time $\times$ range$^3$).}
+%   \label{fig:RiskBubbles}
+% \end{figure}
 
 
 \section{Detector Diagnostics}
