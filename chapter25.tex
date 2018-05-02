@@ -161,10 +161,10 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
 \subsubsection{Cross-Coupling of Translation to Rotation}
 During the commissioning of the first generation of kilometer scale detectors, it became clear that the angular motion of the suspended optics was too large and a significant challenge for the angular control systems~\ref{ASC}. The most obvious mechanism to produce rotations of the optics is, perhaps, direct coupling of the ground motion through the suspension system and into mechanical torque. However, the rotations of the ground are much too small, when propagated through the pertinent mechanical transfer functions, to explain the observed angular motion.
 
-In fact, the dominant coupling mechanism is due to an interaction between the control system and the off-diagonal elements of the suspension: rotations and translations of the ground produce relative motions of the mirrors along the direction of the laser beam propagation. The Length Sensing and Control (cf.~Chapter~\ref{LSC}) system then corrects for this by applying forces to the mirror suspension system.
+In fact, the dominant coupling mechanism is due to an interaction between the control system and the off-diagonal elements of the suspension mechanics: rotations and translations of the ground produce relative motions of the mirrors along the direction of the laser beam propagation. The Length Sensing and Control (cf.~Chapter~\ref{LSC}) system then corrects for this by applying forces to the mirror suspension system.
 
-The mechanical cross-coupling in the suspension system is so large that this force to angle term dominates over all others. This length to angle coupling has a complicated transfer function from each length actuator to the mirror angle due to the many resonances in the suspension, the presence of the local damping loops, and the Sidles-Sigg effect~\cite{Sidles:2006un, Hirose:10, Dooley:13}. For years, attempts have been made to mitigate this effect by taking the applying a filtered version of the length control force as a torque to the suspension actuators. In the asymptotic low and high frequency regimes, the cancellation achieved by this technique can be as good as 99.9\% or more,
-but in the 0.3\,--\,3\,Hz band, where most of the mechanical resonances are,
+The mechanical cross-coupling in the suspension system is so large that this force-to-angle term dominates over all others. This length to angle coupling has a complicated transfer function from each length actuator to the mirror angle due to the many resonances in the suspension, the presence of the local damping loops, and the Sidles-Sigg effect~\cite{Sidles:2006un, Hirose:10, Dooley:13}. For years, attempts have been made to mitigate this effect by applying a filtered version of the length control force as a torque to the suspension actuators. In the asymptotic low and high frequency regimes, the cancellation achieved by this technique can be as good as 99.9\% or more.
+In the 0.3\,--\,3\,Hz band, however, where most of the mechanical resonances are,
 this drops to only 80\,--\,90\%. The fidelity of this cancellation technique is limited by the required accuracy of the measurements, the slow time variation in the opto-mechanical plant, and limitations in inverting high Q zeros of the mechanical transfer function.
 
 
@@ -173,12 +173,11 @@ In the effort to make a mirror suspension with very low thermal noise, the mecha
 elements nearest the mirror must have a very high mechanical Q
 (cf.~Chapters~\ref{THN} and \ref{SUS}).
 In the ideal steady-state, these modes are driven only by the thermal energy
-dictated by the Equipartition theorem and their presence in the data can be simply
-removed through standard techniques~\cite{Allen:1999wy, Finn:Violins, Searle:2003ib, Sintes:1998gq}.
+dictated by the Equipartition theorem, and their presence in the data can be simply removed through standard techniques~\cite{Allen:1999wy, Finn:Violins, Searle:2003ib, Sintes:1998gq}.
 
 Nature, however, is not so kind. Large seismic transients and instabilites in the control systems can lead to large excitations of these modes. The vertical and roll (rotation about the cavity axis)
 modes of the mirror suspension fall in the lower end of the observation band
-(f $\simeq$ 10-20 Hz) and the higher frequency fiber modes which have nodes at
+(f $\simeq$ 10\,--\,20\,Hz) and the higher frequency fiber modes which have nodes at
 their endpoints are at multiples of $\sim$\,500\,Hz. The lower frequency modes have
 decay time constants of order several hours, whereas the higher frequency ones
 have time constants of several days.
@@ -194,10 +193,8 @@ In order to allow the interferometer to operate, numerous digital feedback
 loops have been designed to damp these modes~\cite{martynov2015lock, Miller:ESD}. In the
 installed systems, the only way to damp these modes is to sense their perturbation
 of the mirror motion and apply feedback forces to the suspension chain. In the case
-that thermall induced drifts cause the mode frequencies to overlap, the problem
-becomes intractable results in massive downtime of the detectors. Future designs
-may utilize dedicated hardware solutions to apply damping forces without degrading
-the thermal noise~\cite{Dmitriev:2010hk, Lockerbie:2011zma}.
+that thermally induced drifts cause the mode frequencies to overlap, the problem
+becomes intractable and results in massive downtime of the detectors. Future designs may utilize dedicated hardware solutions to apply damping forces without degrading the thermal noise~\cite{Dmitriev:2010hk, Lockerbie:2011zma}.
 
 Ultimately, we have seen that it is not wise to have high Q mechanical modes
 which are nearly invisible to the control systems. The cost, in terms of time
@@ -297,7 +294,7 @@ the stored power and the backscattered power. The recombined power is
 \begin{figure}[h]
   \centering
     \includegraphics[width=\columnwidth]{Figures/ETM_scatter-BW.pdf}
-    \caption{Schematic diagram of LIGO interferomer mirror and surrounding vacuum chambers responsible for backscattered light.}
+    \caption{Schematic diagram of a LIGO interferomer mirror and surrounding vacuum chambers responsible for backscattered light.}
     \label{fig:ETMscat}
 \end{figure}
 
