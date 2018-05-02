@@ -5,7 +5,7 @@ before_install:
 script:
 - mkdir _build
 #- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build ws-book975x65.tex
-latexmk -pdf -output-directory=_build ws-book975x65
+- latexmk -pdf -output-directory=_build ws-book975x65
 deploy:
   provider: releases
   api_key:
