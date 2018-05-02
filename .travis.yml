@@ -1,12 +1,15 @@
 sudo: required
-dist: xenial
+dist: trusty
 before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra texlive-latex-recommended
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 script:
 - mkdir _build
-- latexmk -pdf ws-book975x65.tex
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build ws-book975x65.tex
+
 deploy:
   provider: releases
+  api_key:
+    secure: eyq1DQCblZX5hLWA5ibcLg
   file:
   - _build/ws-book975x65.pdf
   skip_cleanup: true
