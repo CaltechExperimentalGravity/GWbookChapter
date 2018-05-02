@@ -5,6 +5,7 @@
 *.docx
 *.zip
 .ipynb*
+ws-book975x65.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
