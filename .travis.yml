@@ -27,5 +27,5 @@ cache:
     - $HOME/miniconda
     - $HOME/.cache/Tectonic
 script:
- - tectonic ./main.tex --print
+ - tectonic ./ws-book975x65.tex --print
 
