@@ -1,4 +1,4 @@
-https://travis-ci.com/CaltechExperimentalGravity/GWbookChapter.svg?token=MUh2PBWpkqLo29mMRAgN&branch=master
+![](https://travis-ci.com/CaltechExperimentalGravity/GWbookChapter.svg?token=MUh2PBWpkqLo29mMRAgN&branch=master)
 # GWbookChapter
 Chapter of book for Adv Det GR Centenerary book edited by Saulson and Reitze
 
