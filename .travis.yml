@@ -6,8 +6,6 @@ script:
 - latexmk -pdf ws-book975x65.tex
 deploy:
   provider: releases
-  api_key:
-    secure: <key from travis CLI script>
   file:
   - ws-book975x65.pdf
   skip_cleanup: true
