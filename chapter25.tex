@@ -8,6 +8,7 @@
 % TODO
 % Scattering
 % * diagram of IFO with scattering illustrated
+% * check scattering formulas
 % * put equations in the sections
 % * plot of all of the sources
 %
@@ -19,11 +20,11 @@
 % * collaboration with other fields: controls, materials, astro, GR, lasers
 %
 % Figures
-% -- interactions: less wacky, B&W
-% -- noise budgets: B&W, less busy
-% -- Risk: keep? no, lets drop it
-% -- seismo: B&W
-% -- PEM: B&W
+% x  interactions: less wacky, B&W
+% x  noise budgets: B&W, less busy;  condense into less traces if time
+% x  Risk: keep? no, lets drop it; dropped
+% x  seismo: B&W .... could be better
+% x  PEM:    B&W .... could be better
 %
 \newcommand{\R}[1]{\textcolor{red}{#1}}
 
@@ -105,14 +106,14 @@ regime). This has several problematic consequences:
 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=\columnwidth]{Figures/S6_NB.pdf}
+    \includegraphics[width=\columnwidth]{Figures/S6_NB-BW.pdf}
     \caption{Contribution of Alignment noise to the noise budget of the
     Enhanced LIGO interferometer in Louisiana (2010)}
     \label{fig:eLIGO}
 \end{figure}
 
 \begin{figure}[h]
-    \includegraphics[width=\columnwidth]{Figures/L1-NB.pdf}
+    \includegraphics[width=\columnwidth]{Figures/L1-NB-BW.pdf}
     \caption{Breakdown of the various noise sources for the LIGO Livingston interferometer (4/2017)}
     \label{fig:aLIGO}
 \end{figure}
@@ -175,7 +176,7 @@ elements nearest the mirror must have a very high mechanical Q
 In the ideal steady-state, these modes are driven only by the thermal energy
 dictated by the Equipartition theorem, and their presence in the data can be simply removed through standard techniques~\cite{Allen:1999wy, Finn:Violins, Searle:2003ib, Sintes:1998gq}.
 
-Nature, however, is not so kind. Large seismic transients and instabilites in the control systems can lead to large excitations of these modes. The vertical and roll (rotation about the cavity axis)
+Nature, however, is not so kind. Large seismic transients and instabilities in the control systems can lead to large excitations of these modes. The vertical and roll (rotation about the cavity axis)
 modes of the mirror suspension fall in the lower end of the observation band
 (f $\simeq$ 10\,--\,20\,Hz) and the higher frequency fiber modes which have nodes at
 their endpoints are at multiples of $\sim$\,500\,Hz. The lower frequency modes have
@@ -309,7 +310,7 @@ equivalent of Fermi's 'Golden Rule'\,\cite{Weiss:Scatter97} for optical scatteri
 \begin{equation}
 \frac{dP}{P} = \left( \frac{4 \pi \sigma}{\lambda} \right)^2
 \end{equation}
-where $\sigma$ is the RMS surface roughness. Using the result from
+where $\sigma$ is the RMS surface roughness. Using the measurement result from
 Figure~\ref{fig:PhaseMap}, we can see that the power radiated into
 angles ($\theta_{scat} = \lambda / d_{rough}$) greater than 1\,degree should be
 less than 0.1\,ppm. This underestimates the true number by at least 2 orders of magnitude.
@@ -348,31 +349,23 @@ amorphous thin films during the post-deposition annealing.
     \subfloat[Surf PSD]{{\includegraphics[width=5.5cm]{Figures/ETMpsd.png} }}
     \caption{(left) Surface figure of an uncoated LIGO mirror (ETM07) with the
       spherical curvature and tilt subtracted. The ripple pattern at a radius
-      of 3--15~cm from the center is due to the planetary coating technique.
+      of 3\,--\,15~cm from the center is due to the planetary coating technique.
       (right) 1D power spectrum of surface. Also
       plotted is the RMS surface roughness integrated from high to low
       spatial frequency.}
     \label{fig:PhaseMap}
 \end{figure}
 
-\subsubsection{Case IV: Backscatter from the Bright Port}
+%\subsubsection{Case IV: Backscatter from the Bright Port}
 
 
 
 \subsection{Environmental Noise Sources}
 \label{s:IDC:PEM}
 We would like to imagine that since the interferometers are in a vacuum system and
-protected from the ground by very sophisticated vibrations isolation equipment,
-the coupling of environmental acoustics would be zero. In fact, a host of environmental
-disturbances~\cite{Effler:2015hw, Acernese:2006dq} (cf.~Figure~\ref{fig:EnvironmentalNoise})
-show up in the interferometer output (or are expected to in future detectors)
-at a level much higher than expected by the Navier-Stokes
-equations~\cite{Greenspan:sound} for low frequency acoustics at the $\sim10^{-6}~Pa$
-pressures of high vacuum experiments. The reason for this is that the coupling
-paths are not through vibration of the air molecules in the high vacuum system,
-but through the motion of the vacuum chambers and tubes.
+protected from the outside world by very sophisticated vibrations isolation equipment, the coupling of environmental perturbations would be zero. In fact, a host of environmental disturbances~\cite{Effler:2015hw, Acernese:2006dq} (cf.~Figure~\ref{fig:EnvironmentalNoise}) show up in the interferometer output (or are expected to in future detectors) at a level much higher than expected by the Navier-Stokes equations~\cite{Greenspan:sound} for low frequency acoustics at the $\sim10^{-6}$~Pa pressures of high vacuum experiments. The reason for this is that the coupling paths are not through vibration of the air molecules in the high vacuum system, but through the motion of the vacuum chambers and tubes.
 
-
+In addition to the scattered light mechanisms described in Section~\ref{s:IDC:scatter}, the interferometers are sensitive to electromagnetic fluctuations. This is partly through the control electronics, but also through direct coupling of magnetic fields to the magnets (attached to the mirror suspension) and electric fields coupling to residual electric charge on the mirror surface. Figure~\ref{fig:aLIGO} shows that the electric field noise in particular, is estimated to be one order of magnitude larger than the `fundamental' thermal and quantum noises below in the 10\,--\,30\,Hz band (as of this writing).
 
 
 \begin{figure}[t]
@@ -385,57 +378,8 @@ or control system design.}
 \label{fig:EnvironmentalNoise}
 \end{figure}
 
-\subsection{Complexity}
-\label{s:IDC:Complex}
-The interferometer design should be made as simple as possible, but not so simple as to degrade the controllability and sensitivity.
-In
-Figure~\ref{fig:IDC:SensEvo}, the evolution of the strain sensitivity is plotted
-versus time. The noise hunting~\cite{Rana:PhD} of the interferometer began in earnest at the
-point when the two arm cavities were brought into simultaneous resonance. As is
-clear, the noise reduction in the case of Advanced LIGO has been much more rapid
-than in the initial detectors. What are the reasons for this? There are two chief
-factors: a more experienced interferometer commissioning team and a more expensive
-and complicated interferometer design.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=\columnwidth]{Figures/NoiseProgComp.pdf}
-\caption{Evolution of the interferometer strain sensitivities. The $t = 0$
-  point is chosen, in each case, to coincide with the first time that the
-  two arms are brought into resonance. The circle and star show the evolution of
-  the binary neutron star inspiral reach and the square and the pentagon show
-  the reduction in the strain noise spectral density.}
-\label{fig:IDC:SensEvo}
-\end{figure}
 
-A great deal of emphasis is often placed on making the system design 'simple'
-(a phrase which seems to have different meanings to everyone). A great
-experiment should be designed to be as simple as possible, but no more so. We have
-seen that the initial generation of detector was made too simple; passive vibration
-isolation using tables made of rubber and steel, single stage pendulums holding
-the mirrors, and no adaptive optics. The complicated vibration isolation system,
-which includes N sensors and N feedback loops (cf. Chapter~\ref{SEI})
-reduces the seismic motions of the interferometer mirrors by
-orders of magnitude (compare the 0.1\,--\,3\,Hz transfer functions of AdvLIGO/Virgo with GEO600, initial LIGO, and TAMA SAS). The
-complicated multiple stage pendulum Virgo, GEO600, and Adv. LIGO
-allows the remaining seismic motion to be allocated intelligently
-among the different stages, such that the actuators in the final stages
-may be weak and inject less noise. By integrating the thermal wavefront
-compensation systems (cf.~\ref{TCS}) in the baseline design, the
-interferometers can be made to operate stably with any operating power,
-whereas the first generation interferometers suffered from a lack of optical stability at all but a narrow range of operating power levels.
-
-The addition of hundreds of sensors and feedback loops, along with more careful
-optical modeling, has lead to a more 'simple' system from the standpoint of
-detector commissioning and has reduced the time between installation and astrophysical data taking. The information earned by fighting with first generation of interferometers has yielded valuable fruits and one can only assume that we are now sowing the seeds for the third generation to reap.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\columnwidth]{Figures/aLIGO_noises.pdf}
-\caption{Strain noise reduction of the Advanced LIGO interferometers
-  through 2016. \R{change to BW} }
-\label{fig:IDC:aLIGOnoises}
-\end{figure}
 
 
 % \section{Risk Register and Risk Reduction Research}
@@ -596,6 +540,9 @@ The acousto-optic parametric instability~\cite{Matt:PI} control
 % technqiues and tricks that we have not thought to publish~\cite{HarryCollins}
 % and to establish personal relationships which allow the free exchange of
 % knowledge in the future and make it easy to ask for help.
+
+
+\input{Complexity}
 
 
 \section{Conclusion}
