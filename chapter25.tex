@@ -52,7 +52,7 @@ so rich, and so challenging.
 
 
 \section{Sub-system Integration Issues}
-We design the individual components of the interfererometer to fulfill some
+We design the individual components of the interferometer to fulfill some
 primary goals with some secondary considerations.
 
 In some cases, however, the most important driver in the design should, in fact, be the interaction that this 'isolated' component has with the full system. In some cases, this interaction is only apparent with the highest circulating laser power levels and only when considering the smallest mirror displacements.
@@ -64,7 +64,7 @@ interaction.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{Figures/SystemConflicts-BW.pdf}
-\caption{Examples of interactions between subsytems}
+\caption{Examples of interactions between subsystems}
 \label{fig:SystemConflicts}
 \end{figure}
 
@@ -82,7 +82,7 @@ regime). This has several problematic consequences:
   power leads to static and dynamic instabilities in mirror
   orientations~\cite{Sidles:2006un, Dooley:13, aLIGO:ASC}. In addition
   to producing more mirror motion, the concomitant increase in the angular feedback control bandwidth (cf.~Chapter~\ref{ASC}) increases the noise injected into the GW strain channel at low frequencies (cf.~Fig.~\ref{}).
-\item In addition to angular instabilites, the system of compound
+\item In addition to angular instabilities, the system of compound
   resonant cavities can exhibit instabilities along the optical cavity
   axis~\cite{SGLMW2004, BuCh2002, Osamu:spring}. This unstable opto-mechanical eigenfrequency can show up in the GW detection band, making the control system challenging to design (cf.~Chapter~\ref{LSC}).
 \item Through the finite optical absorption in the mirror substrates
@@ -90,14 +90,14 @@ regime). This has several problematic consequences:
   mirrors and thermal gradients are formed. These lead to thermal
   lensing and thermal deformations (cf.~Chapter~\ref{TCS}) which can
   reduce the stored power in the system, destabilize the MIMO angular
-  control system, increase the coupling of laser ampltidue and
+  control system, increase the coupling of laser amplitude and
   frequency noise to the strain channel, spoil the dark fringe
   contrast, and aggravate opto-acoustic parametric instabilities (cf.~Chapter~\ref{SYS}).
 \item Light which scatters out of the main interferometer and then returns
   after interacting with a vibrating piece of the environment, will be phase
   modulated by that vibration. In a low power interferometer, this will just
   produce phase noise, but depending upon the relative phase of the
-  interferometer field and the backscattered light, this can also produce
+  interferometer field and the back-scattered light, this can also produce
   amplitude noise. These amplitude fluctuations (via radiation pressure) can
   produce as much as an order of magnitude more strain noise than mere
   phase fluctuations.
@@ -125,7 +125,7 @@ provide much attenuation of noise at higher frequencies.  This results in some (
 one encountered in analog electronic filter design: a sharp transition from
 the passband to the stopband requires complex poles in the passband (e.g.
 in Chebyshev filters) which amplify the signals at those frequencies. This
-is ameiliorated somewhat through the use of active (a.k.a. `cold') damping
+is ameliorated somewhat through the use of active (a.k.a. `cold') damping
 techniques~\cite{Kuroda:1982vf, Forward:1979ks, Shapiro:2015di}.
 
 
@@ -151,8 +151,8 @@ Important considerations in test mass suspension design\cite{SUS:2012, Aston:201
      comes from the suspension. To fulfill this requirement, the mirror must be isolated by a
      multi-stage pendulum~\cite{Beker:2011}.
    \item low suspension thermal noise and minimization of creep noise~\cite{Levin:2012ek, Gretarsson:2005gs}
-   \item third priority is some thoughts on damping
-   \item 4th priority is minimize damping noise
+   \item ability to damp high Q suspension modes
+   \item ability to damp in a low-noise way
    \item should instead consider upconversion, control forces, gradual noise
       reduction, minimization of angular noise generation, etc. all together in
       holistic metric v. sensitivity and uptime.
@@ -195,11 +195,11 @@ loops have been designed to damp these modes~\cite{martynov2015lock, Miller:ESD}
 installed systems, the only way to damp these modes is to sense their perturbation
 of the mirror motion and apply feedback forces to the suspension chain. In the case
 that thermally induced drifts cause the mode frequencies to overlap, the problem
-becomes intractable and results in massive downtime of the detectors. Future designs may utilize dedicated hardware solutions to apply damping forces without degrading the thermal noise~\cite{Dmitriev:2010hk, Lockerbie:2011zma}.
+becomes nearly intractable and results in significant downtime of the detectors. Future designs may utilize dedicated hardware solutions to apply damping forces without degrading the thermal noise~\cite{Dmitriev:2010hk, Lockerbie:2011zma}.
 
 Ultimately, we have seen that it is not wise to have high Q mechanical modes
 which are nearly invisible to the control systems. The cost, in terms of time
-spent developing an ad-hoc solution, is quite high.
+spent developing an \emph{ad-hoc} solution, is quite high.
 
 %\subsection{Digital Control Systems: A second example}
 
@@ -232,132 +232,7 @@ spent developing an ad-hoc solution, is quite high.
 % \end{itemize}
 
 
-\subsection{Scattered Light}
-\label{s:IDC:scatter}
-The sensitivity required to make gravitational wave measurements can
-be expressed also as a sensitivity to \textit{optical phase} fluctuations.
-The current state of the art is approximately
-$10^{-11}$ radians/$\sqrt{\rm Hz}$ and is nominally considered to be
-limited by quantum mechanics and the available laser power (cf.~Chapter~\ref{SQN}). Practically, however, all of the high
-sensitivity interferometers in the past 30 years have been limited
-at some frequencies by the non-fundamental phase fluctuations due to
-scattered light. This phenomenon of excess phase noise due to scattered
-light has been known about for decades~\cite{Schilling:1981} but
-the methods by which to combat it have been developing steadily since
-then and involve the highest levels of experimental artistry in the
-field of laser interferometry.
-
-Due to imperfections in the optics, for example, a small fraction of
-the laser light escapes from the main interferometer beam path. This
-light then interacts with something (e.g. a piece of the vacuum system
-or some other suspended optic or beam dump) and then recombines with the
-circulating laser field within the interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012,
-Stefano:Scatter, vinet1997scattered, fritschel1998high}.
-The recombination may occur at virtually any point within the system:
-inside of the Fabry-Perot arm cavities, at the beamsplitter, or even at
-the final photodetector which records the GW strain signal. Scattered
-light induced phase noise in the sensing of auxilliary degrees of
-freedom can couple into the strain channel through the relevant
-feedback control systems (cf.~Chapter~\ref{LSC, NFN}).
-
-It is illuminating to consider \emph{quantitatively} the amplitude of
-the noise for a few of these cases.
-
-\subsubsection{Case I: The Beam Tube Baffles}
-% based on T1300354
-The case of scattering from the multi-km beam tubes connecting the ends of the
-interferometer has been studied by Whitcomb, Weiss, Thorne, and Flanagan (for LIGO)
-and by Braccini, Vinet, et al. (for Virgo); see references above. Here we provide
-a condensed version of their arguments so as to construct a noise budget for backscatter.
-Let us assume in this case that the field scatters from the test mass surface,
-reflects from a piece of multi-km long beamtube, returns to the same test mass
-mirror, and then recombines into the circulating cavity mode. The resulting phase
-fluctuation of the electric field will be
-\begin{equation}
-\delta u_{s} = \frac{4 \pi}{\lambda} x_{s}(f) P_s^{1/2}
-\end{equation}
-For comparison, the field fluctuation due to mirror motion will be
-\begin{equation}
-\delta u_{m} = \frac{4 \pi}{\lambda} x_{m}(f) P_0^{1/2}
-\end{equation}
-where $x_s$ is the motion of the beamtube in the direction of the mirror, $x_m$
-is the motion of the interferometer mirror, $\lambda$ is the laser wavelength,
-$P_0$ is the power stored in the arm cavity, and $P_s$ is the power which
-recombines into the circulating cavity mode. Ignoring for a moment the radiation
-pressure effects, we can see that the phase noise due to this type of backscatter
-can be simply expressed (in units of mirror displacement) using the ratios of
-the stored power and the backscattered power. The recombined power is
-\begin{equation}
-\frac{\delta P_s}{P_0} = \frac{\lambda^2}{r^2} \left( \frac{dP}{d\Omega_{mb}}\right)^2 \frac{dP}{d\Omega_{bm}} \delta \Omega_{mb}
-\end{equation}
-
-
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=\columnwidth]{Figures/ETM_scatter-BW.pdf}
-    \caption{Schematic diagram of a LIGO interferomer mirror and surrounding vacuum chambers responsible for backscattered light.}
-    \label{fig:ETMscat}
-\end{figure}
-
-
-
-\subsubsection{Case II: The Test Mass Chambers}
-During the operation of the first generation of kilometer scale interferometers,
-it became clear that the scattered light from the test mass mirrors was not
-all concentrated into small angles (as predicted by theory for super-polished
-optics). To calculate the total power scattered into wide angles, one can use the
-equivalent of Fermi's 'Golden Rule'\,\cite{Weiss:Scatter97} for optical scattering:
-\begin{equation}
-\frac{dP}{P} = \left( \frac{4 \pi \sigma}{\lambda} \right)^2
-\end{equation}
-where $\sigma$ is the RMS surface roughness. Using the measurement result from
-Figure~\ref{fig:PhaseMap}, we can see that the power radiated into
-angles ($\theta_{scat} = \lambda / d_{rough}$) greater than 1\,degree should be
-less than 0.1\,ppm. This underestimates the true number by at least 2 orders of magnitude.
-
-Based on cavity ringdown and resonant reflectivity tests (cf.~\cite{Isogai2013}),
-the round trip (arm cavity) loss in the initial LIGO interferometers ranged from
-$\sim$60--140\,ppm. For two of the Advanced LIGO interferometers, the loss
-is in the $\sim$80--120\,ppm range. Wide angle, \textit{in situ},
-measurements (using calibrated photodetectors and CCD cameras) show
-that the total loss for $\theta_{scat} \gtrsim 1\deg$ is $\sim$\,15\,ppm and that
-the angular distribution in that range is that of a Lambertian surface. Images
-such as the one in Figure\,\ref{fig:2kETMy}, implicate point-like structures.
-Repeated cleaning of the surface using various techniques reveals a largely
-unchanging pattern, implying that the points are defects in the dielectric
-mirror coatings, rather than surface contaminants. Although the details of the
-story are still being investigated, it seems likely that the defects are due to
-artifacts of the ion beam sputtering process as well as crystal formation in the
-amorphous thin films during the post-deposition annealing.
-
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=\columnwidth]{Figures/Cheryl-2ketmy.pdf}
-    \caption{Image of an initial LIGO test mass during normal operation. The large blob near the top of the image is due to a diagnostic beam. The 'starry night' of points are believed to be due to point defects in the high reflection coating and contribute ot small and large angle scattering. Photo credit: Cheryl Vorvick (LHO)}
-    \label{fig:2kETMy}
-\end{figure}
-
-
-
-
-\subsubsection{Case III: Backscatter from the Dark Port}
-
-\begin{figure}
-    \centering
-    \subfloat[Phase Map]{{\includegraphics[width=6cm]{Figures/ETMphasemap.png} }}
-    \qquad
-    \subfloat[Surf PSD]{{\includegraphics[width=5.5cm]{Figures/ETMpsd.png} }}
-    \caption{(left) Surface figure of an uncoated LIGO mirror (ETM07) with the
-      spherical curvature and tilt subtracted. The ripple pattern at a radius
-      of 3\,--\,15~cm from the center is due to the planetary coating technique.
-      (right) 1D power spectrum of surface. Also
-      plotted is the RMS surface roughness integrated from high to low
-      spatial frequency.}
-    \label{fig:PhaseMap}
-\end{figure}
-
-%\subsubsection{Case IV: Backscatter from the Bright Port}
-
+\input{Backscatter}
 
 
 \subsection{Environmental Noise Sources}
@@ -483,7 +358,7 @@ In addition to the instabilities caused by the mirror
     excited by the control system, either by the physical mirror actuators
     or through the high bandwidth laser frequency control loops
     (cf.~Chapter~\ref{LSC}) which can apply forces to the mirrors by the
-    frequency to ampltiude conversion in detuned optical cavities and the
+    frequency to amplitude conversion in detuned optical cavities and the
     resulting radiation pressure force.
 
 The acousto-optic parametric instability~\cite{Matt:PI} control
@@ -546,17 +421,30 @@ The acousto-optic parametric instability~\cite{Matt:PI} control
 
 
 \section{Conclusion}
-These wise things should be kept in mind while doing the detector commissioning.
+What wise things should be kept in mind while dreaming about the next
+generation of gravitational wave detectors, and also while we continue
+to improve the machines we now have? Above all, I have found the
+following items to be of vital importance:
 
-In addition to the usual thoughts about how to radically improve the detector sensitivity.
+\begin{enumerate}
+\item An experienced, curious, and motivated team to spend many years
+  deeply understanding all facets of the interferometer.
+\item The ability to develop simple mental models of the systems, so
+  as to guide the debugging without having to resort to long
+  computations.
+\item A detailed and up-to-date Noise Budget
+  (cf.~Figures~\ref{fig:eLIGO} and \ref{fig:aLIGO}) to track subtle
+  changes in the noise as progress is made.
+\item Agile computer models of the interferometer, at all levels of
+  detail, which allow for quick answers to easy questions and reliable
+  answers for complicated questions.
+\end{enumerate}
+
+
 
 Its not possible to think of everything. We need to incorporate the lessons of
 the previous generation of detector, while keeping in mind that the design will
-be imperfect. How shall we achieve the last order of magnitude in sensitivity
-in a rational and deterministic way?
-
-Its important, above all, to stay flexible
-and be able to determine when a given system is not functioning adaquetly. At
-what point do we decide that the 'hose clamps and duct tape' approach won't
-work and we need a professionally engineered replacement for the
-malfunctioning component or system or method?
+be imperfect. The road between our current understanding of our
+apparatuses and the ultimate quantum limits of the future ones is
+filled with nearly invisible speed bumps. The best that we can do is
+prepare to be surprised.

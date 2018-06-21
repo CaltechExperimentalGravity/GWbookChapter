@@ -6,6 +6,7 @@ DOC = ws-book975x65
 all: pdf
 pdf:
 	latexmk -pdf $(DOC)
+	latexmk -c $(DOC)
 
 continuous:
 	latexmk -pdf -pvc $(DOC)
