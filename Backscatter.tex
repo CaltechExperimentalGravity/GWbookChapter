@@ -20,7 +20,7 @@ the laser light escapes from the main interferometer beam path. This
 light then interacts with something (e.g. a piece of the vacuum system
 or some other suspended optic or beam dump) and then recombines with the
 circulating laser field within the
-interferometer~\cite{Kip:Scatter95, Kip:scatter1989, Sam:Scatter2012,
+interferometer~\cite{Kip:Scatter95, Kip:Baffles1989, Sam:Scatter2012,
 Stefano:Scatter, vinet1997scattered, fritschel1998high}.
 The recombination may occur at virtually any point within the system:
 inside of the Fabry-Perot arm cavities, at the beamsplitter, or even at
@@ -29,8 +29,24 @@ light induced phase noise in the sensing of auxiliary degrees of
 freedom (cf.~Chapter~\ref{LSC, NFN}) can couple into the strain channel
 through the relevant feedback control systems .
 
-It is illuminating to consider \emph{quantitatively} the amplitude of
-the noise for a few of these cases.
+It is illuminating to consider \emph{quantitatively} the 
+amplitude of the noise for a few of these cases.
+
+
+\begin{figure}
+    \centering
+    \subfloat[Phase Map]{{\includegraphics[width=6cm]{Figures/ETMphasemap.png} }}
+    \qquad
+    \subfloat[Surf PSD]{{\includegraphics[width=5.5cm]{Figures/ETMpsd.png} }}
+    \caption{(left) Surface figure of an uncoated LIGO mirror (ETM07) with the
+      spherical curvature and tilt subtracted. The ripple pattern at a radius
+      of 3\,--\,15\,cm from the center is due to the planetary coating technique.
+      (right) 1D power spectrum of surface. Also
+      plotted is the RMS surface roughness integrated from high to low
+      spatial frequency.}
+    \label{fig:PhaseMap}
+\end{figure}
+
 
 \subsubsection{Case I: The Beam Tube Baffles}
 % based on T1300354
@@ -63,14 +79,14 @@ where the factor of 2 comes from only including phase fluctuations of the backsc
 
 So in order to estimate the $x_m$, we will have to compute $P_s$.
 This can be written down by tracing the path of the beam and considering
-the relevant scattering cross sections at each step:
+the relevant scattering cross sections at each step~\cite{Kip:Baffles1989}:
 \begin{enumerate}
 \item The probability for the main beam to scatter into some angle towards a potential backscatterer.
 \item The probability for that backscatterer to scatter light back towards the mirror.
 \item The probability for that field to scatter back into the cavity mode.
 \end{enumerate}
 \begin{equation}
-P_s = P_0 \frac{\lambda^2}{r^2} \delta \Omega_{ms} \frac{dP}{d\Omega_{ms}} \frac{dP}{d\Omega_{bm}} \frac{dP}{d\Omega_{sm}}
+P_s = P_0 \frac{\lambda^2}{d^2} \delta \Omega_{ms} \frac{dP}{d\Omega_{ms}} \frac{dP}{d\Omega_{bm}} \frac{dP}{d\Omega_{sm}}
 \label{eq:ScatProb1}
 \end{equation}
 In the above equation, the scatter probability is used; this is related to the
@@ -80,7 +96,7 @@ corresponds to normal incidence.
 The scattering in/out of the main cavity mode has time reversal symmetry,
 and so the first and last probabilities in \eqref{eq:ScatProb1} are equal:
 \begin{equation}
-P_s = P_0 \frac{\lambda^2}{r^2} \delta \Omega_{ms}
+P_s = P_0 \frac{\lambda^2}{d^2} \delta \Omega_{ms}
 \bigg(\frac{dP}{d\Omega_{ms}}\bigg)^2 \frac{dP}{d\Omega_{bm}}
 \label{eq:ScatProb2}
 \end{equation}
@@ -93,7 +109,12 @@ P_s = P_0 \frac{\lambda^2}{r^2} \delta \Omega_{ms}
     \label{fig:ETMscat}
 \end{figure}
 
-
+Based on the dimensions in Figure~\ref{fig:ETMscat}, we can see that
+we should consider angles of $\sim r_{\rm tube}/d_{\rm scat}$, where
+$r_{\rm tube} \simeq 0.5$\,m and $d_{\rm scat} \sim$10\,--\,4000\,m
+for the mirror BRDF. For light scattered into these angles
+($\theta_{scat} = \lambda / d_{rough}$), we need to consider spatial scales
+(cf. Figure~\ref{PSD}) of X - XX m.
 
 \subsubsection{Case II: The Test Mass Chambers}
 During the operation of the first generation of kilometer scale interferometers,
@@ -108,7 +129,7 @@ equivalent of Fermi's 'Golden Rule'\,\cite{Weiss:Scatter97} for optical scatteri
 where $\sigma$ is the RMS surface roughness, and $\lambda$ is the
 laser wavelength. Combining the measurement result from
 Figure~\ref{fig:PhaseMap} with \eqref{eq:GoldenRule}, we can see that the power radiated into
-angles ($\theta_{scat} = \lambda / d_{rough}$) greater than 1\,degree should be
+angles greater than 1\,degree should be
 less than 0.1\,ppm. This underestimates the true number by
 at least 2 orders of magnitude.
 
@@ -121,9 +142,9 @@ that the total loss for $\theta_{scat} \gtrsim 1\deg$ is $\sim$\,15\,ppm.
 However, it is not at all clear that the angular distribution in that
 range is that of a Lambertian surface. Measurements taken at angles of
 $\sim$ (0.5 m)/(4000 m) $\approx 0.1$\,mrad show a large azimuthal dependence
-(i.e. the BSDF is not symmetric around the beam axis).
-Images
-such as the one in Figure\,\ref{fig:2kETMy}, implicate point-like structures.
+(i.e. the BRDF is not symmetric around the beam axis).
+Images, such as the one in Figure\,\ref{fig:2kETMy}, 
+implicate point-like structures.
 Repeated cleaning of the surface using various techniques reveals a largely
 unchanging pattern, implying that the points are defects in the dielectric
 mirror coatings, rather than surface contaminants. Although the details of the
@@ -134,29 +155,35 @@ post-deposition annealing.
 
 %\subsubsection{Case III: Backscatter from the Dark Port}
 \paragraph{Backscatter from the Dark Port}
+Another location which requires much care in design is the (dark)
+detection port of the interferometer. Since it is in this location
+that the very small optical phase measurements are done, any small
+fields at this location can be potentially troublesome.
 
+In particular, most of the past and current interferometers have
+$\sim10\,--\,100$\,mW of light going from the beamsplitter in the
+direction of the GW detection photodiodes. Some of this light is
+unwanted (coming from the contrast defect of the light from the two
+arms) and some is there intentionally (a local oscillator field at
+either the main laser frequency or offset by tens of MHz in the case
+of interferometers with heterodyne readout). As with all sources of
+backscatter, the fields which scatter back into the interferometer
+from the dark port produce both amplitude and phase modulation.
 
+In order to reduce the backscatter noise from the dark port to an
+acceptable level, \R{baffles, seismic iso, Faraday, good PDs, good OMC, ...}
 
 \begin{figure}[h]
   \centering
     \includegraphics[width=\columnwidth]{Figures/Cheryl-2ketmy.pdf}
-    \caption{Image of an initial LIGO test mass during normal operation. The large blob near the top of the image is due to a low power diagnostic beam. The 'starry night' of points are believed to be due to point defects in the high reflection coating and contribute to small and large angle scattering. Photo credit: Cheryl Vorvick (LHO)}
+    \caption[Point defects in a LIGO mirror]{Image of an initial LIGO 
+      test mass during normal operation. The large blob near the top
+      of the image is due to a low power diagnostic beam. The 
+      'starry night' of points are believed to be due to point 
+      defects in the high reflection coating and contribute to small 
+      and large angle scattering. Photo credit: Cheryl Vorvick (LHO)}
     \label{fig:2kETMy}
 \end{figure}
 
-
-\begin{figure}
-    \centering
-    \subfloat[Phase Map]{{\includegraphics[width=6cm]{Figures/ETMphasemap.png} }}
-    \qquad
-    \subfloat[Surf PSD]{{\includegraphics[width=5.5cm]{Figures/ETMpsd.png} }}
-    \caption{(left) Surface figure of an uncoated LIGO mirror (ETM07) with the
-      spherical curvature and tilt subtracted. The ripple pattern at a radius
-      of 3\,--\,15\,cm from the center is due to the planetary coating technique.
-      (right) 1D power spectrum of surface. Also
-      plotted is the RMS surface roughness integrated from high to low
-      spatial frequency.}
-    \label{fig:PhaseMap}
-\end{figure}
 
 %\subsubsection{Case IV: Backscatter from the Bright Port}
