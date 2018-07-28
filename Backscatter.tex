@@ -1,4 +1,4 @@
-\subsection{Scattered Light}
+\section{Scattered Light}
 \label{s:IDC:scatter}
 The sensitivity required to make gravitational wave measurements can
 be expressed also as a sensitivity to optical \textit{phase} fluctuations.
@@ -29,8 +29,7 @@ light induced phase noise in the sensing of auxiliary degrees of
 freedom (cf.~Chapter~\ref{LSC, NFN}) can couple into the strain channel
 through the relevant feedback control systems .
 
-It is illuminating to consider \emph{quantitatively} the 
-amplitude of the noise for a few of these cases.
+%It is illuminating to consider \emph{quantitatively} the amplitude of the noise for a few of these cases.
 
 
 \begin{figure}
@@ -48,7 +47,7 @@ amplitude of the noise for a few of these cases.
 \end{figure}
 
 
-\subsubsection{Case I: The Beam Tube Baffles}
+\subsection{Case I: The Beam Tube Baffles}
 % based on T1300354
 The case of scattering from the multi-km beam tubes connecting the ends of the
 interferometer has been studied by Whitcomb, Weiss, Thorne, and Flanagan (for LIGO)
@@ -112,11 +111,13 @@ P_s = P_0 \frac{\lambda^2}{d^2} \delta \Omega_{ms}
 Based on the dimensions in Figure~\ref{fig:ETMscat}, we can see that
 we should consider angles of $\sim r_{\rm tube}/d_{\rm scat}$, where
 $r_{\rm tube} \simeq 0.5$\,m and $d_{\rm scat} \sim$10\,--\,4000\,m
-for the mirror BRDF. For light scattered into these angles
-($\theta_{scat} = \lambda / d_{rough}$), we need to \R{consider spatial scales
-(cf. Figure~\ref{PSD}) of X - XX m}.
+for the mirror BRDF. 
+For light scattered into these angles ($\theta_{scat} = \lambda /
+\lambda_{rough} \simeq$ 0.1\,--50\,mrad), 
+we need to consider spatial scales on the mirror of
+ (cf. Figure~\ref{fig:PhaseMap}) $\lambda_{rough} \sim $ 0.001\,--\,1\,cm.
 
-\subsubsection{Case II: The Test Mass Chambers}
+\subsection{Case II: The Test Mass Chambers}
 During the operation of the first generation of kilometer scale interferometers,
 it became clear that the scattered light from the test mass mirrors was not
 all concentrated into small angles (as predicted by theory for super-polished
@@ -151,11 +152,11 @@ unchanging pattern, implying that the points are defects in the dielectric
 mirror coatings, rather than surface contaminants. Although the details of the
 story are still being investigated, it seems possible that the defects
 are due to artifacts of the ion beam sputtering process~\cite{reid2016development} as well as
-crystal formation in the amorphous thin films during the
+crystal formation~\cite{Qin:ks} in the amorphous thin films during the
 post-deposition annealing.
 
 %\subsubsection{Case III: Backscatter from the Dark Port}
-\paragraph{Backscatter from the Dark Port}
+\subsection{Backscatter from the Dark Port}
 Another location which requires much care in design is the (dark)
 detection port of the interferometer. Since it is in this location
 that the very small optical phase measurements are done, any small
@@ -184,6 +185,11 @@ acceptable level, a series of measures are generally taken:
   specular reflection and minimize the backscattering into the interferometer.
 \end{itemize}
 
+One promising approach would be to limit the amount of carrier light
+which is transmitted by the interferometer to the dark port. The idea
+of making a balanced homodyne readout~\cite{fritschel2014balanced}
+utilizing a local oscillator field from an auxiliary beam is being
+pursued as a future upgrade of Advanced LIGO.
 
 
 \begin{figure}[h]
