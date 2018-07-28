@@ -20,7 +20,7 @@
 % * collaboration with other fields: controls, materials, astro, GR, lasers
 %
 % Figures
-% x  interactions: less wacky, B&W
+% x  interactions: less wacky, B&W --- DONE
 % x  noise budgets: B&W, less busy;  condense into less traces if time
 % x  Risk: keep? no, lets drop it; dropped
 % x  seismo: B&W .... could be better
@@ -64,7 +64,7 @@ interaction.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{Figures/SystemConflicts-BW.pdf}
-\caption{Examples of interactions between subsystems}
+\caption{Examples of interactions (squares) between subsystems (pentagons).}
 \label{fig:SystemConflicts}
 \end{figure}
 
@@ -238,9 +238,24 @@ spent developing an \emph{ad-hoc} solution, is quite high.
 \subsection{Environmental Noise Sources}
 \label{s:IDC:PEM}
 We would like to imagine that since the interferometers are in a vacuum system and
-protected from the outside world by very sophisticated vibrations isolation equipment, the coupling of environmental perturbations would be zero. In fact, a host of environmental disturbances~\cite{Effler:2015hw, Acernese:2006dq} (cf.~Figure~\ref{fig:EnvironmentalNoise}) show up in the interferometer output (or are expected to in future detectors) at a level much higher than expected by the Navier-Stokes equations~\cite{Greenspan:sound} for low frequency acoustics at the $\sim10^{-6}$~Pa pressures of high vacuum experiments. The reason for this is that the coupling paths are not through vibration of the air molecules in the high vacuum system, but through the motion of the vacuum chambers and tubes.
+protected from the outside world by very sophisticated vibrations
+isolation equipment, the coupling of environmental perturbations would
+be zero. In fact, a host of environmental
+disturbances~\cite{Effler:2015hw, Acernese:2006dq}
+(cf.~Figure~\ref{fig:EnvironmentalNoise}) show up in the
+interferometer output (or are expected to in future detectors) at a
+level much higher than expected by the Navier-Stokes
+equations~\cite{Greenspan:sound} for low frequency acoustics at the
+$\sim10^{-6}$~Pa pressures of high vacuum experiments. The reason for
+this is that the coupling paths are not through vibration of the air
+molecules in the high vacuum system. Rather it is through the motion of the vacuum chambers and tubes.
 
-In addition to the scattered light mechanisms described in Section~\ref{s:IDC:scatter}, the interferometers are sensitive to electromagnetic fluctuations. This is partly through the control electronics, but also through direct coupling of magnetic fields to the magnets (attached to the mirror suspension) and electric fields coupling to residual electric charge on the mirror surface. Figure~\ref{fig:aLIGO} shows that the electric field noise in particular, is estimated to be one order of magnitude larger than the `fundamental' thermal and quantum noises below in the 10\,--\,30\,Hz band (as of this writing).
+In addition to the scattered light mechanisms described in
+Section~\ref{s:IDC:scatter}, the interferometers are sensitive to
+electromagnetic fluctuations. This is partly through the control
+electronics, but also through direct coupling of magnetic fields to
+the magnets (attached to the mirror suspension) and electric fields
+coupling to residual electric charge on the test mass surface. Figure~\ref{fig:aLIGO} shows that the electric field noise in particular, is estimated to be one order of magnitude larger than the `fundamental' thermal and quantum noises below in the 10\,--\,20\,Hz band (as of this writing).
 
 
 \begin{figure}[t]
@@ -332,15 +347,17 @@ a few of these are in place for some of the detectors (KAGRA, Virgo, LIGO, GEO),
 it is fair to say that none of the following have been uniformly implemented and
 they are esoteric enough to make this unsurprising.
 
-Since the GW detection band overlaps mainly with the audio band, the
-    digital systems which we use to record signals and hunt for noise. The highest
-    frequencies that we can monitor are 10\,--\,20\,kHz. In order to diagnose
-    excess noise in lasers, electronics, etc. at frequencies of up to several
-    MHz we are often forced to move analog equipment around the site and manually
-    check for problems. In future detectors, more care should be paid to allowing
-    for these diagnostics, either by the use of FPGA based high frequency
-    digitizers or by remote access of dedicated analog test instruments.
+\paragraph{RF Diagnostics}
+Since the GW detection band overlaps mainly with the audio band, so do
+the digital systems which we use to record signals and hunt for
+noise. The highest frequencies that are monitored are
+10\,--\,20\,kHz. In order to diagnose excess noise in lasers,
+electronics, etc. at frequencies of up to several MHz we are often
+forced to move analog equipment around the site and manually check for
+problems. In future detectors, more care should be paid to allowing
+for these diagnostics, either by the use of FPGA based high frequency digitizers(cf. the Fermilab Holometer~\cite{Chou:2017em}) or by remote access of dedicated analog test instruments.
 
+\paragraph{Higher order spatial modes}
 Chapter\,\ref{COP} describes the higher order spatial modes (HOM) of
     Fabry-Perot optical resonators. Most of the considerations included when
     refining the design of the modern detectors, either consider the frequency
@@ -351,29 +368,35 @@ Chapter\,\ref{COP} describes the higher order spatial modes (HOM) of
     This situation is complicated by the non-spherical aberrations in the mirrors
     produced by polishing errors, coating non-uniformity, and time dependent
     thermal gradients. These effects all serve to move the HOM resonance frequencies
-    slightly from their ideal positions~\cite{Siegman:Lasers}.
+    slightly from their ideal positions~\cite{Siegman:Lasers}. In
+    future detectors, it would be useful to have monitors of the
+    spatial mode content of all the laser fields in the
+    interferometer. This, combined with simulations, would provide
+    important insights into the surface perturbations of the mirrors
+    as well as the resulting frequency responses of the optical cavities.
 
+\paragraph{High frequency instabilities}
 In addition to the instabilities caused by the mirror
     suspension (described above), the eigenmodes of the mirrors can be
     excited by the control system, either by the physical mirror actuators
     or through the high bandwidth laser frequency control loops
     (cf.~Chapter~\ref{LSC}) which can apply forces to the mirrors by the
     frequency to amplitude conversion in detuned optical cavities and the
-    resulting radiation pressure force.
+    resulting radiation pressure force. The acousto-optic parametric
+    instability~\cite{Matt:PI} control systems, by definition, require
+    high frequency monitoring capability (cf.~Chapter~\ref{SYS}). The
+    ability to monitor, and also apply force feedback, at these
+    ultrasonic frequencies will be very useful for the high Q modes.
 
-The acousto-optic parametric instability~\cite{Matt:PI} control
-    systems, by definition, require high frequency monitoring capability
-    (cf.~Chapter~\ref{SYS}).
-
-\begin{itemize}
-  \item non-uniform optic absorption
-  \item time dependence of optical scattering
-  \item how close are the optics to the stops
-  \item THD of the force actuators
-  \item THD of the displacement sensors
-  \item strain release in vacuum system couples to IFO by scattered light
-  \item bursts of gas lead to transient phase noise in arm cavities
-\end{itemize}
+% \begin{itemize}
+%   \item non-uniform optic absorption
+%   \item time dependence of optical scattering
+%   \item how close are the optics to the stops
+%   \item THD of the force actuators
+%   \item THD of the displacement sensors
+%   \item strain release in vacuum system couples to IFO by scattered light
+%   \item bursts of gas lead to transient phase noise in arm cavities
+% \end{itemize}
 
 % \section{People}
 % \label{s:People}
