@@ -133,10 +133,11 @@ angles greater than 1\,degree should be
 less than 0.1\,ppm. This underestimates the true number by
 at least 2 orders of magnitude.
 
-Based on cavity ringdown and resonant reflectivity tests (cf.~\cite{Isogai2013}),
-the round trip (arm cavity) loss in the initial LIGO interferometers ranged from
-$\sim$60--140\,ppm. For two of the Advanced LIGO interferometers, the loss
-is in the $\sim$80--120\,ppm range. Wide angle, \textit{in situ},
+Based on cavity ringdown and resonant reflectivity tests 
+(cf.~\cite{Isogai2013}), the round trip (arm cavity) loss in the
+ initial LIGO interferometers ranged from
+$\sim$60\,--\,140\,ppm. For two of the Advanced LIGO interferometers, the loss
+is in the $\sim$80\,--\,120\,ppm range. Wide angle, \textit{in situ},
 measurements (using calibrated photodetectors and CCD cameras) show
 that the total loss for $\theta_{scat} \gtrsim 1\deg$ is $\sim$\,15\,ppm.
 However, it is not at all clear that the angular distribution in that
@@ -149,7 +150,7 @@ Repeated cleaning of the surface using various techniques reveals a largely
 unchanging pattern, implying that the points are defects in the dielectric
 mirror coatings, rather than surface contaminants. Although the details of the
 story are still being investigated, it seems possible that the defects
-are due to artifacts of the ion beam sputtering process as well as
+are due to artifacts of the ion beam sputtering process~\cite{reid2016development} as well as
 crystal formation in the amorphous thin films during the
 post-deposition annealing.
 
@@ -161,7 +162,7 @@ that the very small optical phase measurements are done, any small
 fields at this location can be potentially troublesome.
 
 In particular, most of the past and current interferometers have
-$\sim5\,--\,50$\,mW of light going from the beamsplitter in the
+$\sim$5\,--\,50\,mW of light going from the beamsplitter in the
 direction of the GW detection photodiodes. Some of this light is
 unwanted (coming from the contrast defect of the light from the two
 arms) and some is there intentionally (a local oscillator field at
@@ -173,15 +174,17 @@ from the dark port produce both amplitude and phase modulation.
 In order to reduce the backscatter noise from the dark port to an
 acceptable level, a series of measures are generally taken:
 \begin{itemize}
-\item high quality optics (for low scatter) in the Output Mode Cleaner
+\item an Output Mode Cleaner~\cite{Rob:2008,Tobin:DC} cavity 
+  with a ring (3 or 4 mirror) cavity
+  design so as to limit the scattering into the counter propagating mode.
+\item high quality optics (for low scatter) in the Output Mode Cleaner.
 \item a Faraday isolator between the interferometer and the output
-  detection systems
+  detection systems.
 \item appropriate angling of the photodetectors so as to minimize the
-  specular reflection and minimize the backscattering into the output
-  mode cleaner.
+  specular reflection and minimize the backscattering into the interferometer.
 \end{itemize}
 
-\R{baffles, seismic iso, Faraday, good PDs, good OMC, ...}
+
 
 \begin{figure}[h]
   \centering
